@@ -1,41 +1,127 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-th:replace="layout/user-layout :: layout(~{this::head}, ~{this::main})">
+	th:replace="layout/user-layout :: layout(~{this::head}, ~{this::main})">
 <!-- th:replace="~{템플릿::fragment이름or아이디or태그}" -->
-    <head>
-    </head>
-    <main>
-        <h1>메인영역</h1>
-        <div class="wrap">
-        	<section>
-        		<h2>메인슬라이드</h2>
-        		<div>
-        			<div class="slide-track" style="">
-        			::before
-        				<div data-index="-1" tabindex="-1" class="slick-slide slick-cloned"
-        				aria-hidden="true" style="width: 1390px;">
-	        				<div>
-	        					<div class="bh_mainVisuaImg" style="background-image: url('/springWebSample/src/main/resources/static/image/d5992a995c39c6d0efe1a52a5cf20931.jpg');">
-	        						<section class="oa_curation">
-	        							<p>
-	        								<h3 class="hidden">공영 예술 영상화지원</h3>
-	        								"매일 보는 오디션, 나는 잘하고 있는걸까?"
-	        							</p>
-	        							
-	        						</section>
-	        					</div>
-	        				</div>	
-        				</div>
-        			</div>	
-        		</div>
-        		 영역1
-        	</section>
-        	<section>영역 2</section>
-        	<section>영역 3</section>
-        	<section>영역 4</section>
-        	
-        	
-        	
-        </div>
-    </main>
+<head>
+</head>
+<body>
+	<main>
+		<div class="one-time">
+				<div>
+					<h3>1</h3>
+					내용
+				</div>
+				<div>
+					<h3>2</h3>
+					내용2
+				</div>
+				<div>
+					<h3>3</h3>
+					내용3
+				</div>
+				<div>
+					<h3>4</h3>
+					내용4
+				</div>
+				<div>
+					<h3>5</h3>
+					내용5
+				</div>
+		</div>
+		<div class="main2">
+			<!-- 태그 정의 후  임의의 클래스를 지정한다.-->
+			<div class="indicator">
+				<span class="prevArrow">이전</span>
+				<span class="nextArrow">다음</span>
+			</div>
+			<div class="visual">
+				<div>
+					<img src="image/eaaec4d92602c4e52a02e9827322f566.jpg">
+				</div>
+				<div>
+					<h3>2</h3>
+				</div>
+				<div>
+					<h3>3</h3>
+				</div>
+				<div>
+					<h3>4</h3>
+				</div>
+				<div>
+					<h3>5</h3>
+				</div>
+			</div>
+		</div>
+		<div class="main3">
+			<!-- 태그 정의 후  임의의 클래스를 지정한다.-->
+			<div class="visual2">
+				<div>
+					<h3>1</h3>
+				</div>
+				<div>
+					<h3>2</h3>
+				</div>
+				<div>
+					<h3>3</h3>
+				</div>
+				<div>
+					<h3>4</h3>
+				</div>
+				<div>
+					<h3>5</h3>
+				</div>
+			</div>
+			<div class="indicator2">
+				<span class="prevArrow2">이전</span>
+				<span class="nextArrow2">다음</span>
+			</div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-2.2.0.min.js"
+			type="text/javascript"></script>
+		<script src="/css/common/slick.js" type="text/javascript"
+			charset="utf-8"></script>
+		<script type="text/javascript">
+
+			$('.one-time').slick({
+				  dots: false,
+				  infinite: true,
+				  speed: 300,
+				  slidesToShow: 1,
+				  autoplay : true,
+				  autoplaySpeed : 2000,
+				  adaptiveHeight: true
+				});
+			
+			$('.visual').slick({
+				dots: false,
+				infinite: true,
+				speed: 300,
+				slidesToShow: 4,
+				slidesToScroll: 1, 
+				autoplay : true,
+				autoplaySpeed : 3000,
+				// 지정한 클래스에 맞게 값을 지정한다.
+				prevArrow : $('.prevArrow'),
+				nextArrow : $('.nextArrow'),
+			});
+
+			$('.visual2').slick({
+				dots: false,
+				infinite: true,
+				speed: 300,
+				slidesToShow: 4,
+				slidesToScroll: 1, 
+				autoplay : true,
+				autoplaySpeed : 3000,
+				// 지정한 클래스에 맞게 값을 지정한다.
+				prevArrow : $('.prevArrow2'),
+				nextArrow : $('.nextArrow2'),
+			});
+		</script>
+
+	</main>
+</body>
+
+
 </html>
