@@ -1,11 +1,12 @@
 /* Slider */
 body {
-	background: #ccc;
-}
-
+	background-color: gray;}
+	
+	
 .main {
 	font-family: Arial;
-	width: 500px;
+	width: 1500px;
+	height: 50%;
 	display: block;
 	margin: 0 auto;
 }
@@ -52,7 +53,9 @@ h3 {
 }
 
 .indicator {
-	width: 15500px;
+	top : 100px;
+	position : relative;
+	width: 10%;
 	float: left;
 	box-sizing: border-box;
 	
@@ -62,14 +65,16 @@ div.visual {
 	width: 80%;
 	float: right;
 	box-sizing: border-box;
-	;
+	
 }
 
 .indicator2 {
-	width: 20%;
+	top : 100px;
+	position: relative;
+	width: 10%;
 	float: right;
 	box-sizing: border-box;
-	
+
 }
 
 .visual2 {
