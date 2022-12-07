@@ -1,0 +1,56 @@
+@charset "UTF-8";
+/* 공백 = 하위 모든 자식 요소(손자 포함) */
+/* > = 하위 자식 요소(손자는 안돼) */
+/* html body header>.wrap #menu-top{} : 아이디로 찾아갈거면 굳이 풀경로 표시할 필요 없어(아이디 앞에는 #, 클래스 앞에는 .) */
+
+header>.wrap{
+	width: 1200px;
+	margin: 0 auto 0 auto; /* 상우하좌 순서 */
+	margin: 0 auto; /* 상하 우좌 */
+}
+
+header{
+	border-bottom: 1px solid #d1d1d1;
+	background-color: #f7f7f7;
+}
+
+#logo{
+	height: 75px;
+	border-right: 1px solid #d1d1d1;
+    padding: 0 1.25rem;
+    display: flex;
+    align-items: center;
+}
+
+#header>.wrap div ul li a{ 
+	padding: 25px 10px;
+	display: block;
+}
+
+#login div ul{
+	position: relative;
+}
+
+#login div ul li img{
+	top: 17px;
+	right: -28px;
+}
+
+#login div ul:last-child { 
+	right: 20px;
+}
+
+#login div ul li a{
+	position: relative;
+	color: #f7f7f7;
+	right: 22px;
+}
+
+#header>.wrap div ul li img{
+	position: absolute;
+}
+
+#top-menu div ul{
+	padding: 0 0 0 10px;
+}
+
