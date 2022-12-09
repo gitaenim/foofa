@@ -21,7 +21,7 @@ input:not([type=checkbox]), button{
 	margin-top: 30px;
 	display: block;
 	width: 100%;
-	background-color: #5f0080;
+	background-color: #ff8227;
 	border-radius: 3px;
 	padding: 0px 10px;
 	height: 54px;
@@ -41,9 +41,9 @@ input:not([type=checkbox]), button{
     width: 100%;
     height: 54px;
     border-radius: 3px;
-    color: #5f0080;
+    color: #ff8227;
     background-color: #fff;
-    border: 1px solid #5f0080;
+    border: 1px solid #ff8227;
 }
 .id-info{
 	margin-top: 10px;
