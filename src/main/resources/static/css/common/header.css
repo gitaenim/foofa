@@ -74,10 +74,15 @@ header>.wrap{
     background-color: rgb(255, 255, 255);
 }
 
+.rhrortpsxj:hover .cs-menu{
+	display: inline-block;
+}
+
+
 .cs-triangle{
 	width: 8px;
     height: 5px;
-    background-image: url(/images/icon-down.png);
+    background-image: url(/images/header/icon-down.png);
     background-size: cover;
     background-position: center center;
     display: inline-block;
@@ -114,7 +119,7 @@ header>.wrap{
     background-color: inherit;
     border: none;
     outline: none;
-    font-size: 16px;
+    font-size: 15px;
     letter-spacing: -0.33px;
 }
 
@@ -124,7 +129,11 @@ header>.wrap{
     height: 30px;
     margin: 10px;
     bottom: 3px;
-    background: url(/images/search.png) 0px 0px no-repeat;
+    background-position: 2px 9px;
+    background-repeat:no-repeat;
+    background-color: transparent;
+    background-image: url(/images/header/search.png);
+    background-size: 18px;
     border-radius: 0;
     -webkit-appearance: button;
     text-transform: none;
@@ -161,6 +170,131 @@ header>.wrap{
     cursor: pointer;
 }
 
+.tooltip{
+	position: absolute;
+    inset: 0px auto auto 0px;
+    margin: 0px;
+    transform: translate(18px, 36px);
+    z-index: 1500;
+    pointer-events: auto;
+}
+
+.tooltip2{
+	opacity: 1;
+    transition: opacity 1ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transform-origin: center top;
+    position: absolute;
+    z-index: -1;
+    background-color: transparent;
+    width: 0px;
+    height: 0px;
+    padding: 0px !important;
+    margin: 0px !important;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.6875rem;
+    max-width: 300px;
+    overflow-wrap: break-word;
+    font-weight: 500;
+}
+
+.tooltipxmf{
+	position: absolute;
+    right: -124px;
+    top: 14px;
+    width: 267px;
+    padding: 18px 17px 17px;
+    border: 1px solid rgb(221, 221, 221);
+    background-color: rgb(255, 255, 255);
+}
+
+.tooltip-text{
+	font-weight: 500;
+    font-size: 16px;
+    color: rgb(51, 51, 51);
+    line-height: 24px;
+    letter-spacing: 0.32px;
+}
+
+.tooltip-text strong{
+	font-weight: 400;
+    color: #ff8227;
+}
+
+.tooltip-text span{
+	white-space: nowrap;
+}
+
+.tooltip-button{
+	display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 11px;
+}
+
+.tooltip-button>button{
+	padding-bottom: 1px;
+    white-space: nowrap;
+    display: block;
+    padding: 0px 10px;
+    text-align: center;
+    overflow: hidden;
+    width: 80px;
+    height: 36px;
+    border-radius: 3px;
+    color: #ff8227;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #ff8227;
+}
+
+.tooltip-button>button::after{
+	content: "";
+    position: absolute;
+    left: 133px;
+    top: -11px;
+    width: 18px;
+    height: 11px;
+    background: url(/images/header/tooltip-triangle.png) 50% 50% no-repeat;
+    background-size: 18px;
+}
+.tooltip-button>button>span{
+	font-weight: 500;
+    font-size: 12px;
+}
+
+.tooltip-button button:last-child{
+	width: 145px;
+    white-space: nowrap;
+	display: block;
+    padding: 0px 10px;
+    text-align: center;
+    overflow: hidden;
+    height: 36px;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    background-color: #ff8227;
+    border: 0px none;
+}
+
+.tooltip-button>button:last-child img{
+	width: 18px;
+    height: 18px;
+    margin-left: -11px;
+    margin-top: 9px;
+    vertical-align: -6px;
+    display: inline-block;
+}
+
+.tooltip-button>button:last-child p {
+    display: inline-block;
+    margin-bottom: 10px;
+    line-height: 36px;
+    vertical-align: middle;
+    font-size: 12px;
+}
+
 .zzim{
 	width: 36px;
     height: 36px;
@@ -176,4 +310,92 @@ header>.wrap{
     width: 36px;
     height: 36px;
     cursor: pointer;
+}
+
+.category{
+	min-width: 1050px;
+    letter-spacing: -0.3px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    box-shadow: rgb(0 0 0 / 7%) 0px 3px 4px 0px;
+    width: 100%;
+    z-index: 10;
+}
+
+.categoryxmf{
+	position: relative;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 1050px;
+    height: 56px;
+    margin: 0px auto;
+}
+
+.left-category{
+	display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 100%;
+}
+
+.category-list{
+	width: 16px;
+    height: 14px;
+    margin-right: 14px;
+    background: url(/images/header/list.png) 0px 0px / 16px 14px no-repeat;
+}
+
+.zkxprhfl{
+	font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.3px;
+    color: rgb(51, 51, 51);
+}
+
+.center-category{
+    display: flex;
+    margin-left: 30px;
+}
+
+.center-category li{
+	display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 150px;
+    height: 55px;
+    padding-top: 18px;
+    line-height: 20px;
+    text-align: center;
+}	
+
+.center-category li span{
+	height: fit-content;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(51, 51, 51);
+    cursor: pointer;
+}
+
+.right-category{
+	display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.right-category a{
+	height: 32px;
+    padding: 6px 16px;
+    border-radius: 18px;
+    border: 1px solid rgb(238, 238, 238);
+    color: rgb(102, 102, 102);
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: -0.32px;
+}
+
+.right-category a span{
+	font-weight: 500;
+    color: #ff8227;
 }
