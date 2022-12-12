@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-th:fragment="layout(addHead, addMain)">
-	<head>
-		<meta charset="UTF-8">
-		<title>쿵짝쿵짝</title>
-		<!-- 공통적용할 css, js를 삽입하세요 -->
-		<link rel="stylesheet" href="/css/common/common.css">
-		<th:block th:replace="${addHead}">추가되는 head태그 내용</th:block>
-	</head>
-	<body>
-		<th:block th:insert="~{layout/header :: header}">header태그로 삽입됩니다.</th:block>
-		<th:block th:replace="${addMain}">메인태그로 대체됩니다.</th:block>
-		<th:block th:insert="~{layout/footer :: footer}">footer태그가 삽입됩니다.</th:block>
-	</body>
+	th:fragment="layout(addHead, addMain)">
+<head>
+<meta charset="UTF-8">
+<title>쿵짝쿵짝</title>
+<!-- 공통적용할 css, js를 삽입하세요 -->
+<link rel="stylesheet" href="/css/common/common.css">
+<link rel="stylesheet" type="text/css" href="/css/common/main/slick.css">
+<link rel="stylesheet" type="text/css" href="/css/common/header.css">
+<link rel="stylesheet" type="text/css" href="/css/common/footer.css">
+<link rel="stylesheet" type="text/css" href="/css/common/main/common2.css">
+<link rel="stylesheet" type="text/css" href="/css/common/main/slick-theme.css">
+</head>
+<body>
+	<th:block th:insert="~{layout/header :: header}">header태그로 삽입됩니다.</th:block>
+	<th:block th:replace="${addMain}">메인태그로 대체됩니다.</th:block>
+	<th:block th:insert="~{layout/footer :: footer}">footer태그가 삽입됩니다.</th:block>
+</body>
+
 </html>

@@ -16,4 +16,9 @@ public class LogController {
 	public String signup() {
 		return "log/signup";
 	}
+	
+	@GetMapping("/signup")
+	public String signup2() {
+		return "log/signup";
+	}
 }
