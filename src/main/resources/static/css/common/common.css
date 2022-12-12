@@ -5,10 +5,9 @@
 .flex{display: flex;}
 .row{flex-direction: row;}
 .column{flex-direction: column;}
-.center{align-items: center}
+.center{justify-content: center;}
 .between{justify-content: space-between;}
 .around{justify-content: space-around;}
-
 
 .font-zero{
 	font-size: 0;
