@@ -8,6 +8,7 @@
 <main>
 	<h1>메인</h1>
 	<div class="wrap">
+	<!-- 메인슬라이드 -->
 		<div class="main1">
 			<ul>
 				<li>
@@ -47,8 +48,7 @@
 							<ol class="goods-list wrap flex">
 								<li class="goods-list" th:each="num : ${#numbers.sequence(1,8)}">
 									<div class="g-imgs">
-										<a href="#">
-																						
+										<a href="#">											
 										</a>
 									</div>
 									<div class="goods-info">
@@ -67,8 +67,6 @@
 									</div>
 								</li>
 							</ol>
-							
-							
 							<div class="btn">
 								<button class="s-prev" onclick="prevSgoods()"></button>
 								<button class="s-next" onclick="nextSgoods()"></button>
@@ -78,6 +76,7 @@
 				</div>			
 			</section>
 		</div>
+<!-- 배너 -->
 	</div>
 	<div class="banner">
 	</div>
@@ -151,6 +150,7 @@
 	<script src="/css/common/main/slick.js" type="text/javascript"
 		charset="utf-8"></script>
 	<script type="text/javascript">
+		
 		$('.main1').slick({
 			dots : false,
 			infinite : true,
@@ -176,47 +176,54 @@
 			nextArrow : $('.nextArrow2'),
 		});
 		
-		var lis=$(".goods-list");
-		var ea=4;
+		var lis = $(".goods-list");
+		var ea = 4;
 		var moveLength=(282+24);
-		var tot=lis.length;
-		var rigthEa= tot-ea;
-		var leftEa=0;
-		var position=0;
+		var tot = lis.length;
+		var rigthEa = tot - ea;
+		var leftEa = 0;
+		var position = 0;
 		
-		function nextSgoods(){
-			ea=4;
-			if(rightEa <= ea){
-				ea=rigthEa;
+		console.log(rigthEa);
+		
+		function nextSgoods() {
+			ea = 4;
+			if (rightEa < ea) {
+				ea = rigthEa;
 				$(".s-next").hide();
-			}
-			position = position+(moveLength*ea*1);
-			$(".goods-list").animate({marginLeft: -position}, 1000);
+			};
+			position = position + (moveLength * ea * 1);
 			
-			leftEa=leftEa+ea//왼쪽의 이미지개수
-			rightEa=rightEa-ea;
-			if(leftEa>0){
+			$(".goods-list").animate({
+				marginLeft : -position
+			}, 1000);
+
+			leftEa = leftEa + ea
+			rightEa = rightEa - ea;
+			if (leftEa > 0) {
 				$(".s-prev").show();
-			}
+			};
 		};
 
-		function prevSgoods(){
-			ea=4;
-			if(leftEa<=ea){
-				ea=leftEa;
+		function prevSgoods() {
+			ea = 4;
+			if (leftEa <= ea) {
+				ea = leftEa;
 				$(".s-prev").hide();
-			}
-			position = position+(moveLength*ea*-1);
-			$(".goods-list").animate({marginLeft: -position}, 1000);
+			};
+			position = position + (moveLength * ea * -1);
+			$(".goods-list").animate({
+				marginLeft : -position
+			}, 1000);
 
-			leftEa=leftEa-ea
-			rightEa=rightEa+ea;
-			if(leftEa>0){
+			leftEa = leftEa - ea
+			rightEa = rightEa + ea;
+			if (leftEa > 0) {
 				$(".s-next").show();
-			}
+			};
 		};
-		
 	</script>
+	<!-- 오른쪾 팝업창 -->
 	<div class="pop">
 		<div class="pop-2">
 			<div class="pop-3">
