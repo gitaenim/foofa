@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:fragment="layout(addHead, addMain)">
+<head>
+<meta charset="UTF-8">
+<title>쿵짝쿵짝</title>
+<!-- 공통적용할 css, js를 삽입하세요 -->
+<link rel="stylesheet" href="/css/common/common.css">
+<link rel="stylesheet" type="text/css" href="/css/common/main/order.css">
+<link rel="stylesheet" type="text/css" href="/css/common/footer.css">
+</head>
+<body>
+	<div class="wrap">
+		<div class="nognb">
+			<div class="logo">
+				<a id="header-logo" class="icon" href="/">
+					<img src="/images/header/foofa-logo.png">
+				</a>
+			</div>
+		</div>
+		<div class="body">
+			<div class="mid">
+				<div class="ord-title">
+					<h3>주문/결제</h3>
+					<span class="steps">
+						<em>주문결제 ></em>
+						"주문완료"
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<th:block th:insert="~{layout/footer :: footer}">footer태그가 삽입됩니다.</th:block>
+</body>
+
+</html>

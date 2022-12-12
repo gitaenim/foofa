@@ -1,0 +1,26 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+.nognb{
+	position: relative;
+	height: 90px;
+	border-bottom: 1px solid black;
+	margin: 0 auto;
+}
+
+.logo{
+	width: 1050px;
+	margin: 0 auto;
+	padding-top: 30px;
+}
+.logo a{
+	display: block;
+	float: left;
+	width: 175px;
+	height: 40px;
+}
+img{
+	vertical-align: top;
+	width: 180px;
+	height: 40px;
+}
