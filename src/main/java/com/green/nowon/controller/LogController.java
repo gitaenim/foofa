@@ -16,4 +16,10 @@ public class LogController {
 	public String signup() {
 		return "log/signup";
 	}
+	
+	@GetMapping("/order")
+	public String order() {
+		return "layout/order";
+	}
+	
 }
