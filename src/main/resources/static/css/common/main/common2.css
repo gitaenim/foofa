@@ -19,10 +19,10 @@ body {
 
 .pop{
 	position: absolute;
-	top: 500px;
+	top: 85%;
 	right: 15px;
 	bottom: 0px;
-	height: 200%;
+	height: 150%;
 }
 .pop-2{
 	position: sticky;
@@ -133,12 +133,12 @@ ol{
 	margin-block-end: 1em;
 	margin-inline-start: 0px;
     margin-inline-end: 0px;
-    padding-inline-start: 40px;
+    padding-inline-start: 0px;
 }
 
 #display>ol>li.goods-list{
 	width: 282px;
-	margin-right: 20px;
+	margin-right: 24px;
 }
 #display>ol>li>div.g-imgs>a {
     position: relative;
@@ -203,11 +203,11 @@ ol{
 
 #display>.btn>.s-prev{
 	background-image: url('/images/icon/angle-left-solid.svg');
-	left: 15px;
+	left: -30px;
 }
 #display>.btn>.s-next{
 	background-image: url('/images/icon/angle-right-solid.svg');
-	right: -25px;
+	right: -30px;
 }
 
 /*/////////////////////// 3번 슬라이드////////////////// */

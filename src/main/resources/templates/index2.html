@@ -45,7 +45,7 @@
 					<p class="title">오늘의 특가</p>
 					<div class="area">
 						<div id="display">
-							<ol class="goods-list-wrap flex">
+							<ol class="goods-list wrap flex">
 								<li class="goods-list" th:each="num : ${#numbers.sequence(1,8)}">
 									<div class="g-imgs">
 										<a href="#">											
@@ -156,10 +156,10 @@
 		$('.main1').slick({
 			dots : false,
 			infinite : true,
-			speed : 1000,
+			speed : 300,
 			slidesToShow : 1,
 			autoplay : true,
-			autoplaySpeed : 500,
+			autoplaySpeed : 2000,
 			adaptiveHeight : true,
 			prevArrow : $('.prev1'),
 			nextArrow : $('.next1'),
@@ -182,45 +182,49 @@
 		var ea = 4;
 		var moveLength=(282+24);
 		var tot = lis.length;
-		var rightEa = tot-ea;
+		var rigthEa = tot - ea;
 		var leftEa = 0;
 		var position = 0;
 		
 		console.log(rigthEa);
 		
-		function nextSgoods(){
-			ea=4;
-			if(rightEa <= ea){
-				ea=rightEa;
+		function nextSgoods() {
+			
+			ea = 4;
+			if (tot-4 <= ea) {
+				ea = rigthEa;
 				$(".s-next").hide();
 			}
-			position = position+(moveLength*ea*1);
-			$(".goods-list-wrap").animate({marginLeft: -position}, 1000);
+			position = position + (moveLength * ea * 1);
+			$(".goods-list").animate({
+				marginLeft : -position
+			}, 2000);
+
+			leftEa = leftEa + ea
+			rightEa = tot-4 - ea;
 			
-			leftEa=leftEa+ea//왼쪽의 이미지개수
-			rightEa=rightEa-ea;
-			
-			if(leftEa=>0){
+			if (leftEa > 0) {
 				$(".s-prev").show();
 			}
-		}
+		};
 
-		function prevSgoods(){
-			ea=4;
-			if(leftEa<=ea){
-				ea=leftEa;
+		function prevSgoods() {
+			ea = 4;
+			if (leftEa <= ea) {
+				ea = leftEa;
 				$(".s-prev").hide();
 			}
-			position = position+(moveLength*ea*-1);
-			$(".goods-list-wrap").animate({marginLeft: -position}, 1000);
+			position = position + (moveLength * ea * -1);
+			$(".goods-list").animate({
+				marginLeft : -position
+			}, 1000);
 
-			leftEa=leftEa-ea//왼쪽의 이미지개수
-			rightEa=rightEa+ea;
-			
-			if(rightEa>0){
+			leftEa = leftEa - ea
+			rightEa = rightEa + ea;
+			if (leftEa > 0) {
 				$(".s-next").show();
 			}
-		}
+		};
 	</script>
 	<!-- 오른쪾 팝업창 -->
 	<div class="pop">
