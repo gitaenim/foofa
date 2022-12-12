@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("sb-admin-2.css");
+@import url("sb-admin-2.css"); 
 body{font-size: 16px;}
 header a{
 	color: #fff;
@@ -7,11 +7,28 @@ header a{
 header{
 	position: fixed;
 	left:0;
-	background: rgb(95, 0, 128);
+	background: #ff8227;
 	min-height: 100vh;
 	min-width: 200px;
 	
 }
+h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  
+.margin-bottom-1-5erm{
+	margin-bottom: 1.5rem
+}
+
+.text-gray {
+  color: #5a5c69;
+}
+
+.mb-0{
+  margin-bottom: 0 !important;
+}
+
 .chart-area{
 	background-image: url("img/123.png");
 }
@@ -61,4 +78,49 @@ li{list-style: none;}
 .font-up{
 	font-size: x-large;
     font-weight: 500;
+}
+
+.col-xl{
+  position: relative;
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
+
+header>.wrap ul>li dl>dt:first-child a{
+	padding: 1em 0;
+	font-size: 24px;
+	font-weight: 900;
+	color: rgba(255,255,255,1);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #e3e6f0;
+  border-radius: 0.35rem;
+}
+
+.border-left-primary {
+  border-left: 0.25rem solid #4e73df !important;
+}
+
+.shadow {
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.h-100 {
+  height: 100% ;
+}
+
+.pb-0-5rem{
+	padding-bottom: 0.5rem !important;
+}
+.mr-0-5rem{
+	margin-right: 0.5rem !important;
 }
