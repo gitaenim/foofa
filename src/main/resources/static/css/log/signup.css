@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 
+
 .page-tit{
 	margin-bottom: 50px;
     font-size: 28px;
@@ -11,14 +12,16 @@
     color: #333;
 }
 .view-size-log{
+	margin: 50px auto;
 	min-width: 1050px;
     margin-top: 50px;
     margin-bottom: 60px;
     background-color: rgb(255, 255, 255);
 }
 .signup-mainpage{
+	position: relative;
 	width: 640px;
-    margin: 0px auto;
+    margin: 50px auto;
 }
 .insert-page{
 	box-sizing: border-box;
@@ -87,16 +90,71 @@ button{
     color: rgb(51, 51, 51);
     font-weight: 500;
     font-size: 18px;
-    margin: 100px;
 }
-p{
-	margin-left: 100px;
+p{	
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 25px;
 	font-size: 10px;
 }
 .vole-fo{
+	margin-left: 5px;
+	position: absolute;
+	margin-bottom: 20px;
+	text-align: center;
 	color: rgb(51, 51, 51);
 	font-size: 14px;
 	font-weight: 600;
-	margin-left: 190px;
-	margin-bottom: 50px;
+}
+.seccess-enter{
+	font-size: 14px;
+	display: block;
+    padding: 0px 10px;
+    text-align: center;
+    overflow: hidden;
+    width: 240px;
+    height: 56px;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    background-color: #ff8227;
+    border: 0px none;
+    background-position: center;
+    margin: 50px auto;
+}
+.main-cbox{
+	margin-left: 105px;
+}
+.cbox{
+	margin-bottom: 10px;
+	display: flex;
+    width: 24px;
+    height: 24px;
+    margin-left: 200px;
+}
+.cbox-main{
+	display: inline-block;
+    width: 26px;
+    height: 26px;
+    margin-left: 100px;
+}
+input[type=checkbox]{
+	display: none;
+}
+
+input[type=checkbox]:checked + label::before{
+	background-color:#ff8227;
+}
+ 
+input[type=checkbox] + label::before {
+	content:"";
+	width:20px;
+	height:20px;
+	border-radius:50%;
+	background-image: url("/images/logicon/check-box.svg") ;
+	background-size : 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: rgba(255,255,255,1);
+	top: 2px;
+	margin-right: 5px;
 }

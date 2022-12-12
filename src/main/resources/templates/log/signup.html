@@ -5,6 +5,26 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="/css/common/common.css">
 <link rel="stylesheet" href="/css/log/signup.css">
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="/js/term.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<script type="text/javascript">
+function change() {
+	var ptag = document.getElementById("btn-id-style");
+	ptag.style.color="rgba(221, 221, 221,1)";
+	ptag.style.fontSize="12px";
+	ptag.style.border="1px solid rgba(221, 221, 221,1)";
+	
+}
+function change2() {
+	var ptag = document.getElementById("btn-email-style");
+	ptag.style.color="rgba(221, 221, 221,1)";
+	ptag.style.fontSize="12px";
+	ptag.style.border="1px solid rgba(221, 221, 221,1)";
+	
+}
+</script>
 </head>
 <body>
 <th:block th:insert="~{layout/header :: header}" />
@@ -29,7 +49,7 @@
 					<input type="text" placeholder="아이디를 입력해주세요">
 				</div>
 				<div>
-					<button>중복확인</button>
+					<button id="btn-id-style" onclick="change()">중복확인</button>
 				</div>
 			</div>
 			<div class="flex">
@@ -68,33 +88,41 @@
 					<input type="text" placeholder="예: foofa@foofa.com ">
 				</div>
 				<div>
-					<button>중복확인</button>
+					<button id="btn-email-style" onclick="change2()">중복확인</button>
 				</div>
 			</div>
-			<div class="flex cls-rdds">
-				<div class="cls-rrds">
-					<label>이용약관동의</label>
-					<span>*</span>
-					<div>
-						<span class="cls-rrrdd">전체 동의합니다.</span>
-						<p>선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</p>
+			<div class="term">
+				<div class="flex cls-rdds">
+					<div class="cls-rrds">
+						<label>이용약관동의</label>
+						<span>*</span>
+						<div class="main-cbox">
+							<input type="checkbox" id="term-all">
+							<label for="term-all"><span class="cls-rrrdd">전체 동의합니다.</span></label>
+							<p>선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</p>
+						</div>
 					</div>
 				</div>
+				<div class="cbox">
+					<input type="checkbox" id="ckbox-z">
+					<label for="ckbox-z"><span class="vole-fo">이용약관 동의(필수)</span></label>
+				</div>
+				<div class="cbox">
+					<input type="checkbox" id="ckbox-y">
+					<label for="ckbox-y"><span class="vole-fo">개인정보 수집,이용 동의(필수)</span></label>
+				</div>
+				<div class="cbox">
+					<input type="checkbox" id="ckbox-j">
+					<label for="ckbox-j"><span class="vole-fo">본인은 만14세 이상입니다.(필수)</span></label>
+				</div>
+				<div class="cbox">
+					<input type="checkbox" id="ckbox-s">
+					<label for="ckbox-s"><span class="vole-fo">무료배송,할인쿠폰 등 혜택/정보 수신동의(선택)</span></label>
+				</div>
+				<div>
+					<button class="seccess-enter">가입하기</button>
+				</div>
 			</div>
-			<div>
-				<input type="checkbox">
-				<span class="vole-fo">이용약관 동의(필수)</span>
-			</div>
-			<div>
-				<span class="vole-fo">개인정보 수집,이용 동의(필수)</span>
-			</div>
-			<div>
-				<span class="vole-fo">본인은 만14세 이상입니다.(필수)</span>
-			</div>
-			<div>
-				<span class="vole-fo">무료배송,할인쿠폰 등 혜택/정보 수신동의(선택)</span>
-			</div>
-			
 		</div>
 	</div>
 </main>
