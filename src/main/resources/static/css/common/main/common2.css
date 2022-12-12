@@ -68,9 +68,9 @@ body {
 	width:40px;
 	height :40px;
 	opacity:30%;
-	top:23%;
+	top:40%;
 	left:5%;
-	background-image:url('/image/icon/circle-chevron-left-solid.svg');
+	background-image:url('/images/icon/circle-chevron-left-solid.svg');
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -80,9 +80,9 @@ body {
 	width : 40px;
 	height : 40px;
 	opacity:30%;
-	top:23%;
+	top:40%;
 	right:5%;
-	background-image:url('/image/icon/circle-chevron-right-solid.svg');
+	background-image:url('/images/icon/circle-chevron-right-solid.svg');
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -233,8 +233,8 @@ ol{
 	height :25px;
 	opacity:40%;
 	position : absolute;
-	bottom:-65%;
-	right:13%;
+	bottom:-77%;
+	right:20%;
 	position : absolute;
 	background-image: url('/images/icon/angle-left-solid.svg');
 	background-size: 100%;
@@ -247,8 +247,8 @@ ol{
 	height :25px;
 	opacity:40%;
 	position : absolute;
-	bottom:-65%;
-	right:11%;
+	bottom:-77%;
+	right:18%;
 	position : absolute;
 	background-image: url('/images/icon/angle-right-solid.svg');
 	background-size: 100%;
