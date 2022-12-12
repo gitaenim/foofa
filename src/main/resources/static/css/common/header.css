@@ -179,6 +179,11 @@ header>.wrap{
     pointer-events: auto;
 }
 
+.icon-menu:hover .tooltipxmf,
+.tooltipxmf::before{
+	display: inline-block;
+}
+
 .tooltip2{
 	opacity: 1;
     transition: opacity 1ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
@@ -199,7 +204,17 @@ header>.wrap{
     font-weight: 500;
 }
 
+.tooltipxmf::before{
+	content: "";
+    position: absolute;
+    left: 125px;
+    top: -20px;
+    width: 36px;
+    height: 36px;
+}
+
 .tooltipxmf{
+	display: none;
 	position: absolute;
     right: -124px;
     top: 14px;
@@ -253,7 +268,7 @@ header>.wrap{
 	content: "";
     position: absolute;
     left: 133px;
-    top: -11px;
+    top: -10px;
     width: 18px;
     height: 11px;
     background: url(/images/header/tooltip-triangle.png) 50% 50% no-repeat;
