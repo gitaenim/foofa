@@ -32,19 +32,19 @@
     line-height: 17px;
     text-align: right;
 }
-span{
+.span-color{
 	color: rgb(255, 0, 0);
 }
 .font-style{
 	width: 139px;
     padding-top: 12px;
 }
-label{
+.signup-lable{
 	font-weight: 500;
     color: rgb(51, 51, 51);
     line-height: 20px;
 }
-input{
+.signup-mainpage>div input{
 	margin: 10px; 
 	background-position: center;
 	width: 333px;
@@ -59,7 +59,7 @@ input{
     outline: none;
     box-sizing: border-box;
 }
-button{
+.reduplication{
 	font-weight: 700;
 	font-size: 12px;
 	margin: 10px; 
