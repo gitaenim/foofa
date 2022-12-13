@@ -14,7 +14,7 @@ public class SecurityConfig {
 			.authorizeRequests(authorize -> authorize
 					.antMatchers("/css/**").permitAll()
 					.antMatchers("/images/**","/js/**").permitAll()
-					.antMatchers("/","/signup").permitAll()
+					.antMatchers("/**","/signup").permitAll()
 					.antMatchers("/admin/**").permitAll()
 					.antMatchers("/goods/**").permitAll()
 				.anyRequest().authenticated()

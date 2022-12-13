@@ -17,8 +17,22 @@ public class LogController {
 		return "log/signup";
 	}
 	
+
 	@GetMapping("/signup")
 	public String signup2() {
 		return "log/signup";
 	}
+
+	@GetMapping("/order")
+	public String order() {
+		return "layout/order";
+	}
+	
+
+	
+	@GetMapping("/member/cart")
+	public String cart() {
+		return "log/cart";
+	}
+
 }
