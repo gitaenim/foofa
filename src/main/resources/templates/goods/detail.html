@@ -3,8 +3,11 @@
 	th:replace="layout/user-layout :: layout(~{this::head}, ~{this::main})">
 <!-- th:replace="~{템플릿::fragment이름or아이디or태그}" -->
 <head>
-	<link rel="stylesheet" href="/css/common/common.css">
-	<link rel="stylesheet" href="/css/goods/goods.css">
+	<link rel="stylesheet" type="text/css" href="/css/common/common.css">
+	<link rel="stylesheet" type="text/css" href="/css/goods/goods.css">
+	<script type="text/javascript">
+		var salePrice=${goods.price}*${discountRate};
+	</script>
 </head>
 <main>
 	<h1>메인</h1>
@@ -55,12 +58,38 @@
 		<div class="main-detail">
 			<div class="product-atf">
 				<div class="goods-img"></div>
-				<section> https://www.kurly.com/goods/5048236
+				<section> https://www.kurly.com/goods/5030709
 					<div>새벽배송</div>
-					<div></div>
-					<h2></h2>
-					<div></div>
-					<div></div>
+					<div class="goods-title flex">
+						<div class="flex">
+							<h1>${goods.title}</h1>
+							<button></button>
+						</div>
+						<h2>${goods.content}</h2>
+					</div>
+					<h2 class="flex">
+						<span>${goods.price}</span>
+						<span>원</span>
+					</h2>
+					<div>
+						로그인 후, 할인 및 적립 혜택이 제공됩니다.
+					</div>
+					<div>
+						<dl>
+							<dt>배송</dt>
+							<dd>
+								<p>새벽배송</p>
+								<p>23시 전 주문 시 내일 아침 7시 전 도착
+								(대구·부산·울산 새벽배송 운영시간 별도 확인)</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>중량/용량</dt>
+							<dd>
+								<p>${goods.ea}</p>
+							</dd>
+						</dl>
+					</div>
 					<div></div>
 				</section>
 			</div>
