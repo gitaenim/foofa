@@ -137,6 +137,11 @@
     height: 26px;
     margin-left: 100px;
 }
+.mod{
+	position: absolute;
+	right: 0px;
+	
+}
 input[type=checkbox]{
 	display: none;
 }
@@ -157,4 +162,31 @@ input[type=checkbox] + label::before {
 	background-color: rgba(255,255,255,1);
 	top: 2px;
 	margin-right: 5px;
+}
+.tit-main{
+	display: block;
+    padding-top: 16px;
+    padding-bottom: 8px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 21px;
+    color: #333;
+    font-weight: 500;
+}
+.box-title-tb{
+	padding-bottom: 20px;
+}
+.box-bt1{
+	padding: 10px 5px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.box-bt2{
+	padding: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 19px;
 }
