@@ -29,4 +29,10 @@ public class LogController {
 	}
 	
 
+	
+	@GetMapping("/member/cart")
+	public String cart() {
+		return "log/cart";
+	}
+
 }
