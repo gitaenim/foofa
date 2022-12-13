@@ -4,6 +4,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,8 +19,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-@SequenceGenerator(name = "gen_seq_foo_review",
-		sequenceName = "seq_re" ,initialValue = 1,allocationSize = 1)
+
+@SequenceGenerator(name = "gen_seq_foo_review", sequenceName = "seq_re", initialValue = 1, allocationSize = 1)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -27,23 +28,22 @@ import lombok.NoArgsConstructor;
 @Table(name = "foo_review")
 @Entity
 public class Review extends BaseDateEntity {
-	
+
 	@Id
-	@GeneratedValue(generator = "gen_seq_foo_review")
+	@GeneratedValue(generator = "gen_seq_foo_review", strategy = GenerationType.SEQUENCE)
 	private long rno;
 	@Column(nullable = false)
 	private int rating;
 	@Column(nullable = false)
 	private String content;
 	
-	/*
-	 * @ManyToOne(cascade = CascadeType.ALL)
-	 * 
-	 * @JoinColumn(name = "mno") private MemberEntity member;
-	 * 
-	 * @ManyToOne(cascade = CascadeType.PERSIST)
-	 * 
-	 * @JoinColumn(name="gno") private GoodsEntity goods;
-	 */
-}
+	 
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "mno")
+	private MemberEntity member;
 
+	@ManyToOne(cascade = CascadeType.PERSIST) 
+	@JoinColumn(name="gno")
+	private GoodsEntity goods;
+	
+}

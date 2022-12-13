@@ -39,10 +39,10 @@ public class Board extends BaseDateEntity{
 	
 	private long readCount;
 	
-	/*
-	 * @ManyToOne(cascade = CascadeType.ALL)
-	 * 
-	 * @JoinColumn(name = "mno") private MemberEntity member;
-	 */
+	
+	 @ManyToOne(cascade = CascadeType.ALL)
+	 @JoinColumn(name = "mno")
+	 private MemberEntity member;
+	 
 	
 }
