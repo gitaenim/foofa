@@ -27,7 +27,6 @@ input:not([type=checkbox]), button{
 	padding: 0px 10px;
 	height: 54px;
 	color: #fff;
-	font-weight: 700;
 	background-position: center;
 	border: 0 none;
 }

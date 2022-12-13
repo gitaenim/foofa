@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+.cartsize{
+	width: 1050px;
+    margin: 0 auto;
+    padding-bottom: 80px
+}
+
+.cart-text{
+	padding: 50px 0 48px;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.big{
+	 -webkit-box-pack: justify;
+	 letter-spacing: -0.5px;
+}
+
+.cart-list{
+	   width: 742px;
+}
+
+.select{
+	    align-items: center;
+    padding: 18px 10px 16px 2px;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 500;
+}
+
+.label{
+	display: inline-flex;
+    font-size: 14px;
+    line-height: 26px;
+    padding: 0;
+    color: #333;
+}
+
+.label-checkbox{
+	overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    box-sizing: border-box;
+    padding: 0;
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+        cursor: default;
+}
+
+.checkbox-img{
+	display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+  	border: 0;
+    vertical-align: top;
+}
+
+.crossline{
+	display: inline-block;
+    width: 1px;
+    height: 14px;
+    background: #ddd;
+    margin: 6px 21px 0 22px;
+    vertical-align: top;
+}
+.delete-button{
+	cursor: default;
+  	border-radius: 0;
+	font-size: 14px;
+    color: #333;
+   
+}

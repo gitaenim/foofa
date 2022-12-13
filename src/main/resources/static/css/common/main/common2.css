@@ -19,10 +19,10 @@ body {
 
 .pop{
 	position: absolute;
-	top: 500px;
+	top: 85%;
 	right: 15px;
 	bottom: 0px;
-	height: 200%;
+	height: 150%;
 }
 .pop-2{
 	position: sticky;
@@ -59,16 +59,20 @@ body {
 /* /////////////////1번 슬라이드/////////////// */
 /* /////////////////1번 슬라이드/////////////// */
 .main1 {
-	position:relative;
+	position:static;
 	min-width:auto;
 }
-
+.conta{
+	position : absolute;
+	width: 95%;
+	height: 40px;
+	top:40%;
+}
 .prev1{
 	position : absolute;
 	width:40px;
 	height :40px;
 	opacity:30%;
-	top:40%;
 	left:5%;
 	background-image:url('/images/icon/circle-chevron-left-solid.svg');
 	background-size: 100%;
@@ -80,7 +84,6 @@ body {
 	width : 40px;
 	height : 40px;
 	opacity:30%;
-	top:40%;
 	right:5%;
 	background-image:url('/images/icon/circle-chevron-right-solid.svg');
 	background-size: 100%;
@@ -133,12 +136,12 @@ ol{
 	margin-block-end: 1em;
 	margin-inline-start: 0px;
     margin-inline-end: 0px;
-    padding-inline-start: 40px;
+    padding-inline-start: 0px;
 }
 
 #display>ol>li.goods-list{
 	width: 282px;
-	margin-right: 20px;
+	margin-right: 24px;
 }
 #display>ol>li>div.g-imgs>a {
     position: relative;
@@ -203,11 +206,11 @@ ol{
 
 #display>.btn>.s-prev{
 	background-image: url('/images/icon/angle-left-solid.svg');
-	left: 15px;
+	left: -30px;
 }
 #display>.btn>.s-next{
 	background-image: url('/images/icon/angle-right-solid.svg');
-	right: -25px;
+	right: -30px;
 }
 
 /*/////////////////////// 3번 슬라이드////////////////// */
@@ -228,28 +231,30 @@ ol{
 .pro-price{
 	text-align: center;}
 
+.m3-btn{
+	width: 100%;
+	height: 30px;
+	position: static;
+	margin-bottom: 5px;
+}
+
 .prevArrow2{
 	width:25px;
 	height :25px;
 	opacity:40%;
-	position : absolute;
-	bottom:-77%;
 	right:20%;
-	position : absolute;
+	position:absolute;
 	background-image: url('/images/icon/angle-left-solid.svg');
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: center;
-	
 }
 .nextArrow2{
 	width:25px;
 	height :25px;
 	opacity:40%;
-	position : absolute;
-	bottom:-77%;
 	right:18%;
-	position : absolute;
+	position:absolute;
 	background-image: url('/images/icon/angle-right-solid.svg');
 	background-size: 100%;
 	background-repeat: no-repeat;
