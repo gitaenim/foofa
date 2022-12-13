@@ -8,6 +8,7 @@
 <main>
 	<h1>메인</h1>
 	<div class="wrap">
+	<!-- 메인슬라이드 -->
 		<div class="main1">
 			<ul>
 				<li>
@@ -25,7 +26,7 @@
 				</li>
 			</ul>
 		</div>
-		<div>
+		<div class="conta">
 			<div>
 				<button class="prev1"></button>
 			</div>
@@ -33,7 +34,6 @@
 				<button class="next1"></button>
 			</div>
 		</div>
-
 	</div>
 
 <!-- 2번째 슬라이드 -->
@@ -44,11 +44,10 @@
 					<p class="title">오늘의 특가</p>
 					<div class="area">
 						<div id="display">
-							<ol class="goods-list wrap flex">
+							<ol class="goods-list-wrap flex">
 								<li class="goods-list" th:each="num : ${#numbers.sequence(1,8)}">
 									<div class="g-imgs">
-										<a href="#">
-																						
+										<a href="#">											
 										</a>
 									</div>
 									<div class="goods-info">
@@ -78,6 +77,7 @@
 				</div>			
 			</section>
 		</div>
+<!-- 배너 -->
 	</div>
 	<div class="banner">
 	</div>
@@ -86,6 +86,10 @@
 		<section>
 			<div class="main3">
 				<p class="title">Foofa의 추천상품</p>
+				<div class="m3-btn">
+					<div><button class="prevArrow2"></button></div>
+					<div><button class="nextArrow2"></button></div>
+				</div>
 				<div class="visual2">			
 					<div>
 						<img src="/images/eaaec4d92602c4e52a02e9827322f566.jpg" style="width: 350px; height: 370px;">
@@ -138,9 +142,8 @@
 						</ul>
 					</div>
 				</div>
-				<div class="m3-btn">
-					<button class="prevArrow2"></button>
-					<button class="nextArrow2"></button>
+				<div>
+					
 				</div>	
 			</div>
 		</section>
@@ -151,13 +154,14 @@
 	<script src="/css/common/main/slick.js" type="text/javascript"
 		charset="utf-8"></script>
 	<script type="text/javascript">
+		
 		$('.main1').slick({
 			dots : false,
 			infinite : true,
-			speed : 300,
+			speed : 1000,
 			slidesToShow : 1,
 			autoplay : true,
-			autoplaySpeed : 2000,
+			autoplaySpeed : 500,
 			adaptiveHeight : true,
 			prevArrow : $('.prev1'),
 			nextArrow : $('.next1'),
@@ -176,29 +180,32 @@
 			nextArrow : $('.nextArrow2'),
 		});
 		
-		var lis=$(".goods-list");
-		var ea=4;
+		var lis = $(".goods-list");
+		var ea = 4;
 		var moveLength=(282+24);
-		var tot=lis.length;
-		var rigthEa= tot-ea;
-		var leftEa=0;
-		var position=0;
+		var tot = lis.length;
+		var rightEa = tot-ea;
+		var leftEa = 0;
+		var position = 0;
+		
+		console.log(rigthEa);
 		
 		function nextSgoods(){
 			ea=4;
 			if(rightEa <= ea){
-				ea=rigthEa;
+				ea=rightEa;
 				$(".s-next").hide();
 			}
 			position = position+(moveLength*ea*1);
-			$(".goods-list").animate({marginLeft: -position}, 1000);
+			$(".goods-list-wrap").animate({marginLeft: -position}, 1000);
 			
 			leftEa=leftEa+ea//왼쪽의 이미지개수
 			rightEa=rightEa-ea;
-			if(leftEa>0){
+			
+			if(leftEa=>0){
 				$(".s-prev").show();
 			}
-		};
+		}
 
 		function prevSgoods(){
 			ea=4;
@@ -207,16 +214,17 @@
 				$(".s-prev").hide();
 			}
 			position = position+(moveLength*ea*-1);
-			$(".goods-list").animate({marginLeft: -position}, 1000);
+			$(".goods-list-wrap").animate({marginLeft: -position}, 1000);
 
-			leftEa=leftEa-ea
+			leftEa=leftEa-ea//왼쪽의 이미지개수
 			rightEa=rightEa+ea;
-			if(leftEa>0){
+			
+			if(rightEa>0){
 				$(".s-next").show();
 			}
-		};
-		
+		}
 	</script>
+	<!-- 오른쪾 팝업창 -->
 	<div class="pop">
 		<div class="pop-2">
 			<div class="pop-3">
