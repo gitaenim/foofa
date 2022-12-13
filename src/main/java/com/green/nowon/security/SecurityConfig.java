@@ -16,6 +16,7 @@ public class SecurityConfig {
 					.antMatchers("/images/**","/js/**").permitAll()
 					.antMatchers("/**","/signup").permitAll()
 					.antMatchers("/admin/**").permitAll()
+					.antMatchers("/goods/**").permitAll()
 				.anyRequest().authenticated()
 			)
 			.formLogin(formLogin->formLogin

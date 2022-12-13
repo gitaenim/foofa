@@ -17,5 +17,9 @@ public class AdminController {
 		return "/admin/authority";
 	}
 	
+	@GetMapping("/goods/reg")
+	public String GoodsReg() {
+		return "goods/goods-reg";
+	}
 
 }
