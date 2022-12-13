@@ -1,4 +1,4 @@
-package com.green.nowon.entity.order;
+package com.green.nowon.domain.entity.order;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
