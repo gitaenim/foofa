@@ -5,32 +5,35 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@SequenceGenerator(name = "gen_c",sequenceName = "seq_c",allocationSize = 1,initialValue = 1)
-@Table(name = "cart")
+@SequenceGenerator(name = "gen_ci",sequenceName = "seq_ci",allocationSize = 1,initialValue = 1)
+@Table(name = "cartItem")
 @Entity
-public class CartEntity {
+public class CartItemEntity {
 
 	@Id
-	@GeneratedValue(generator = "gen_c",strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(generator = "gen_ci",strategy = GenerationType.SEQUENCE)
+	private long cino;
+	
+	@ManyToOne
+	@JoinColumn(name = "cno")
 	private long cno;
 	
 	private long gno;
-	
-	private long mno;
+	@Column(nullable = false)
+	private int count;
 	
 	@Column(nullable = false)
-	private int quantity;
-	
+	private boolean selected;
 }
