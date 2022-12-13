@@ -28,8 +28,8 @@ public class CartEntity {
 	@GeneratedValue(generator = "gen_c",strategy = GenerationType.SEQUENCE)
 	private long cno;
 	
-	@OneToOne
-	@JoinColumn(name = "mno")
-	private long mno;
+	//@OneToOne
+	//@JoinColumn(name = "mno")
+	//private long mno;
 	
 }
