@@ -30,7 +30,10 @@ public class CartItemEntity {
 	@JoinColumn(name = "cno")
 	private long cno;
 	
+	@ManyToOne
+	@JoinColumn(name = "gno")
 	private long gno;
+	
 	@Column(nullable = false)
 	private int count;
 	

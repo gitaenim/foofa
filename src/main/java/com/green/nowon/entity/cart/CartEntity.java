@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -26,11 +28,8 @@ public class CartEntity {
 	@GeneratedValue(generator = "gen_c",strategy = GenerationType.SEQUENCE)
 	private long cno;
 	
-	private long gno;
-	
+	@OneToOne
+	@JoinColumn(name = "mno")
 	private long mno;
-	
-	@Column(nullable = false)
-	private int quantity;
 	
 }
