@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="layout/user-layout :: layout(~{this::head}, ~{this::main})">
+	
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <main>
+ 
+<div class="cartsize">
+	<h2 class="cart-text">장바구니</h2>
+	<div class="flex between big">
+		<div class="cart-list">
+			<div class="flex select">
+				<div>
+					<label class="label">
+						<input type="checkbox" disabled class="label-checkbox">
+						<img src="/images/cart/as.svg" class="checkbox-img">
+						<span class="">전체선택 (0/0)</span>
+					</label>
+					<span class="crossline"></span>
+					<button disabled class="delete-button">선택삭제</button>
+				</div>
+			</div>
+			<div></div>
+			<div></div>
+		</div>
+		<div>123</div>
+	</div>
+</div>
+ 
+ </main>
+</body>
+</html>

@@ -21,4 +21,9 @@ public class LogController {
 	public String signup2() {
 		return "log/signup";
 	}
+	
+	@GetMapping("/member/cart")
+	public String cart() {
+		return "log/cart";
+	}
 }
