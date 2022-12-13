@@ -26,6 +26,7 @@ public class CartItemEntity {
 	@GeneratedValue(generator = "gen_ci",strategy = GenerationType.SEQUENCE)
 	private long cino;
 	
+	/*
 	@ManyToOne
 	@JoinColumn(name = "cno")
 	private long cno;
@@ -33,6 +34,7 @@ public class CartItemEntity {
 	@ManyToOne
 	@JoinColumn(name = "gno")
 	private long gno;
+	*/
 	
 	@Column(nullable = false)
 	private int count;
