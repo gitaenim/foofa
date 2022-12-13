@@ -1,4 +1,4 @@
-package com.green.nowon.entity.delivery;
+package com.green.nowon.domain.entity.delivery;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

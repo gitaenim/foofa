@@ -1,4 +1,4 @@
-package com.green.nowon.entity.cart;
+package com.green.nowon.domain.entity.cart;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
