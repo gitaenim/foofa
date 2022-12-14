@@ -10,6 +10,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.green.nowon.domain.entity.member.MemberEntity;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -28,8 +30,8 @@ public class CartEntity {
 	@GeneratedValue(generator = "gen_c",strategy = GenerationType.SEQUENCE)
 	private long cno;
 	
-	//@OneToOne
-	//@JoinColumn(name = "mno")
-	//private long mno;
+	@OneToOne
+	@JoinColumn(name = "mno")
+	private MemberEntity mno;
 	
 }
