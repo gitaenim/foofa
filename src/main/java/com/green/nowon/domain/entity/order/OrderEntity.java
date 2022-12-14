@@ -29,6 +29,7 @@ public class OrderEntity {
 	@GeneratedValue(generator = "gen_o",strategy = GenerationType.SEQUENCE)
 	private long ono;
 	
+	/*
 	@ManyToOne
 	@JoinColumn(name = "dno")
 	private long dno;
@@ -40,6 +41,7 @@ public class OrderEntity {
 	@OneToOne
 	@JoinColumn(name = "cno")
 	private long cno;
+	*/
 	
 	@Column(nullable = false)
 	private String status;

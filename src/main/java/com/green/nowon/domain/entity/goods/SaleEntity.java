@@ -24,6 +24,10 @@ import lombok.NoArgsConstructor;
 @Entity
 public class SaleEntity {
 	
+	@Id
+	@Column(unique = true ,nullable = false)
+	private long sale;
+	
 	@Column(nullable = false)
 	private String startDate;
 	
@@ -31,9 +35,7 @@ public class SaleEntity {
 	private String endDate;
 	
 	@Column(nullable = false)
-	private int saleRate;
+	private long saleRate;
 	
-	@Column(nullable = false)
-	private int gno;
 	
 }
