@@ -6,6 +6,7 @@
 	height: 90px;
 	border-bottom: 1px solid black;
 	margin: 0 auto;
+	width: 1020px;
 }
 
 .logo{
@@ -22,7 +23,7 @@
 }
 img{
 	vertical-align: top;
-	width: 180px;
+	width: 175px;
 	height: 40px;
 	text-align: left;
 }
