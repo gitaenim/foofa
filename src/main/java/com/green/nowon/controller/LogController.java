@@ -23,12 +23,8 @@ public class LogController {
 		return "log/signup";
 	}
 
-	@GetMapping("/order")
-	public String order() {
-		return "layout/order";
-	}
 	
-
+	
 	
 	@GetMapping("/cart")
 	public String cart() {
