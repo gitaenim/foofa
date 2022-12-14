@@ -24,7 +24,7 @@ public class MyFileUtils {
 					+"_"+ (System.nanoTime()/1000000)
 					+ extension;
 			//fileName = UUID.randomUUID().toString()+extension; //파일이름 랜덤으로 생성
-		
+			
 			/*
 			String[] strs=orgName.split("[.]");
 			fileName = strs[0];
