@@ -1,4 +1,4 @@
-\!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	th:fragment="layout(addHead, addMain)">
 <head>
@@ -46,9 +46,9 @@
 						</table>
 					</div>
 				</div>
-				<h2 class="del-adr-head">
+				<h2 class="del-adr-head customer-h2">
 					받는 사람 정보
-					<button class="del-adr-list-btn" type="button">배송지변경</button>
+					<button class="del-adr-list-btn page-btn" type="button">배송지변경</button>
 				</h2>
 				<table class="del-adr">
 					<tbody>
@@ -63,12 +63,163 @@
 							<th class="del-adr-h">배송주소</th>
 							<td class="del-adr-d">주소시 주소동 111호</td>
 						</tr>
+						<tr>
+							<th class="del-adr-h">연락처</th>
+							<td class="del-adr-d">000-0000-0000</td>
+						</tr>
+					</tbody>
+				</table>
+				<div>
+					<div>
+						<div class="del-msg-cont">
+							<table class="del-req-msg">
+								<tbody>
+									<tr>
+										<th class="del-req-msg-th">
+											<span>배송 요청사항</span>
+										</th>
+										<td>
+											<span class="test00">문앞</span>
+											<button class="del-req-msg-popup page-btn" type="button">변경</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			<div ><!-- 상품정보 -->
+				<div class="goods-info">
+					<div class="goods-info-title customer-h2">배송 1건 중 1</div>
+					<div class="goods-info-group">
+						<div class="goods-info-date">
+							주문날짜
+						</div>
+						<div class="goods-info-list">
+							<p class="goods-list">상품리스트</p>
+							<div class="goods-info-bundle">
+								물건 수량 / <span>배송정보(무료or배송료)</span>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="pay-price-section" >
+				<h2 class="check-out customer-h2 orderbox">결제정보</h2>
+				<table class="pay-price">
+					<colgroup>
+						<col width="144">
+					</colgroup>
+					<tbody>
+						<tr class="payorder-wrap">
+							<th class="wrap-title">
+								총 상품가격
+							</th>
+							<td>
+								<div class="payorder">
+									<strong class="price">
+										<span>goods 총 가격</span>
+										<span class="unit"> 원 </span>
+									</strong>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th class="wrap-title">할인</th>
+							<td>
+								<div class="price">
+									<strong>
+										<span>할인가</span>
+										<span class="unit">원</span>
+									</strong>
+								</div>
+								<div class="coupon">
+									<span class="price-msg">적용가능한 할인쿠폰이 없습니다.</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th class="wrap-title">배송비</th>
+							<td class="">
+								<div>
+									<strong class="price">
+										<span>0</span>
+										<span class="unit">원</span>
+									</strong>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th class="wrap-title">적립금</th>
+							<td>
+								<div>
+									<strong class="price">
+										<span>0</span>
+										<span>원</span>
+									</strong>
+									<span class="price-msg">
+										<span class="usable">
+											보유:
+											<strong>0</strong>
+											<span class="unit">원</span>
+										</span>
+									</span>
+									<button class="page-btn pri-btn">적립금사용</button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th class="wrap-title">총 결제금액</th>
+							<td>
+								<div>
+									<strong class="price">
+										<span>00,000</span>
+										<span class="unit">원</span>
+									</strong>
+								</div>
+							</td>
+						</tr>
+						<tr id="paySel" class="payType-wrap">
+							<th class="wrap-title">결제방법</th>
+							<td class="inputWrap payType">
+								<div id="payBox" class="pay-box">
+									<div class="type-selector-list-wrapper">
+										<ul id="payTypeLIst" class="type-selector-list">
+											<li id="pay" class="type-selector-li">
+												<input class="type-selector-radio" type="radio" name="payType" id="">
+												<label class="type-selector-label type-selector-label--bank">
+													<span class="type-selector-label__text">계좌이체</span>
+												</label>
+											</li>
+											<li id="payCard" class="type-selector-li">
+												<input class="type-selector-radio" type="radio" name="payType" id="">
+												<label class="type-selector-label type-selector-label--bank">
+													<span class="type-selector-label__text">신용/체크카드</span>
+												</label>
+											</li>
+											<li id="phone" class="type-selector-li">
+												<input class="type-selector-radio" type="radio" name="payType" id="">
+												<label class="type-selector-label type-selector-label--bank">
+													<span class="type-selector-label__text">핸드폰</span>
+												</label>
+											</li>
+											<li id="accountPay" class="type-selector-li">
+												<input class="type-selector-radio" type="radio" name="payType" id="">
+												<label class="type-selector-label type-selector-label--bank">
+													<span class="type-selector-label__text">무통장입금</span>
+												</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</td>
+						</tr>
 					</tbody>
 				</table>
 			</div>
 		</div>
 	</div>
-	
+	</div>
 	
 	
 	<th:block th:insert="~{layout/footer :: footer}">footer태그가 삽입됩니다.</th:block>
