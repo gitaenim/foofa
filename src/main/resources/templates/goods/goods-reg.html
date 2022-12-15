@@ -15,51 +15,108 @@
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script type="text/javascript">
+	var idx=1;
 	$(document).ready(function() {
 		  $('#summernote').summernote();
 		});
+	function gimgChanged(el){
+		var filedata=$(el)[0].files[0];
+		var formData=new FormData();
+		formData.append('gimg',filedata);
+		
+		$.ajax({
+			url:"/admin/temp-up",
+			type:"post",
+			contentType:false,
+    		processData:false,
+    		data:formData,
+    		success:function(map){//서버에 업로드 이후 url리턴 -> 파라미터에 전달
+    			console.log();
+    			
+    			$(el).siblings(".img").css("background-image", "url("+map.url+")");
+    			$(el).siblings(".newName").val(map.fileName);
+    			
+    			//추가이미지인 경우 아래문장 실행
+    			if($(el).prop("id")=="defimg")return;//대표이미지 처리는 여기서 끝
+	    		
+	    		//추가이미지를 넣을수있는 태그 삽입
+    			if(idx < 3)addTag();
+    		}
+		});
+	}
+	function addTag(){
+    	//class 이름이 addimg 인 모든 태그
+    	var addimgs=$(".addimg")
+    	
+    	var tag = 
+    		`
+    		<div class="addimg">
+				<label class="img" for="addimg_${idx}">+</label>
+				<input id="addimg_${idx}" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
+				<input type="hidden" class="newName" name="newName">
+			</div>
+    		`
+    	
+    	addimgs.last().after(tag);
+    	idx++;
+   }
+	
 </script>
 
 </head>
-<body>
-<th:block th:insert="~{admin/admin :: header}" />
-<main>
-	<h1>상품등록</h1>
-	<p class="tag">상품등록페이지</p>
-	<form>
-		<table class="goods-table">
-			<tr>
-				<td>상품명</td>
-				<td><input type="text" placeholder="상품명을 입력해주세요"></td>
-			</tr>
-			<tr>
-				<td>대표이미지</td>
-				<td>
-					<input  type="file" />
-				</td>
-			</tr>
-			<tr>
-				<td>가격</td>
-				<td><input type="text" placeholder="상품가격을 입력해 주세요"/></td>
-			</tr>
-			<tr>
-				<td>재고</td>
-				<td><input type="text" placeholder="상품수량을 입력해 주세요"/></td>
-			</tr>
-			<tr>
-				<td colspan="2">상세정보</td>
-			</tr>
-			<tr>
-				<td colspan="2"><textarea id="summernote"></textarea></td>
-			</tr>
-			<tr>
-				<td colspan="2">
-					<button class="suecs">상품등록</button>
-				</td>
-			</tr>
-		</table>
-	</form>
-</main>
-
+<body class="flex">
+	<th:block th:insert="~{admin/admin :: header}" />
+	<main>
+		<h1>상품등록</h1>
+		<p class="tag">상품등록페이지</p>
+		<a href="/">HOME</a>
+		<form>
+			<table class="goods-table">
+				<tr>
+					<td>상품명</td>
+					<td><input type="text" name="title" placeholder="상품명을 입력해주세요"></td>
+				</tr>
+				<tr>
+					<td>상품이미지</td>
+					<td>
+						<div>
+							<label class="img" for="defimg">+</label>
+							<input id="defimg" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
+							<input type="hidden" class="newName" name="newName">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>추가이미지</td>
+					<td class="flex">
+						<div class="addimg">
+							<label class="img" for="addimg">+</label>
+							<input id="addimg" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
+							<input type="hidden" class="newName" name="newName">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>가격</td>
+					<td><input type="text" name="price" placeholder="상품가격을 입력해 주세요"/></td>
+				</tr>
+				<tr>
+					<td>재고</td>
+					<td><input type="text" name="stock" placeholder="상품수량을 입력해 주세요"/></td>
+				</tr>
+				<tr>
+					<td colspan="2">상세정보</td>
+				</tr>
+				<tr>
+					<td colspan="2"><textarea id="summernote"></textarea></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<button class="suecs">상품등록</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</main>
 </body>
 </html>
