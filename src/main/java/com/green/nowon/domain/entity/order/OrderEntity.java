@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Getter
 @SequenceGenerator(name = "gen_o",sequenceName = "seq_o",allocationSize = 1,initialValue = 1)
-@Table(name = "order")
+@Table(name = "foo_order")
 @Entity
 public class OrderEntity {
 
@@ -46,9 +46,9 @@ public class OrderEntity {
 	@JoinColumn(name = "cno")
 	private CartEntity cno;
 	
-	@Column(nullable = false)
-	private String status;
+	@Column(nullable = false,name = "status")
+	private String statuss;
 	
-	@Column
-	private String memo;
+	@Column(name = "memo",nullable = false)
+	private String memoo;
 }
