@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="layout/user-layout :: layout(~{this::head}, ~{this::main})">
+<head>
+
+</head>
+
+<main>
+	<h3 class="head-text" >상품 목록</h3>
+	   <table>
+    	<tr>
+    		<td>상품명</td>
+    		<td>상품가격</td>
+    		<td>주문가능수량</td>
+    	</tr>
+    	<tr th:each="dto:${list}" th:onclick="|goodsClicked(${dto.gno})|" class="goods-list">
+    		<td>[[${dto.title}]]</td>
+    		<td>[[${dto.price}]]</td>
+    		<td>[[${dto.stock}]]</td>
+    		
+    	
+    	</tr>
+    </table>
+    <div th:each="dto:${list}" th:onclick="|goodsClicked(${dto.gno})|" class="goods-list">
+    	<div>[[${dto.title}]]</div>
+    	<div>[[${dto.price}]]</div>
+    	<div>[[${dto.stock}]]</div>
+    </div>
+</main>
+
+</html>

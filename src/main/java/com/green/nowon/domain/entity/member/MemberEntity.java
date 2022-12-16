@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -27,6 +29,7 @@ import lombok.NoArgsConstructor;
 public class MemberEntity {
 	
 	@Id
+	@GeneratedValue(generator = "gen_mem",strategy = GenerationType.SEQUENCE)
 	private long mno;
 	@Column(unique = true, nullable = false)
 	private String email;

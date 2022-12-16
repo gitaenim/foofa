@@ -46,9 +46,9 @@ public class OrderEntity {
 	@JoinColumn(name = "cno")
 	private CartEntity cno;
 	
-	@Column(nullable = false,name = "status")
-	private String statuss;
+	@Column(nullable = false)
+	private String status;
 	
-	@Column(name = "memo",nullable = false)
-	private String memoo;
+	@Column(nullable = true)
+	private String memo;
 }
