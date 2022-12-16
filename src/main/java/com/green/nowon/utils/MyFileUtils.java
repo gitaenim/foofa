@@ -9,6 +9,12 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.web.multipart.MultipartFile;
 
 public class MyFileUtils {
+	
+	public static void moveUploadLocFormTemp(String[] newName, String url) {
+		ClassPathResource cpr=new ClassPathResource("static"+url+"temp/");
+		
+	}
+	
 
 	public static Map<String, String> fileUpload(MultipartFile gimg, String location) {
 		
@@ -16,9 +22,10 @@ public class MyFileUtils {
 		//이 위치에 파일을 업로드 할거예요
 		File folder=null;
 		String fileName=null;
+		String orgName=null;
 		try {
 			folder = cpr.getFile();
-			String orgName=gimg.getOriginalFilename();
+			orgName=gimg.getOriginalFilename();
 			
 			int idx = orgName.lastIndexOf("."); //인덱스번호찾기 - 파일 이름 중에서 마지막(.)의 인덱스번호
 			//String extension = orgName.substring(idx); // .확장자
@@ -38,7 +45,8 @@ public class MyFileUtils {
 		}
 		Map<String, String> tempfile = new HashMap<>();
 		//tempfile.put("location", location);
-		tempfile.put("fileName", fileName);
+		tempfile.put("newName", fileName);
+		tempfile.put("orgName", orgName);
 		tempfile.put("url", location+fileName);
 		
 		return tempfile;

@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -17,7 +19,7 @@ import lombok.NoArgsConstructor;
 
 
 @Getter
-@DynamicUpdate
+//@DynamicUpdate
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -36,14 +38,11 @@ public class GoodsImg {
 	private String orgName;
 	@Column(nullable = false)
 	private String newName;
-	@Column(nullable = false)
-	private long size;
 	
 	private boolean def;
 	
-	//대표이미지 셋팅에 필요한 편의메소드
-	public GoodsImg def(boolean def) {
-		this.def=def;
-		return this;
-	}
+	@JoinColumn
+	@ManyToOne
+	private GoodsEntity goods;
+	
 }

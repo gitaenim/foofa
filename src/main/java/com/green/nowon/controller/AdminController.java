@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.green.nowon.domain.dto.GoodsInsertDTO;
 import com.green.nowon.service.goodsservice.GoodsService;
 
 @org.springframework.stereotype.Controller
@@ -29,7 +30,13 @@ public class AdminController {
 	
 	@GetMapping("/admin/goods")
 	public String GoodsReg() {
-		return "goods/goods-reg";
+		return "admin/goods/goods-reg";
+	}
+	
+	@PostMapping("/admin/goods")
+	public String GoodsReg(GoodsInsertDTO dto) {
+		service.save(dto);
+		return "admin/goods/goods-reg";
 	}
 	
 	@ResponseBody

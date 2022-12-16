@@ -21,6 +21,7 @@
 		});
 	function gimgChanged(el){
 		var filedata=$(el)[0].files[0];
+		
 		var formData=new FormData();
 		formData.append('gimg',filedata);
 		
@@ -34,7 +35,9 @@
     			console.log();
     			
     			$(el).siblings(".img").css("background-image", "url("+map.url+")");
-    			$(el).siblings(".newName").val(map.fileName);
+    			$(el).siblings(".newName").val(map.newName);
+    			$(el).siblings(".orgName").val(map.orgName);
+    			
     			
     			//추가이미지인 경우 아래문장 실행
     			if($(el).prop("id")=="defimg")return;//대표이미지 처리는 여기서 끝
@@ -54,10 +57,11 @@
 				<label class="img" for="addimg_${idx}">+</label>
 				<input id="addimg_${idx}" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
 				<input type="hidden" class="newName" name="newName">
+				<input type="hidden" class="orgName" name="orgName">
 			</div>
     		`
     	
-    	addimgs.last().after(tag);
+    	$(".addimg").last().after(tag);
     	idx++;
    }
 	
@@ -70,7 +74,7 @@
 		<h1>상품등록</h1>
 		<p class="tag">상품등록페이지</p>
 		<a href="/">HOME</a>
-		<form>
+		<form action="/admin/goods" method="post">
 			<table class="goods-table">
 				<tr>
 					<td>상품명</td>
@@ -83,6 +87,7 @@
 							<label class="img" for="defimg">+</label>
 							<input id="defimg" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
 							<input type="hidden" class="newName" name="newName">
+							<input type="hidden" class="orgName" name="orgName">
 						</div>
 					</td>
 				</tr>
@@ -93,6 +98,7 @@
 							<label class="img" for="addimg">+</label>
 							<input id="addimg" class="gimg" type="file" name="gimg" onchange="gimgChanged(this)">
 							<input type="hidden" class="newName" name="newName">
+							<input type="hidden" class="orgName" name="orgName">
 						</div>
 					</td>
 				</tr>
