@@ -41,7 +41,6 @@ public class MyFileUtils {
 					+"_"+(System.nanoTime()/1000000)
 					+orgName.substring(idx);
 			//fileName = UUID.randomUUID().toString()+extension; //파일이름 랜덤으로 생성
-		
 			
 			//원본.이름_3515315315.jpg
 			gimg.transferTo(new File(folder, fileName)); //업로드
