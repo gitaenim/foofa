@@ -13,6 +13,14 @@ public class MyFileUtils {
 	public static void moveUploadLocFormTemp(String[] newName, String url) {
 		ClassPathResource cpr=new ClassPathResource("static"+url+"temp/");
 		
+		for(String name:newName) {
+			try {
+				File file=new File(cpr.getFile(), name);
+				file.renameTo(new File(cpr.getFile().getParent(),name));
+			}catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
 	}
 	
 
