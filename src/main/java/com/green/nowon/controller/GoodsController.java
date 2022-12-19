@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.green.nowon.domain.entity.goods.GoodsListImg;
 import com.green.nowon.service.GoodsListImgService;
 import com.green.nowon.service.GoodsService;
 

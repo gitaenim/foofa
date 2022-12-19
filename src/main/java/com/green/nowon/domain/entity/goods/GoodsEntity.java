@@ -47,12 +47,12 @@ public class GoodsEntity {
 	private int stock;
 	
 	@Builder.Default
-	@OneToMany(mappedBy = "item")
-	private List<GoodsListImg> imgs=new ArrayList<>();
+	@OneToMany(mappedBy = "goods")
+	private List<GoodsImg> imgs=new ArrayList<>();
 	
-	public GoodsListImg defImg() {
-		for(GoodsListImg img:imgs) {
-			if(img.isDefImg()) return img;
+	public GoodsImg defImg() {
+		for(GoodsImg img:imgs) {
+			if(img.isDef()) return img;
 				
 		}
 		return imgs.get(0);//만약에 대표이지미지 없으면 첫번째이미지로
