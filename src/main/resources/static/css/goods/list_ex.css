@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-.head-text{
+/* .head-text{
 	margin-top: 50px;
     font-weight: 500;
     font-size: 28px;
@@ -9,9 +9,9 @@
     letter-spacing: -1px;
     text-align: center;
 }
-.goods-list{
+.goods-list1{
 	display: grid;
-    grid-template-columns: repeat(auto-fill, 249px);
+ grid-template-columns: repeat(auto-fill, 249px); 
     gap: 24px 18px;
     width: 100%;
-}
+} */
