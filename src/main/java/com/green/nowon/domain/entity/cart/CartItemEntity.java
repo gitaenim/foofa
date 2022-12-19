@@ -10,6 +10,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.green.nowon.domain.entity.goods.GoodsEntity;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
@@ -26,15 +28,15 @@ public class CartItemEntity {
 	@GeneratedValue(generator = "gen_ci",strategy = GenerationType.SEQUENCE)
 	private long cino;
 	
-	/*
+	
 	@ManyToOne
 	@JoinColumn(name = "cno")
-	private long cno;
+	private CartEntity cno;
 	
 	@ManyToOne
 	@JoinColumn(name = "gno")
-	private long gno;
-	*/
+	private GoodsEntity gno;
+	
 	
 	@Column(nullable = false)
 	private int count;
