@@ -11,4 +11,9 @@ public class OrderController {
 		return "order/order";
 	}
 	
+	@GetMapping("/order/list")
+	public String orderList() {
+		return "order/order-list";
+	}
+	
 }

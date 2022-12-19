@@ -5,8 +5,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import com.green.nowon.domain.entity.cart.CartEntity;
+import com.green.nowon.domain.entity.delivery.DeliveryEntity;
+import com.green.nowon.domain.entity.member.MemberEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,9 +32,23 @@ public class OrderEntity {
 	@Id
 	@GeneratedValue(generator = "gen_o",strategy = GenerationType.SEQUENCE)
 	private long ono;
+
 	
+	@ManyToOne
+	@JoinColumn(name = "dno")
+	private DeliveryEntity dno;
+	
+	@ManyToOne
+	@JoinColumn(name = "mno")
+	private MemberEntity mno;
+	
+	@OneToOne
+	@JoinColumn(name = "cno")
+	private CartEntity cno;
 	
 	@Column(nullable = false)
 	private String status;
+	
+	@Column(nullable = true)
 	private String memo;
 }

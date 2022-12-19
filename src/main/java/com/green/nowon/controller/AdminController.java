@@ -28,6 +28,14 @@ public class AdminController {
 		return "/admin/authority";
 	}
 	
+
+	@GetMapping("admin/delivery-status")
+	public String deliveryStatus() {
+		
+		return "/admin/delivery-status";
+	}
+	
+	
 	@GetMapping("/admin/goods")
 	public String GoodsReg() {
 		return "admin/goods/goods-reg";
