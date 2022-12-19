@@ -13,9 +13,7 @@ public class GoodsListDTO {
 	private long gno;
 	private String title;
 	private String price;
-	private String stock;
-	private LocalDateTime updatedDate;
-	
+	private String content;
 	//이미지테이블에 저장되어있음
 	private String imgUrl;
 
@@ -23,8 +21,7 @@ public class GoodsListDTO {
 		this.gno =e.getGoodsNo();
 		this.title = e.getTitle();
 		this.price = e.getPrice();
-		this.stock = e.getStock();
-
+		this.content=e.getContent();
 		
 	}
 	

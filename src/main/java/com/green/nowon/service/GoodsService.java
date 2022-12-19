@@ -6,4 +6,6 @@ public interface GoodsService {
 
 	void findAll(Model model);
 
+	void goodsOfCategory(long no, Model model);
+
 }

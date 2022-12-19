@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.springframework.ui.Model;
+
 import com.green.nowon.domain.entity.BaseDateEntity;
 
 import lombok.AllArgsConstructor;
@@ -32,4 +34,5 @@ public class GoodsListImg extends BaseDateEntity{
 	@JoinColumn//item_no
 	@ManyToOne
 	private GoodsEntity goods;
+
 }

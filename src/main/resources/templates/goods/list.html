@@ -6,26 +6,27 @@
 </head>
 
 <main>
-	<h3 class="head-text" >상품 목록</h3>
-	   <table>
-    	<tr>
-    		<td>상품명</td>
-    		<td>상품가격</td>
-    		<td>주문가능수량</td>
-    	</tr>
-    	<tr th:each="dto:${list}" th:onclick="|goodsClicked(${dto.gno})|" class="goods-list">
-    		<td>[[${dto.title}]]</td>
-    		<td>[[${dto.price}]]</td>
-    		<td>[[${dto.stock}]]</td>
-    		
-    	
-    	</tr>
-    </table>
-    <div th:each="dto:${list}" th:onclick="|goodsClicked(${dto.gno})|" class="goods-list">
-    	<div>[[${dto.title}]]</div>
-    	<div>[[${dto.price}]]</div>
-    	<div>[[${dto.stock}]]</div>
-    </div>
+	<h1>메인컨텐츠</h1>
+	<div class="wrap view-size"> 
+		<p>상품리스트</p>
+		<ul>
+			<li th:each="dto:${list}">
+				<div>
+					<a href="#"><img width="180px" th:src="${dto.defImgUrl}"></a>
+				</div>
+				<div class="info">
+					<p><a href=""><span>[[${dto.title}]]</span></a></p>
+					<div class="price">
+						<i >
+							<span>sale정보</span>
+							<span>기본가격</span>
+						</i>
+						<span>[[${dto.price}]]</span>
+					</div>
+					<div>구매평</div>
+				</div>
+			</li>
+		</ul>
+	</div>
 </main>
-
 </html>
