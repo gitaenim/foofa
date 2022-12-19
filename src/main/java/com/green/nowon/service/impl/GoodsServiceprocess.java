@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.green.nowon.domain.dto.GoodsListDTO;
-import com.green.nowon.domain.entity.CategoryEntity;
+import com.green.nowon.domain.entity.category.CategoryEntity;
+import com.green.nowon.domain.entity.category.CategoryEntityRepository;
+import com.green.nowon.domain.entity.category.CategoryItemEntityRepository;
 import com.green.nowon.domain.entity.goods.GoodsEntityRepository;
 import com.green.nowon.service.GoodsService;
 
@@ -17,6 +19,12 @@ public class GoodsServiceprocess implements GoodsService {
 
 	@Autowired
 	private GoodsEntityRepository repo;
+	@Autowired
+	CategoryItemEntityRepository cateItemRepo;
+	@Autowired
+	GoodsEntityRepository imgRepo;
+	@Autowired
+	CategoryEntityRepository cateRepo;
 
 	@Override
 	public void findAll(Model model) {
@@ -27,7 +35,7 @@ public class GoodsServiceprocess implements GoodsService {
 	}
 
 	@Override
-	public void goodsOfCategory(long no, Model model) {
+	public void goodsOfCategory(long cateNo, Model model) {
 		//카테고리에 해당하는 상품들모두
 		CategoryEntity ca=cateRepo.findById(cateNo).get();
 		System.out.println("현재카테고리:"+ca.getName());
