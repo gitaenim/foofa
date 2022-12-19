@@ -10,7 +10,8 @@ input[type=file]{
 .goods-table input{
 	font-size: 16px;
 	font-weight: 500;
-	margin-top: 30px;
+	margin-top: 25px;
+	margin-bottom:10px;
 	display: inline-block;
 	border: 1px solid #ff8227;
 	width: 100%;
@@ -33,3 +34,20 @@ input[type=file]{
 	height: 50px;
 }
 
+.img{
+	width: 100px;
+	height: 100px;
+	background-color: white;
+	border: 1px solid #ff8227;
+	text-align: center;
+	line-height: 100px;
+	font-size: 30px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-left: 5px;
+}
+
+main input[type=file] {
+	display: none;
+}
