@@ -12,7 +12,7 @@ public class GoodsListDTO {
 	
 	private long gno;
 	private String title;
-	private String price;
+	private int price;
 	private String content;
 	//이미지테이블에 저장되어있음
 	private String imgUrl;
