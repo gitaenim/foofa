@@ -17,6 +17,12 @@ public class AdminController {
 		return "/admin/authority";
 	}
 	
+	@GetMapping("admin/delivery-status")
+	public String deliveryStatus() {
+		
+		return "/admin/delivery-status";
+	}
+	
 	@GetMapping("/goods/reg")
 	public String GoodsReg() {
 		return "goods/goods-reg";
