@@ -52,7 +52,7 @@ img{
 .ordTitle{
 	height: 70px;
 	overflow: hidden;
-	border-bottom: 3px solid #777;
+	border-bottom: 3px solid rgb(236, 130, 0);
 }
 .ordTitle .title{
 	float: left;
@@ -252,4 +252,23 @@ img{
 }
 .price-msg {
 	padding-right: 10px;
+}
+
+.type-selector-li{
+	float: left;
+	margin-left: 5px;
+}
+.orders-btn{
+	text-align: center;
+	margin-top: 30px;
+}
+.order-btn{
+	text-align : center;
+	border: 2px solid rgb(236, 130, 0);
+	width: 180px;
+	height: 80px;
+	font-size: 25px;
+	background-color: rgb(251, 184, 123);
+	color: white;
+	
 }
