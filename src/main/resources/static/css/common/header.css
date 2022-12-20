@@ -4,6 +4,11 @@
 /* html body header>.wrap #menu-top{} : 아이디로 찾아갈거면 굳이 풀경로 표시할 필요 없어(아이디 앞에는 #, 클래스 앞에는 .) */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
 
+img{
+	border: 0;
+    vertical-align: top;
+}
+
 header>.wrap{
 	width: 1200px;
 	margin: 0 auto 0 auto; /* 상우하좌 순서 */

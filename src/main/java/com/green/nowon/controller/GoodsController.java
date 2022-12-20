@@ -21,4 +21,26 @@ public class GoodsController {
 		return "goods/list";
 	}
 
+	
+	@GetMapping("/common/category/{no}/goods")
+	public String goodsOfCategory(@PathVariable long no, Model model) {
+		service.goodsOfCategory(no, model);
+		return "goods/category-list";
+	}
+
+	@GetMapping("/admin/goods")
+	public String goods() {
+		return "goods/reg";
+	}
+
+	@GetMapping("/goods/1")
+	public String detail() {
+		return "goods/detail";
+	}
+	
+	@GetMapping("/goods/detail/review")
+	public String category() {
+		return "goods/review";
+	}
+
 }
