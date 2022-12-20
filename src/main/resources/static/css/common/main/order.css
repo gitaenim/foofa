@@ -54,6 +54,7 @@ img{
 	overflow: hidden;
 	border-bottom: 3px solid rgb(236, 130, 0);
 }
+
 .ordTitle .title{
 	float: left;
 	margin-top: 5px;
@@ -70,6 +71,9 @@ img{
 	font-size: 15px;
 	color: rgb(251, 184, 123);
 	font-weight: 700;
+}
+.ordTitle .steps a{
+	color: rgb(251, 184, 123);
 }
 .customer-h2{
 	padding: 2px;

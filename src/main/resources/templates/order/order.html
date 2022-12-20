@@ -6,24 +6,43 @@
 <title>주문페이지</title>
 <!-- 공통적용할 css, js를 삽입하세요 -->
 <link rel="stylesheet" href="/css/common/common.css">
-<link rel="stylesheet" type="text/css" href="/css/common/main/order.css">
+
 <link rel="stylesheet" type="text/css" href="/css/common/footer.css">
+
 </head>
 <body>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script>
+function addressDaum(){
+    new daum.Postcode({
+        oncomplete: function(data) {
+        	var fullRoadAddr = data.roadAddress; // 도로명 주소 변수
+            var extraRoadAddr = '';
+           
+        	if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                extraRoadAddr += data.bname;
+            }
+        	
+            document.getElementById('sample4_postcode').value = data.zonecode;
+            document.getElementById('sample4_roadAddress').value = fullRoadAddr;
+        }
+    }).open();
+   }
+</script>
+<link rel="stylesheet" href="/css/common/main/order.css">
 	<div class="wrap">
 		<div class="nognb">
 			<div class="logo">
 				<a id="header-logo" class="icon" href="/"> <img
 					src="/images/header/foofa-logo.png">
-				</a>
+				</a>	
 			</div>
 		</div>
 		<div id="body">
 			<div class="mid">
 				<div class="ordTitle">
 					<h3 class="title">주문/결제</h3>
-					<span class="steps"> 장바구니 > <em>주문결제 > </em>주문완료
-					</span>
+					<span class="steps"> <a href="/cart">장바구니</a> > <em>주문결제 ></em>주문완료</span>
 				</div>
 				<div data-component="customer">
 					<div class="customer-root">
@@ -46,11 +65,12 @@
 						</table>
 					</div>
 				</div>
-				<h2 class="del-adr-head customer-h2">
-					받는 사람 정보
-					<button class="del-adr-list-btn page-btn" type="button">배송지변경</button>
-				</h2>
+				
 				<table class="del-adr">
+					<h2 class="del-adr-head customer-h2">
+						받는 사람 정보
+						<button class="del-adr-list-btn page-btn" type="button" onclick="addressDaum()">배송지변경</button>
+					</h2>
 					<tbody>
 						<tr>
 							<th class="del-adr-h">이름</th>
@@ -61,7 +81,13 @@
 						</tr>
 						<tr>
 							<th class="del-adr-h">배송주소</th>
-							<td class="del-adr-d">주소시 주소동 111호</td>
+							<td id="adress-data"  class="del-adr-d">주소시 주소동 111호</td>
+							
+							<input type="text" id="sample4_postcode" placeholder="우편번호">
+							<input type="text" id="sample4_roadAddress" placeholder="도로명주소">
+							<input type="text" id="sample4_jibunAddress" placeholder="지번주소">
+							
+								
 						</tr>
 						<tr>
 							<th class="del-adr-h">연락처</th>
