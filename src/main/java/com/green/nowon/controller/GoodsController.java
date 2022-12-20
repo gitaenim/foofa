@@ -28,10 +28,6 @@ public class GoodsController {
 		return "goods/category-list";
 	}
 
-	@GetMapping("/admin/goods")
-	public String goods() {
-		return "goods/reg";
-	}
 
 	@GetMapping("/goods/1")
 	public String detail() {
