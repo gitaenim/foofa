@@ -1,28 +1,31 @@
 package com.green.nowon.domain.dto;
 
-import java.time.LocalDateTime;
-
+import com.green.nowon.domain.entity.category.CategoryItemEntity;
 import com.green.nowon.domain.entity.goods.GoodsEntity;
 
+import lombok.Data;
 import lombok.Getter;
 
-
-@Getter//페이지에서 데이터추출하기위해
+@Data
 public class GoodsListDTO {
 	
-	private long gno;
+	private long no;
 	private String title;
-	private String price;
-	private String content;
-	//이미지테이블에 저장되어있음
-	private String imgUrl;
+	private int price;
+	private int stock;
+	
+	//이미지 대표이미지
+	private String defImgUrl;
 
 	public GoodsListDTO(GoodsEntity e) {
-		this.gno =e.getGoodsNo();
+		this.no = e.getGoodsNo();
 		this.title = e.getTitle();
-		//this.price = e.getPrice();
-		this.content=e.getContent();
-		
+		this.price = e.getPrice();
+		this.stock = e.getStock();
+		this.defImgUrl = e.defImg().getUrl()+e.defImg().getNewName();
+	}
+	public GoodsListDTO(CategoryItemEntity cie) {
+		this(cie.getItem());
 	}
 	
 		
