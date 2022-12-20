@@ -16,8 +16,4 @@ public interface GoodsService {
 	void list(Model model);
 
 	void goodsOfCategory(long no, Model model);
-
-	void list(Model model);
-
-	void goodsOfCategory(long no, Model model);
 }
