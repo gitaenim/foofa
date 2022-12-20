@@ -20,7 +20,7 @@ public class GoodsListDTO {
 	public GoodsListDTO(GoodsEntity e) {
 		this.gno =e.getGoodsNo();
 		this.title = e.getTitle();
-		this.price = e.getPrice();
+		//this.price = e.getPrice();
 		this.content=e.getContent();
 		
 	}

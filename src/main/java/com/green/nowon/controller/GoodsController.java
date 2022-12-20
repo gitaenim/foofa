@@ -16,13 +16,9 @@ public class GoodsController {
 	@Autowired
 	GoodsService service;
 	
-	@Autowired
-	GoodsListImgService imgService;
-	
 	@GetMapping("/list")
 	public String list(Model model){
-		service.findAll(model);
-		imgService.findAll(model);
+		service.list(model);
 		return "goods/list";
 	}
 	
@@ -30,11 +26,6 @@ public class GoodsController {
 	public String goodsOfCategory(@PathVariable long no, Model model) {
 		service.goodsOfCategory(no, model);
 		return "goods/category-list";
-	}
-
-	@GetMapping("/admin/goods")
-	public String goods() {
-		return "goods/reg";
 	}
 
 	@GetMapping("/goods/1")

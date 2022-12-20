@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.green.nowon.domain.dto.GoodsListDTO;
-import com.green.nowon.domain.entity.CategoryEntity;
+//import com.green.nowon.domain.entity.CategoryEntity;
 import com.green.nowon.domain.entity.goods.GoodsEntityRepository;
 import com.green.nowon.service.GoodsService;
 
@@ -29,27 +29,27 @@ public class GoodsServiceprocess implements GoodsService {
 	@Override
 	public void goodsOfCategory(long no, Model model) {
 		//카테고리에 해당하는 상품들모두
-		CategoryEntity ca=cateRepo.findById(cateNo).get();
-		System.out.println("현재카테고리:"+ca.getName());
-		CategoryEntity su=ca.getParent();
-		if(su!=null) {
-			System.out.println("상위카테고리:"+su.getName());
-			su=su.getParent();
-			if(su!=null) {
-				System.out.println("상위카테고리:"+su.getName());
-				su=su.getParent();
-				if(su!=null) {
-					System.out.println("상위카테고리:"+su.getName());
-					su=su.getParent();
-				}
-			}
-		};
+		//CategoryEntity ca=cateRepo.findById(cateNo).get();
+		//System.out.println("현재카테고리:"+ca.getName());
+		//CategoryEntity su=ca.getParent();
+//		if(su!=null) {
+//			System.out.println("상위카테고리:"+su.getName());
+//			su=su.getParent();
+//			if(su!=null) {
+//				System.out.println("상위카테고리:"+su.getName());
+//				su=su.getParent();
+//				if(su!=null) {
+//					System.out.println("상위카테고리:"+su.getName());
+//					su=su.getParent();
+//				}
+//			}
+//		};
 		
 		
-		model.addAttribute("cate", ca);
-		model.addAttribute("list", cateItemRepo.findAllByCategoryNo(cateNo)
-				.stream()
-				.map(GoodsListDTO::new)
-				.collect(Collectors.toList()));
+		//model.addAttribute("cate", ca);
+		//model.addAttribute("list", cateItemRepo.findAllByCategoryNo(cateNo)
+//				.stream()
+//				.map(GoodsListDTO::new)
+//				.collect(Collectors.toList()));
 	}
 }
