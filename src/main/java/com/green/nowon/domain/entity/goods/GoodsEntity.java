@@ -14,6 +14,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.DynamicUpdate;
 
+import com.green.nowon.domain.entity.BaseDateEntity;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -28,7 +30,7 @@ import lombok.NoArgsConstructor;
 		sequenceName = "s_goods", initialValue = 1, allocationSize = 1)
 @Table(name = "goods")
 @Entity
-public class GoodsEntity {
+public class GoodsEntity extends BaseDateEntity{
 	@Id
 	@GeneratedValue(generator = "g_s_goods", strategy = GenerationType.SEQUENCE)
 	@Column(name = "gno")

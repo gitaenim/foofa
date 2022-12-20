@@ -3,10 +3,10 @@ package com.green.nowon.domain.dto;
 import com.green.nowon.domain.entity.category.CategoryItemEntity;
 import com.green.nowon.domain.entity.goods.GoodsEntity;
 
+import lombok.Data;
 import lombok.Getter;
 
-
-@Getter//페이지에서 데이터추출하기위해
+@Data
 public class GoodsListDTO {
 	
 	private long no;
