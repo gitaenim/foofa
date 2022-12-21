@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.green.nowon.domain.entity.goods.GoodsImgRepository;
+import com.green.nowon.service.goodsservice.GoodsListImgService;
 
 
 @Service
