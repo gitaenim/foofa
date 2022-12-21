@@ -1,4 +1,4 @@
-package com.green.nowon.service.goodsservice;
+package com.green.nowon.service;
 
 import org.springframework.ui.Model;
 

@@ -1,7 +1,5 @@
 package com.green.nowon.domain.dto;
 
-import java.time.LocalDateTime;
-
 import com.green.nowon.domain.entity.goods.GoodsEntity;
 
 import lombok.Getter;

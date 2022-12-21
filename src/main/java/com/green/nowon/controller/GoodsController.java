@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.green.nowon.service.goodsservice.GoodsListImgService;
+import com.green.nowon.service.GoodsListImgService;
 import com.green.nowon.service.goodsservice.GoodsService;
 
 @Controller

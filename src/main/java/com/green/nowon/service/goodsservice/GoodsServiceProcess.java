@@ -1,4 +1,4 @@
-package com.green.nowon.service.impl;
+package com.green.nowon.service.goodsservice;
 
 import java.util.List;
 import java.util.Map;
@@ -15,7 +15,6 @@ import com.green.nowon.domain.dto.GoodsListDTO;
 import com.green.nowon.domain.entity.goods.GoodsEntity;
 import com.green.nowon.domain.entity.goods.GoodsEntityRepository;
 import com.green.nowon.domain.entity.goods.GoodsImgRepository;
-import com.green.nowon.service.goodsservice.GoodsService;
 import com.green.nowon.utils.MyFileUtils;
 
 @Service
