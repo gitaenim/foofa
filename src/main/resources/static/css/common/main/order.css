@@ -111,6 +111,7 @@ img{
 }
 .del-adr-list-btn{
 	margin-left: 5px;
+	margin-bottom:5px;
 	vertical-align: middle;
 }
 .del-adr{
@@ -124,7 +125,7 @@ img{
 	width: 104px;
 	background-color: rgb(251, 184, 123);
 	text-align: right;
-	font-size: 14px;
+	font-size: 13px;
 	color: white;
 }
 .del-adr-d{
@@ -159,21 +160,14 @@ img{
 .del-req-msg{
 	width: 100%;
 }
-.del-req-msg-th{
-	padding: 7px 10px 7px 0px;
-	border-left: 1px solid rgb(236, 130, 0);
-	width: 103px;
-	background-color: rgb(251, 184, 123);
-	text-align: right;
-	color: white;
-}
+
 .del-req-msg-th span{
 	padding: 0 0 0 10px;
 	font-size: 14px;
 	width: 100%
 }
 .page-btn{
-	padding: 4px 8px;
+	padding: 0 5px 0 5px;
     border: 1px solid black;
     color: #333;
     border-radius: 2px;
@@ -181,9 +175,8 @@ img{
     font-size: 11px;
 	
 }
-.test00{
-    padding: 10px 10px 10px 16px;
-    font-size: 12px;
+.door{
+	padding-right :15px;
 }
 .goods-info{
 	margin-top:8px; 
