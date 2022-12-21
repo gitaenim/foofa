@@ -8,7 +8,7 @@ import lombok.Getter;
 @Getter//페이지에서 데이터추출하기위해
 public class GoodsListDTO {
 	
-	private long gno;
+	private long no;
 	private String title;
 	private int price;
 	private String content;
@@ -16,7 +16,7 @@ public class GoodsListDTO {
 	private String imgUrl;
 
 	public GoodsListDTO(GoodsEntity e) {
-		this.gno =e.getGoodsNo();
+		this.no =e.getGoodsNo();
 		this.title = e.getTitle();
 		this.price = e.getPrice();
 		this.content=e.getContent();
