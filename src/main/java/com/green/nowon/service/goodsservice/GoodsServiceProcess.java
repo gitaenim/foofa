@@ -56,30 +56,4 @@ public class GoodsServiceProcess implements GoodsService {
 
 	
 
-	@Override
-	public void goodsOfCategory(long no, Model model) {
-		//카테고리에 해당하는 상품들모두
-		CategoryEntity ca=cateRepo.findById(cateNo).get();
-		System.out.println("현재카테고리:"+ca.getName());
-		CategoryEntity su=ca.getParent();
-		if(su!=null) {
-			System.out.println("상위카테고리:"+su.getName());
-			su=su.getParent();
-			if(su!=null) {
-				System.out.println("상위카테고리:"+su.getName());
-				su=su.getParent();
-				if(su!=null) {
-					System.out.println("상위카테고리:"+su.getName());
-					su=su.getParent();
-				}
-			}
-		};
-		
-		
-		model.addAttribute("cate", ca);
-		model.addAttribute("list", cateItemRepo.findAllByCategoryNo(cateNo)
-				.stream()
-				.map(GoodsListDTO::new)
-				.collect(Collectors.toList()));
-	}
 }
