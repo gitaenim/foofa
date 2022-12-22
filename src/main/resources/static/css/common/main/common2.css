@@ -132,7 +132,7 @@ body {
 
 ol{
 	list-style-type: decimal;
-	margin-block-start:1em;
+	/* margin-block-start:1em; */ /* 카테고리랑 겹쳐서 주석처리함  */
 	margin-block-end: 1em;
 	margin-inline-start: 0px;
     margin-inline-end: 0px;

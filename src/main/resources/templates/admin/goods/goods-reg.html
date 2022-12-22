@@ -16,6 +16,33 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script type="text/javascript">
 	var idx=1;
+
+	$(document).ready(function() {
+	    $('#summernote').summernote();
+	    //1차카테고리 세팅
+	    getCategory();
+	});
+
+	
+	 function getCategory(){
+	    	//1차카테고리 정보를 읽어
+	    	$.ajax({
+	    		url:"/common/categorys",
+	    		success: function(result){//result<==category.html
+	    			$("#cate").html(result);
+	    			var depth=$("#cate>.category").last().index()+1;
+	    			$("#cate>.category").last().find(".depth").text(depth+"차 카테고리");
+	    		}
+	    	});
+	    }
+	 
+	 
+	 
+	 
+	
+
+
+	var idx=1;
 	$(document).ready(function() {
 		  $('#summernote').summernote();
 		});
@@ -69,7 +96,7 @@
 
 </head>
 <body class="flex">
-	<th:block th:insert="~{admin/admin :: header}" />
+	<th:block th:insert="~{layout/layout-admin :: header}" />
 	<main>
 		<h1>상품등록</h1>
 		<p class="tag">상품등록페이지</p>

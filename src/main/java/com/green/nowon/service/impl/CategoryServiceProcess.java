@@ -2,6 +2,7 @@ package com.green.nowon.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import com.green.nowon.domain.entity.category.CategoryEntity;
 import com.green.nowon.domain.entity.category.CategoryEntityRepository;
@@ -28,12 +29,19 @@ public class CategoryServiceProcess implements CategoryService {
 
 
 		
-		CategoryEntity cate2=repo.findByParentNoAndName(cate1.getNo(), names[1])
+		repo.findByParentNoAndName(cate1.getNo(), names[1])
 				.orElseGet(()->repo.save(CategoryEntity.builder()
 						.name(names[1])
 						.depth(2)
 						.parent(cate1)
 						.build()));
+	}
+
+	@Override
+	public void categoryList(Long parentNo, Model model) {
+		if(parentNo.intValue()==0)parentNo=null;//null 은 1차카테고리
+		model.addAttribute("list", repo.findByParentNoOrderByNameAsc(parentNo));
+		
 	}
 
 }

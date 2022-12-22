@@ -21,7 +21,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @SequenceGenerator(name = "gen_d",sequenceName = "seq_d",allocationSize = 1,initialValue = 1)
-@Table(name = "delivery")
+@Table(name = "foo_delivery")
 @Entity
 public class DeliveryEntity {
 

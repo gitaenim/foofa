@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @SequenceGenerator(name = "gen_seq_goods_img",
 		sequenceName = "seq_img",initialValue = 1,allocationSize = 1)
-@Table(name = "foo_goods_img")
+@Table(name = "goods_img")
 @Entity
 public class GoodsImg {
 	
