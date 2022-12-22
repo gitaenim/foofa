@@ -12,6 +12,12 @@ public interface GoodsService {
 	Map<String, String> fileTempUp(MultipartFile gimg);
 
 	void save(GoodsInsertDTO dto);
+	
+	void findAll(Model model);
+
+	//void goodsOfCategory(long no, Model model);
+	
+	
 
 	void list(Model model);
 

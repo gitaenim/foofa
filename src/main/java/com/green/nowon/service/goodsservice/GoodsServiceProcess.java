@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+
 import javax.transaction.Transactional;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,9 +16,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.green.nowon.domain.dto.GoodsInsertDTO;
 import com.green.nowon.domain.dto.GoodsListDTO;
+
 import com.green.nowon.domain.entity.category.CategoryEntity;
 import com.green.nowon.domain.entity.category.CategoryEntityRepository;
 import com.green.nowon.domain.entity.category.CategoryItemEntityRepository;
+
 import com.green.nowon.domain.entity.goods.GoodsEntity;
 import com.green.nowon.domain.entity.goods.GoodsEntityRepository;
 import com.green.nowon.domain.entity.goods.GoodsImgRepository;
@@ -53,6 +57,7 @@ public class GoodsServiceProcess implements GoodsService {
 		GoodsEntity entity=grepo.save(dto.toGoodsEntity());
 		dto.toGoodsImg(entity, upload).forEach(girepo::save);
 	}
+
 	
 	@Transactional
 	@Override
@@ -88,4 +93,20 @@ public class GoodsServiceProcess implements GoodsService {
 				.map(GoodsListDTO::new)
 				.collect(Collectors.toList()));
 	}
+
+
+	@Autowired
+	private GoodsEntityRepository repo;
+
+	@Override
+	public void findAll(Model model) {
+		List<GoodsListDTO> result=repo.findAll().stream()
+				.map(GoodsListDTO::new).collect(Collectors.toList());
+		
+		model.addAttribute("list", result);
+	}
+
+	
+
+
 }
