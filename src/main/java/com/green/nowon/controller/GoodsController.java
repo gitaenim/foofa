@@ -15,10 +15,6 @@ import com.green.nowon.service.goodsservice.GoodsService;
 @Controller
 public class GoodsController {
 
-
-	
-}
-
 	@Autowired
 	GoodsService service;
 	
