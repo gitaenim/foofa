@@ -6,9 +6,19 @@ body{
 	font-family: 'Noto Sans KR', sans-serif;
 	font-weight: 400;
 	color:#222;
+	font-size: 16px !important;
+	line-height: normal !important;
 	}
 a{text-decoration: none; color: #222; text-underline-position: from-font;}
 li{list-style: none;}
 h1{position: absolute; left:-9999px;}
 button{border: none; background: transparent; cursor: pointer;}
 address{font-style: normal;}
+
+dd, dt {
+    line-height: normal !important;
+}
+dl {
+    margin-top: 0;
+    margin-bottom: 0 !important;
+}

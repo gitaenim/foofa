@@ -17,22 +17,22 @@ public class AdminController {
 	@Autowired
 	private GoodsService service;
 	
-	@GetMapping("admin")
+	@GetMapping("/admin")
 	public String admin() {
 		
-		return "/admin/admin";
+		return "admin/admin";
 	}
 	
-	@GetMapping("admin/authority")
+	@GetMapping("/admin/authority")
 	public String authority() {
-		return "/admin/authority";
+		return "admin/authority";
 	}
 	
 
-	@GetMapping("admin/delivery-status")
+	@GetMapping("/admin/delivery-status")
 	public String deliveryStatus() {
 		
-		return "/admin/delivery-status";
+		return "admin/delivery-status";
 	}
 	
 	
@@ -45,6 +45,11 @@ public class AdminController {
 	public String GoodsReg(GoodsInsertDTO dto) {
 		service.save(dto);
 		return "admin/goods/goods-reg";
+	}
+	
+	@GetMapping("/admin/board")
+	public String BoardList() {
+		return "admin/board/faq-list";
 	}
 	
 	@ResponseBody

@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="layout/user-layout :: layout(~{this::head}, ~{this::main})">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/css/common/common.css">
 <link rel="stylesheet" href="/css/log/signup.css">
-<link rel="stylesheet" href="/css/common/header.css">
-<link rel="stylesheet" href="/css/common/footer.css">
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script src="/js/term.js"></script>
 <script
