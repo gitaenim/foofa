@@ -4,14 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import com.green.nowon.service.GoodsListImgService;
 import com.green.nowon.service.goodsservice.GoodsService;
 
 @Controller
 public class GoodsController {
-
+	
 	@Autowired
 	GoodsService service;
 	
@@ -22,6 +21,7 @@ public class GoodsController {
 	}
 
 	
+
 	@GetMapping("/common/category/{no}/goods")
 	public String goodsOfCategory(@PathVariable long no, Model model) {
 		service.goodsOfCategory(no, model);
@@ -38,5 +38,6 @@ public class GoodsController {
 	public String category() {
 		return "goods/review";
 	}
+
 
 }
