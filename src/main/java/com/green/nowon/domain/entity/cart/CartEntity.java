@@ -21,13 +21,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@SequenceGenerator(name = "gen_c",sequenceName = "seq_c",allocationSize = 1,initialValue = 1)
-@Table(name = "cart")
+@Table(name = "foo_cart")
 @Entity
 public class CartEntity {
 
 	@Id
-	@GeneratedValue(generator = "gen_c",strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long cno;
 	
 	@OneToOne

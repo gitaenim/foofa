@@ -5,7 +5,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.green.nowon.domain.dto.MemberDTO;
-import com.green.nowon.domain.entity.member.MemberRepository;
+import com.green.nowon.domain.entity.member.MemberEntityRepository;
 import com.green.nowon.domain.entity.member.Role;
 import com.green.nowon.service.LogService;
 
@@ -13,7 +13,7 @@ import com.green.nowon.service.LogService;
 public class LogServiceProcess implements LogService {
 
 	@Autowired
-	private MemberRepository repository;
+	private MemberEntityRepository repository;
 	
 	@Autowired
 	private PasswordEncoder pe;

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.green.nowon.domain.entity.goods.GoodsEntity;
-import com.green.nowon.domain.entity.goods.GoodsImg;
+import com.green.nowon.domain.entity.goods.GoodsImgEntity;
 import com.green.nowon.utils.MyFileUtils;
 
 import lombok.Data;
@@ -23,13 +23,13 @@ public class GoodsInsertDTO {
 	private String[] orgName;
 	
 	
-	public List<GoodsImg> toGoodsImg(GoodsEntity goods, String url){
-		List<GoodsImg> imgs=new ArrayList<>();
+	public List<GoodsImgEntity> toGoodsImg(GoodsEntity goods, String url){
+		List<GoodsImgEntity> imgs=new ArrayList<>();
 		for(int i=0; i<orgName.length;i++) {
 			if(orgName[i].equals("")||orgName[i]==null)continue;
 			boolean defImg=false;
 			if(i==0) defImg=true;
-			GoodsImg gent=GoodsImg.builder()
+			GoodsImgEntity gent=GoodsImgEntity.builder()
 					.url(url)
 					.orgName(orgName[i])
 					.newName(newName[i])

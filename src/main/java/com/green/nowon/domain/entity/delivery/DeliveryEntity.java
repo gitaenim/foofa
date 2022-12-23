@@ -20,13 +20,12 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@SequenceGenerator(name = "gen_d",sequenceName = "seq_d",allocationSize = 1,initialValue = 1)
-@Table(name = "delivery")
+@Table(name = "foo_delivery")
 @Entity
 public class DeliveryEntity {
 
 	@Id
-	@GeneratedValue(generator = "gen_d",strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long dno;
 	
 	@Column(nullable = false)
