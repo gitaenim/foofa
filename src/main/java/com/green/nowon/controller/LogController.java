@@ -30,9 +30,5 @@ public class LogController {
 		return "redirect:/login";
 	}
 	
-	@GetMapping("/cart")
-	public String cart() {
-		return "member/cart";
-	}
 
 }

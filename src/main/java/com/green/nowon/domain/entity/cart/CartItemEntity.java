@@ -7,15 +7,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import com.green.nowon.domain.entity.goods.GoodsEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+@Getter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -26,7 +27,6 @@ public class CartItemEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long cino;
-	
 	
 	@ManyToOne
 	@JoinColumn(name = "cno")
@@ -42,4 +42,9 @@ public class CartItemEntity {
 	
 	@Column(nullable = false)
 	private boolean selected;
+	
+	public CartItemEntity updateQuantity(int count) {
+		this.count += count;
+		return this;
+	}
 }
