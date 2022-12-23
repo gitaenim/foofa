@@ -8,9 +8,5 @@ import com.green.nowon.service.BoardService;
 @Service
 public class BoardServiceProcess implements BoardService {
 
-	@Override
-	public void listForAjax(ModelAndView mv, String division, int page) {
-		
-	}
 
 }
