@@ -55,7 +55,7 @@ public class GoodsEntity extends BaseDateEntity{
 			if(img.isDef()) return img;
 				
 		}
-		return imgs.get(0);//만약에 대표이지미지 없으면 첫번째이미지로
+		return imgs.get(0);//만약에 대표이지미지 없으면 첫번째이미지로 지정
 	}
 
 }

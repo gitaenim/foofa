@@ -114,6 +114,7 @@ body {
 	color: #ff8227;
 	text-align: center;
 	margin-bottom: 20px;
+	margin-top: 50px;
 }
 
 #today-slide>.wrap>.t-menu{
@@ -128,6 +129,8 @@ body {
 }
 #today-slide>.wrap #display{
 	overflow: hidden;
+	margin-bottom: 100px;
+	border-bottom: 1px solid #a9a9a9; 
 }
 
 ol{
@@ -242,7 +245,7 @@ ol{
 	width:25px;
 	height :25px;
 	opacity:40%;
-	right:20%;
+	right:14%;
 	position:absolute;
 	background-image: url('/images/icon/angle-left-solid.svg');
 	background-size: 100%;
@@ -253,7 +256,7 @@ ol{
 	width:25px;
 	height :25px;
 	opacity:40%;
-	right:18%;
+	right:12%;
 	position:absolute;
 	background-image: url('/images/icon/angle-right-solid.svg');
 	background-size: 100%;

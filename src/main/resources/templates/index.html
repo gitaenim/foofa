@@ -4,8 +4,8 @@
 	
 <!-- th:replace="~{템플릿::fragment이름or아이디or태그}" -->
 <head>
-	<link rel="stylesheet" href="/css/common/main/slick.css">
 	<link rel="stylesheet" href="/css/common/main/common2.css">
+	<link rel="stylesheet" href="/css/common/main/slick.css">
 	<link rel="stylesheet" href="/css/common/main/slick-theme.css">
 </head>
 <main>
@@ -40,51 +40,6 @@
 	</div>
 
 <!-- 2번째 슬라이드 -->
-	<div id="main2">
-		<div class="wrap view-size">
-			<section id="today-slide">
-				<div class="wrap">
-					<p class="title">오늘의 특가</p>
-					<div class="area">
-						<div id="display">
-							<ol class="goods-list-wrap flex">
-								<li class="goods-list" th:each="num : ${#numbers.sequence(1,8)}">
-									<div class="g-imgs">
-										<a href="#">											
-										</a>
-									</div>
-									<div class="goods-info">
-										<ul>
-											<li>
-												<span class="del-shop">Foofa 전용</span>
-												<span class="del-lowest">BEST</span>
-											</li>
-											<li class="g-name">상품_[[${num}]]</li>
-											<li class="g-price">
-												<span class="sale-r">할인</span>
-												<span class="buy-price">7,000</span>원
-												<span class="sell-price">10,000</span>원
-											</li>
-										</ul>
-									</div>
-								</li>
-							</ol>
-							
-							
-							<div class="btn">
-								<button class="s-prev" onclick="prevSgoods()"></button>
-								<button class="s-next" onclick="nextSgoods()"></button>
-							</div>
-						</div>
-					</div>
-				</div>			
-			</section>
-		</div>
-<!-- 배너 -->
-	</div>
-	<div class="banner">
-	</div>
-<!-- 3번째 슬라이드 -->
 	<div class="wrap">
 		<section>
 			<div class="main3">
@@ -152,6 +107,52 @@
 		</section>
 	</div>
 	
+<!-- 배너 -->
+	</div>
+	<div class="banner">
+	</div>
+<!-- 3번째 슬라이드 -->
+	<div id="main2">
+		<div class="wrap view-size">
+			<section id="today-slide">
+				<div class="wrap">
+					<p class="title">오늘의 특가</p>
+					<div class="area">
+						<div id="display">
+							<ol class="goods-list-wrap flex">
+								<li class="goods-list" th:each="num : ${#numbers.sequence(1,8)}">
+									<div class="g-imgs">
+										<a href="#">											
+										</a>
+									</div>
+									<div class="goods-info">
+										<ul>
+											<li>
+												<span class="del-shop">Foofa 전용</span>
+												<span class="del-lowest">BEST</span>
+											</li>
+											<li class="g-name">상품_[[${num}]]</li>
+											<li class="g-price">
+												<span class="sale-r">할인</span>
+												<span class="buy-price">7,000</span>원
+												<span class="sell-price">10,000</span>원
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ol>
+							
+							
+							<div class="btn">
+								<button class="s-prev" onclick="prevSgoods()"></button>
+								<button class="s-next" onclick="nextSgoods()"></button>
+							</div>
+						</div>
+					</div>
+				</div>			
+			</section>
+		</div>
+	
 	<script src="https://code.jquery.com/jquery-2.2.0.min.js"
 		type="text/javascript"></script>
 	<script src="/css/common/main/slick.js" type="text/javascript"
@@ -174,7 +175,7 @@
 			dots : false,
 			infinite : true,
 			speed : 300,
-			slidesToShow : 3,
+			slidesToShow : 4,
 			slidesToScroll : 1,
 			autoplay : true,
 			autoplaySpeed : 2000,

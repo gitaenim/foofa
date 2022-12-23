@@ -1,5 +1,7 @@
 package com.green.nowon.domain.entity.order;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +13,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.green.nowon.domain.entity.BaseDateEntity;
 import com.green.nowon.domain.entity.cart.CartEntity;
 import com.green.nowon.domain.entity.delivery.DeliveryEntity;
 import com.green.nowon.domain.entity.member.MemberEntity;
@@ -26,28 +29,17 @@ import lombok.NoArgsConstructor;
 @Getter
 @Table(name = "foo_order")
 @Entity
-public class OrderEntity {
+public class OrderEntity extends BaseDateEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long ono;
-
+	private long ono;//주문번호
 	
+	private LocalDateTime orderDate; //주문한 날짜
+	
+	@JoinColumn//member_mno
 	@ManyToOne
-	@JoinColumn(name = "dno")
-	private DeliveryEntity dno;
+	private MemberEntity member;//주문자 정보
 	
-	@ManyToOne
-	@JoinColumn(name = "mno")
-	private MemberEntity mno;
 	
-	@OneToOne
-	@JoinColumn(name = "cno")
-	private CartEntity cno;
-	
-	@Column(nullable = false)
-	private String status;
-	
-	@Column(nullable = true)
-	private String memo;
 }

@@ -14,19 +14,19 @@
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script type="text/javascript">
-	$(function(){
-		$("#summernote").summernote();
-	});
+
 	
 	var idx=1;
+	
 	$(document).ready(function() {
 		  $('#summernote').summernote();
 		});
+	
 	function gimgChanged(el){
-		var filedata=$(el)[0].files[0];
+		var fileData=$(el)[0].files[0];
 		
 		var formData=new FormData();
-		formData.append('gimg',filedata);
+		formData.append('gimg',fileData);
 		
 		$.ajax({
 			url:"/admin/temp-up",

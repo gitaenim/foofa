@@ -41,7 +41,7 @@ public class AdminController {
 		return "admin/goods/goods-reg";
 	}
 	
-	@PostMapping("/admin/goods")
+	@PostMapping("/admin/goods/reg")
 	public String GoodsReg(GoodsInsertDTO dto) {
 		service.save(dto);
 		return "admin/goods/goods-reg";

@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
 td{border-bottom: 1px solid rgb(251, 184, 123);}
+
 .unit{
 	color: #111;
 	font-size: 12px;
@@ -20,19 +21,19 @@ div{
 	width: 1020px;
 }
 
-.logo{
+.order-logo{
 	width: 1050px;
 	margin: 0 auto;
 	padding-top: 30px;
 	position: absolute;
 }
-.logo a{
+.order-logo a{
 	display: block;
 	float: left;
 	width: 175px;
 	height: 40px;
 }
-img{
+#header-logo > img{
 	vertical-align: top;
 	width: 175px;
 	height: 40px;
@@ -52,7 +53,7 @@ img{
 .ordTitle{
 	height: 70px;
 	overflow: hidden;
-	border-bottom: 3px solid #777;
+	border-bottom: 3px solid rgb(236, 130, 0);
 }
 .ordTitle .title{
 	float: left;
