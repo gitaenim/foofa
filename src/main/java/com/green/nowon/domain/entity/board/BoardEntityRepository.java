@@ -1,9 +1,10 @@
-package com.green.nowon.domain.entity.goods;
+package com.green.nowon.domain.entity.board;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface GoodsImgRepository extends JpaRepository<GoodsImg, Long>{
+public interface BoardEntityRepository extends JpaRepository<BoardEntity, Long>{
+
 
 }

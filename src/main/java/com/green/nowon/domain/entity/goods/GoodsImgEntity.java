@@ -23,14 +23,12 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@SequenceGenerator(name = "gen_seq_goods_img",
-		sequenceName = "seq_img",initialValue = 1,allocationSize = 1)
 @Table(name = "foo_goods_img")
 @Entity
-public class GoodsImg {
+public class GoodsImgEntity {
 	
 	@Id
-	@GeneratedValue(generator = "gen_seq_goods_img", strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long ino;
 	@Column(nullable = false)
 	private String url;
