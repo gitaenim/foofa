@@ -27,7 +27,7 @@ public class LogController {
 	@PostMapping("/signup")
 	public String signup(MemberDTO dto) {
 		service.save(dto);
-		return "redirect:/log/login";
+		return "redirect:/login";
 	}
 	
 	@GetMapping("/cart")
