@@ -12,10 +12,16 @@ public class GoodsListDTO {
 	private long no;
 	private String title;
 	private int price;
+
+	private String content;
+	//이미지테이블에 저장되어있음
+	private String imgUrl;
+
 	private int stock;
 	
-	//이미지 대표이미지
+
 	private String defImgUrl;
+
 
 	public GoodsListDTO(GoodsEntity e) {
 		this.no = e.getGoodsNo();

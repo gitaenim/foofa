@@ -7,8 +7,16 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+
+
+
 @EnableWebSecurity
 public class SecurityConfig {
+	
+	@Bean
+	MyUserDetailsService customUserDetailsService() {
+		return new MyUserDetailsService();
+	}
 	
 	@Bean
 	PasswordEncoder passwordEncoder() {
