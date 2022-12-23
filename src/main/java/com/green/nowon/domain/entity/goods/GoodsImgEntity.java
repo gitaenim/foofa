@@ -1,44 +1,46 @@
-package com.green.nowon.domain.entity.delivery;
+package com.green.nowon.domain.entity.goods;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import org.springframework.lang.Nullable;
+import org.hibernate.annotations.DynamicUpdate;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
+
+@Getter
+//@DynamicUpdate
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@SequenceGenerator(name = "gen_d",sequenceName = "seq_d",allocationSize = 1,initialValue = 1)
-@Table(name = "delivery")
+@Table(name = "foo_goods_img")
 @Entity
-public class DeliveryEntity {
-
+public class GoodsImgEntity {
+	
 	@Id
-	@GeneratedValue(generator = "gen_d",strategy = GenerationType.SEQUENCE)
-	private long dno;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long ino;
+	@Column(nullable = false)
+	private String url;
+	@Column(nullable = false)
+	private String orgName;
+	@Column(nullable = false)
+	private String newName;
 	
-	@Column(nullable = false)
-	private int zip;
-	@Column(nullable = false)
-	private String addr1;
-	@Column()
-	private String addr2;
-	@Column(nullable = false)
-	private String receiver;
-	@Column(nullable = false)
-	private String phone;
+	private boolean def;
 	
+	@JoinColumn
+	@ManyToOne
+	private GoodsEntity goods;
 	
 }

@@ -18,18 +18,19 @@ import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-@SequenceGenerator(name = "gen_mem", initialValue = 1, allocationSize = 1 ,sequenceName = "seq_mem")
-@Table(name = "member")
+@Getter
+@Table(name = "foo_member")
 @Entity
 public class MemberEntity {
 	
 	@Id
-	@GeneratedValue(generator = "gen_mem",strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long mno;
 	@Column(unique = true, nullable = false)
 	private String email;
@@ -39,7 +40,7 @@ public class MemberEntity {
 	private String name;
 	
 	@Builder.Default
-	@CollectionTable(name = "member_role")
+	@CollectionTable(name = "foo_member_role")
 	@Enumerated(EnumType.STRING)
 	@ElementCollection(fetch = FetchType.EAGER)
 	private Set<Role> roles=new HashSet<>();
