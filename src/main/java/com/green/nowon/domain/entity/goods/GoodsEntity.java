@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -36,15 +37,16 @@ public class GoodsEntity extends BaseDateEntity{
 	
 	@Column(unique = true, nullable = false) //unique not null
 	private String title;
-	
-	@Column(nullable = false)
-	private String content;
-	
 	@Column(nullable = false)
 	private int price;
-	
 	@Column
 	private int stock;
+
+	@Column(nullable = false)
+	@Lob
+	private String content;
+	
+
 	
 	@Builder.Default
 	@OneToMany(mappedBy = "goods")

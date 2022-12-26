@@ -2,20 +2,15 @@ package com.green.nowon.domain.entity.order;
 
 import java.time.LocalDateTime;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import com.green.nowon.domain.entity.BaseDateEntity;
-import com.green.nowon.domain.entity.cart.CartEntity;
-import com.green.nowon.domain.entity.delivery.DeliveryEntity;
 import com.green.nowon.domain.entity.member.MemberEntity;
 
 import lombok.AllArgsConstructor;
