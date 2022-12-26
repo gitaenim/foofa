@@ -42,6 +42,8 @@ public class DeliveryEntity {
 	private String detailAddr;//상세주소 ex)XxX동XxX호
 	@Column(nullable = false)
 	private String phone;//연락처
+	@Column(nullable = false)
+	private String extraAddr;
 	
 
 	@JoinColumn(name = "mno")//member_mno

@@ -23,12 +23,16 @@ public class OrderServiceProcess implements OrderService {
 	@Autowired
 	private GoodsEntityRepository gRepo;
 	
+	
+	
+	
 	@Transactional
 	@Override
 	public void orderGoods(OrderGoodsDTO dto, Model model) {
-		model.addAttribute("list",gRepo.findById(dto.getGoodsNo())
+		model.addAttribute("odlist" , gRepo.findById(dto.getGoodsNo())
 				.map(OrderGoodsListDTO::new).get().quantity(dto.getOrderQuantity()));
 	}
+	
 	
 	@Override
 	public void deliveryInfoSave(DeliveryInfoDTO dto, String email) {

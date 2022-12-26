@@ -13,6 +13,7 @@ public class DeliveryInfoDTO {
 	private String jibunAddr;
 	private String detailAddr;
 	private String phone;
+	private String extraAddr;
 	
 	
 	public DeliveryEntity toEntity() {
@@ -23,6 +24,7 @@ public class DeliveryInfoDTO {
 				.jibunAddr(jibunAddr)//지번주소
 				.detailAddr(detailAddr)//상세주소 ex)xxx동xxx호 
 				.phone(phone)//연락처
+				.extraAddr(extraAddr)//부재중시 수령장소
 				.build();
 	}
 

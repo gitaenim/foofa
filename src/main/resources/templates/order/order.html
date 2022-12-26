@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-	>
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <meta charset="UTF-8">
 <title>주문페이지</title>
 <!-- 공통적용할 css, js를 삽입하세요 -->
+
 <link rel="stylesheet" type="text/css" href="/css/common/main/order.css">
 <link rel="stylesheet" href="/css/common/common.css">
-<script type="text/javascript" src="/js/order.js"></script>
 
 </head>
 <main>
+<body>
+<script type="text/javascript" src="/js/order.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <div class="wrap">
 	<div class="nognb">
@@ -44,9 +46,10 @@
 					</table>
 				</div>
 			</div>
+<!--///////////////////////////주소입력////////////////////////////-->
 			<h2 class="del-adr-head customer-h2">받는 사람 정보</h2>
 			<table id="deliveryInfo" class="del-adr">
-				<tbody>
+				<tbody id="delivery-table">
 					<tr>
 						<th class="del-adr-h">이름</th>
 						<td class="del-adr-d del-adr-d-name">
@@ -62,19 +65,18 @@
 					<tr>
 						<th class="del-adr-h">배송주소</th>
 						<td class="del-adr-d">
-							<span>
+								<span>
 							<label for="base-addr"><input type="radio" id="base-addr" 기존주소/>기존주소</label>
 							<label for="base-addr"><input type="radio" id="base-addr" 기존주소/>신규주소등록</label>
 							</span>
 							<br>
-							<input type="text" id="postcode" placeholder="우편번호">
+							<input type="text" id="postcode" name="postcode" placeholder="우편번호">
 							<input type="button" class="page-btn" onclick="adrList()" value="우편번호 찾기" style="cursor: pointer;">
 							<br>
-							<input type="text" id="roadAddr" placeholder="도로명주소">
-							<input type="text" id="jibunAddr" placeholder="지번주소">
+							<input type="text" id="roadAddr" name="roadAddr" placeholder="도로명주소">
+							<input type="text" id="jibunAddr" name="jibunAddr" placeholder="지번주소">
 							<br>
-							<input type="text" id="detailAddr" placeholder="상세주소를 입력해주세요">
-							<button type="submit" class="page-btn" style="cursor: pointer;">신규주소등록</button>
+							<input type="text" id="detailAddr" name="detailAddr" placeholder="상세주소를 입력해주세요">
 						</td>
 					</tr>
 					<tr>
@@ -82,32 +84,34 @@
 							<span>배송 요청사항</span>
 						</th>
 						<td class="del-adr-d">
-							<select>
-								<option value="1">문앞</option>
-								<option value="2">경비실</option>
-							</select>
-							<button class="page-btn" type="submit">변경</button>
+							<p>부재중일시 수령가능한 장소</p>
+							<input type="text" id="extraAddr" name="extraAddr" placeholder="ex)문앞, 경비실">
+							<button type="submit" class="page-btn add-save-btn" style="cursor: pointer;">신규주소등록</button>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 			
-		<div ><!-- 상품정보 -->
-			<div class="goods-info ">
-				<div class="goods-info-title del-adr-head customer-h2">상품정보</div>
+		
+		<table> <!-- 상품정보 -->
+			<div class="goods-info-title del-adr-head customer-h2">상품정보</div>
 				<div class="goods-info-group">
-					<div class="goods-info-date">
+					<div  id="order_date_time" class="goods-info-date">
 						주문날짜
 					</div>
 					<div class="goods-info-list">
 						<p class="goods-list">상품리스트</p>
 						<div class="goods-info-bundle">
 							물건 수량 / <span>배송정보(무료or배송료)</span>
-					</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
+				<tr class="goods-info-list" th:each="dto:${odlist}">
+					<td>
+						<input type="text" readonly="readonly" th:value="${dto.goods.gno}">
+					</td>
+				</tr>
+		</table>
 		<div id="pay-price-section" >
 			<h2 class="check-out del-adr-head customer-h2  orderbox">결제정보</h2>
 			<table class="pay-price">
@@ -205,6 +209,7 @@
 	</div>
 </div>
 </div>
+</body>
 </main>
 <footer>
 	<th:block th:insert="~{layout/footer :: footer}">footer태그가 삽입됩니다.</th:block>

@@ -1,6 +1,11 @@
 /**
  * 
  */
+ 
+ $(function(){
+	$("#delivery-table").submit(deliSubmit);
+});
+ 
 ///////////////주소검색//////////////////////////////
  function adrList(){
     new daum.Postcode({
@@ -29,4 +34,27 @@
        }
     }).open();
 }
-	
+
+function deliSubmit(event){
+	//event.preventDefalut();
+	var queryString=$(this).serialize();
+	$.ajax({
+		url:"/order/deliveryInfo",
+		type:"post",
+		data:queryString,
+		success:function(){
+			alert("등록완료");
+		}
+		
+	});
+
+}
+
+
+
+date = new Date();
+year = date.getFullYear();
+month = date.getMonth() + 1;
+day = date.getDate();
+console.log(year);
+document.getElementById("order_date_time").innerHTML = year + "-" + month + "-" + day;
