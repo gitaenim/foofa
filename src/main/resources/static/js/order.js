@@ -7,9 +7,10 @@
 	console.log("11111111111111111111111111111");
 });
 
-function deliverySubmited(event){
-	console.log("22222222222222222222222222222222222222222222");
-	event.preventDefalut();
+function deliverySubmited(subevent){
+
+	subevent.preventDefault();
+	
 	var queryString=$(this).serialize();
 	$.ajax({
 		url:"/order/deliveryInfo",
