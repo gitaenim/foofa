@@ -23,7 +23,7 @@ import com.green.nowon.domain.entity.category.CategoryItemEntityRepository;
 
 import com.green.nowon.domain.entity.goods.GoodsEntity;
 import com.green.nowon.domain.entity.goods.GoodsEntityRepository;
-import com.green.nowon.domain.entity.goods.GoodsImgRepository;
+import com.green.nowon.domain.entity.goods.GoodsImgEntityRepository;
 import com.green.nowon.utils.MyFileUtils;
 
 @Service
@@ -39,7 +39,7 @@ public class GoodsServiceProcess implements GoodsService {
 	GoodsEntityRepository grepo;
 	
 	@Autowired
-	GoodsImgRepository girepo;
+	GoodsImgEntityRepository girepo;
 	
 	@Autowired
 	CategoryItemEntityRepository cateItemRepo;
