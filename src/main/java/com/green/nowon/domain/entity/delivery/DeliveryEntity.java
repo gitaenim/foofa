@@ -33,6 +33,8 @@ public class DeliveryEntity {
 	@Column(nullable = false)
 	private String receivName;//수령자 이름
 	@Column(nullable = false)
+	private String phone;//연락처
+	@Column(nullable = false)
 	private String postcode;//우편번호
 	@Column(nullable = false)
 	private String roadAddr;//도로명주소
@@ -41,9 +43,7 @@ public class DeliveryEntity {
 	@Column(nullable = false)
 	private String detailAddr;//상세주소 ex)XxX동XxX호
 	@Column(nullable = false)
-	private String phone;//연락처
-	@Column(nullable = false)
-	private String extraAddr;
+	private String extraAddr;//요청사항
 	
 
 	@JoinColumn(name = "mno")//member_mno

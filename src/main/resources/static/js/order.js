@@ -3,9 +3,27 @@
  */
  
  $(function(){
-	$("#delivery-table").submit(deliSubmit);
+	$("#delivery-table").submit(deliverySubmited);
+	console.log("11111111111111111111111111111");
 });
- 
+
+function deliverySubmited(event){
+	console.log("22222222222222222222222222222222222222222222");
+	event.preventDefalut();
+	var queryString=$(this).serialize();
+	$.ajax({
+		url:"/order/deliveryInfo",
+		type:"post",
+		data:queryString,
+		success:function(){
+			console.log("등록완료");
+		}
+		
+	});
+
+}
+
+
 ///////////////주소검색//////////////////////////////
  function adrList(){
     new daum.Postcode({
@@ -35,26 +53,4 @@
     }).open();
 }
 
-function deliSubmit(event){
-	//event.preventDefalut();
-	var queryString=$(this).serialize();
-	$.ajax({
-		url:"/order/deliveryInfo",
-		type:"post",
-		data:queryString,
-		success:function(){
-			alert("등록완료");
-		}
-		
-	});
 
-}
-
-
-
-date = new Date();
-year = date.getFullYear();
-month = date.getMonth() + 1;
-day = date.getDate();
-console.log(year);
-document.getElementById("order_date_time").innerHTML = year + "-" + month + "-" + day;

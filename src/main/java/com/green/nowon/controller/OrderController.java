@@ -32,7 +32,7 @@ public class OrderController {
 	
 	@ResponseBody
 	@PostMapping("/order/deliveryInfo")
-	public void deliveryInfo(DeliveryInfoDTO dto,@AuthenticationPrincipal MyUserDetails uDetail) {
+	public void deliveryInfo(DeliveryInfoDTO dto, @AuthenticationPrincipal MyUserDetails uDetail) {
 		service.deliveryInfoSave(dto, uDetail.getEmail());
 	}
 	

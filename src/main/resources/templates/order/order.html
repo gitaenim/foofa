@@ -5,7 +5,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <meta charset="UTF-8">
 <title>주문페이지</title>
 <!-- 공통적용할 css, js를 삽입하세요 -->
-
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <link rel="stylesheet" type="text/css" href="/css/common/main/order.css">
 <link rel="stylesheet" href="/css/common/common.css">
 
@@ -46,10 +46,10 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 					</table>
 				</div>
 			</div>
-<!--///////////////////////////주소입력////////////////////////////-->
+			<!--///////////////////////////주소입력////////////////////////////-->
 			<h2 class="del-adr-head customer-h2">받는 사람 정보</h2>
-			<table id="deliveryInfo" class="del-adr">
-				<tbody id="delivery-table">
+			<table  id="deliveryInfo" class="del-adr">
+				<form id="delivery-table">
 					<tr>
 						<th class="del-adr-h">이름</th>
 						<td class="del-adr-d del-adr-d-name">
@@ -65,18 +65,38 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 					<tr>
 						<th class="del-adr-h">배송주소</th>
 						<td class="del-adr-d">
-								<span>
-							<label for="base-addr"><input type="radio" id="base-addr" 기존주소/>기존주소</label>
-							<label for="base-addr"><input type="radio" id="base-addr" 기존주소/>신규주소등록</label>
+							<span>
+								<label for="base-addr">
+									<input type="radio" name="addr-check" id="base-addr"/>
+									기존주소
+									<br>
+									<ul class="baseAddrs">
+										<li>
+											<span>우편번호</span>
+											<span>도로명</span>
+											<span>지번</span>
+											<span>세부주소</span>
+											<span>수령장소</span>
+										</li>
+									</ul>
+								</label>
+								
+								<label for="new-addr">
+									<input type="radio" name="addr-check" id="new-addr"/>
+									신규주소등록
+									<br>
+									<span class="newAddrs">
+										<input type="text" id="postcode" name="postcode" placeholder="우편번호">
+										<input type="button" class="page-btn" onclick="adrList()" value="우편번호 찾기" style="cursor: pointer;">
+										<br>
+										<input type="text" id="roadAddr" name="roadAddr" placeholder="도로명주소">
+										<input type="text" id="jibunAddr" name="jibunAddr" placeholder="지번주소">
+										<br>
+										<input type="text" id="detailAddr" name="detailAddr" placeholder="상세주소를 입력해주세요">
+										<button type="submit" class="page-btn add-save-btn" style="cursor: pointer;">신규주소등록</button>
+									</span>
+								</label>
 							</span>
-							<br>
-							<input type="text" id="postcode" name="postcode" placeholder="우편번호">
-							<input type="button" class="page-btn" onclick="adrList()" value="우편번호 찾기" style="cursor: pointer;">
-							<br>
-							<input type="text" id="roadAddr" name="roadAddr" placeholder="도로명주소">
-							<input type="text" id="jibunAddr" name="jibunAddr" placeholder="지번주소">
-							<br>
-							<input type="text" id="detailAddr" name="detailAddr" placeholder="상세주소를 입력해주세요">
 						</td>
 					</tr>
 					<tr>
@@ -86,10 +106,9 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 						<td class="del-adr-d">
 							<p>부재중일시 수령가능한 장소</p>
 							<input type="text" id="extraAddr" name="extraAddr" placeholder="ex)문앞, 경비실">
-							<button type="submit" class="page-btn add-save-btn" style="cursor: pointer;">신규주소등록</button>
 						</td>
 					</tr>
-				</tbody>
+				</form>
 			</table>
 			
 		
@@ -203,8 +222,8 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 				</tbody>
 			</table>
 		</div>
-		<div>
-			<button>주문하기</button>
+		<div id="btn-pg-order">
+			<button type="button" class="btn-pg">주문하기</button>
 		</div>
 	</div>
 </div>
