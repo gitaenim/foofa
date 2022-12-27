@@ -362,8 +362,11 @@ header>.wrap{
 .left-cate:hover > .cate-wrap{
 	display: block;
 }
+.cate:hover > .cate-wrap{
+	display: block;
 
-.left-cate > .cate-wrap{
+	}
+.left-cate .cate-wrap{
 	display: none;
 }
 #nb>.wrap>ul>.cate>.cate-wrap{
@@ -377,13 +380,11 @@ header>.wrap{
 	background-color: rgba(255,255,255, 1);
 	width: 200px;
 	border: 1px solid #a9a9a9;
-	/* height: calc(36px*4); */
 	padding: 8px 0;
 }
 .left-cate>.cate-wrap>ol{
 	top: 55px;
 	left:0;
-	/* coomon.css 문제 해결 해야함 */
 }
 
 .left-cate ol li{

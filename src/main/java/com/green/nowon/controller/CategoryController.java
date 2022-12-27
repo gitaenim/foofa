@@ -18,13 +18,13 @@ public class CategoryController {
 	
 	@GetMapping("/category/add")
 	public String reg() {
-		return "/admin/category/add";
+		return "admin/category/add";
 	}
 	
 	@PostMapping("/category/add")
 	public String add(String[] name) {
 		service.add(name);
-		return "/category/add";
+		return "admin/category/add";
 	}
 	
 	@GetMapping("/common/layout/categorys/{parentNo}")
