@@ -5,44 +5,23 @@
 <meta charset="UTF-8">
 <title>주문페이지</title>
 <!-- 공통적용할 css, js를 삽입하세요 -->
-<link rel="stylesheet" href="/css/common/common.css">
-
-<link rel="stylesheet" type="text/css" href="/css/common/footer.css">
-
+<link rel="stylesheet" type="text/css" href="/css/common/main/order.css">
 </head>
 <body>
-<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-<script>
-function addressDaum(){
-    new daum.Postcode({
-        oncomplete: function(data) {
-        	var fullRoadAddr = data.roadAddress; // 도로명 주소 변수
-            var extraRoadAddr = '';
-           
-        	if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                extraRoadAddr += data.bname;
-            }
-        	
-            document.getElementById('adr_postcode').value = data.zonecode;
-            document.getElementById('roadAddress-num').value = fullRoadAddr;
-        }
-    }).open();
-   }
-</script>
-<link rel="stylesheet" href="/css/common/main/order.css">
 	<div class="wrap">
 		<div class="nognb">
 			<div class="logo">
 				<a id="header-logo" class="icon" href="/"> <img
 					src="/images/header/foofa-logo.png">
-				</a>	
+				</a>
 			</div>
 		</div>
 		<div id="body">
 			<div class="mid">
 				<div class="ordTitle">
 					<h3 class="title">주문/결제</h3>
-					<span class="steps"> <a href="/cart">장바구니</a> > <em>주문결제 > </em>주문완료</span>
+					<span class="steps"> 장바구니 > <em>주문결제 > </em>주문완료
+					</span>
 				</div>
 				<div data-component="customer">
 					<div class="customer-root">
@@ -57,69 +36,62 @@ function addressDaum(){
 									<td class="customer--1">이메일</td>
 									<td class="customer--2">test@test.com</td>
 								</tr>
-								
+								<tr>
+									<td class="customer--1">휴대폰 번호</td>
+									<td class="customer--2">010.0000.0000</td>
+								</tr>
 							</tbody>
 						</table>
 					</div>
 				</div>
-				
+				<h2 class="del-adr-head customer-h2">
+					받는 사람 정보
+					<button class="del-adr-list-btn page-btn" type="button">배송지변경</button>
+				</h2>
 				<table class="del-adr">
-					<h2 class="del-adr-head customer-h2">
-						받는 사람 정보
-						
-					</h2>
 					<tbody>
 						<tr>
 							<th class="del-adr-h">이름</th>
 							<td class="del-adr-d del-adr-d-name">
 								<span class="del-adr-name">박기태</span>
-								
+								<span class="del-adr-label">기본배송지</span>
 							</td>
 						</tr>
 						<tr>
 							<th class="del-adr-h">배송주소</th>
-							<td id="adress-data"  class="del-adr-d">
-								<input type="text" id="adr_postcode" placeholder="우편번호" style="border: none; width:60px; pointer-events: none;">
-								<button class="del-adr-list-btn page-btn" type="button" onclick="addressDaum()">우편번호 찾기</button>
-								<br>
-								<input type="text" id="roadAddress-num" placeholder="주소" style="border: none; width: 200px; pointer-events: none;">
-								<p>나머지 주소</p>
-								<input type="text" placeholder="나머지 주소를 입력해주세요" style=" width: 200px;">
-							</td>
+							<td class="del-adr-d">주소시 주소동 111호</td>
 						</tr>
 						<tr>
 							<th class="del-adr-h">연락처</th>
 							<td class="del-adr-d">000-0000-0000</td>
 						</tr>
 					</tbody>
-					<div class="del-msg-cont">
+				</table>
+				<div>
+					<div>
+						<div class="del-msg-cont">
 							<table class="del-req-msg">
 								<tbody>
 									<tr>
-										<th class="del-adr-h">
+										<th class="del-req-msg-th">
 											<span>배송 요청사항</span>
 										</th>
-										<td class="del-adr-d">
-											<span class="door">문앞</span>
-											<button class="page-btn popup-btn" type="button">변경</button>
+										<td>
+											<span class="test00">문앞</span>
+											<button class="del-req-msg-popup page-btn" type="button">변경</button>
 										</td>
 									</tr>
 								</tbody>
 							</table>
 						</div>
-				</table>
-				<div>
-					<div>
-						<button class="addSelcet-btn" type="button">등록</button>
 					</div>
 				</div>
-			
 			<div ><!-- 상품정보 -->
 				<div class="goods-info">
-					<div class="goods-info-title customer-h2">상품정보</div>
+					<div class="goods-info-title customer-h2">배송 1건 중 1</div>
 					<div class="goods-info-group">
-						<div>
-							<p class="goods-info-date">주문날짜 :</p> 
+						<div class="goods-info-date">
+							주문날짜
 						</div>
 						<div class="goods-info-list">
 							<p class="goods-list">상품리스트</p>
@@ -175,7 +147,25 @@ function addressDaum(){
 								</div>
 							</td>
 						</tr>
-						
+						<tr>
+							<th class="wrap-title">적립금</th>
+							<td>
+								<div>
+									<strong class="price">
+										<span>0</span>
+										<span>원</span>
+									</strong>
+									<span class="price-msg">
+										<span class="usable">
+											보유:
+											<strong>0</strong>
+											<span class="unit">원</span>
+										</span>
+									</span>
+									<button class="page-btn pri-btn">적립금사용</button>
+								</div>
+							</td>
+						</tr>
 						<tr>
 							<th class="wrap-title">총 결제금액</th>
 							<td>
@@ -224,9 +214,6 @@ function addressDaum(){
 						</tr>
 					</tbody>
 				</table>
-				<div class="orders-btn">
-					<a href="/order/list"><button class="order-btn" type="button">주문하기</button></a>
-				</div>
 			</div>
 		</div>
 	</div>

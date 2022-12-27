@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 
-import com.green.nowon.domain.entity.goods.GoodsImg;
+import com.green.nowon.domain.entity.goods.GoodsImgEntity;
 import com.green.nowon.domain.entity.goods.GoodsImgRepository;
 import com.green.nowon.service.GoodsListImgService;
 
@@ -25,7 +25,7 @@ public class GoodsListImgProcess implements GoodsListImgService {
 
 	@Override
 	public void findAll(Model model) {
-		List<GoodsImg> list=repo.findAll();
+		List<GoodsImgEntity> list=repo.findAll();
 		
 		model.addAttribute("img",list);
 	}

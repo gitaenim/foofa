@@ -13,12 +13,8 @@ public interface GoodsService {
 
 	void save(GoodsInsertDTO dto);
 	
-	void findAll(Model model);
-
-	//void goodsOfCategory(long no, Model model);
+	void findAll(Model model);	
 	
-	
-
 	void list(Model model);
 
 	void goodsOfCategory(long no, Model model);
