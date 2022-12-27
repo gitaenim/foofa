@@ -31,7 +31,8 @@ public class MemberEntity {
 	@Id
 	@GeneratedValue(generator = "gen_mem",strategy = GenerationType.SEQUENCE)
 	private long mno;
-	@Column(unique = true, nullable = false)
+	
+	@Column(unique = true)
 	private String email;
 	@Column(nullable = false)
 	private String pass;
