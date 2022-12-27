@@ -213,7 +213,7 @@ button[disabled], input[disabled] {
 .last-text{
 	padding: 12px 0;
 }
-ul {
+.cartsize ul {
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;

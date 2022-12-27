@@ -24,13 +24,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@SequenceGenerator(name = "gen_o",sequenceName = "seq_o",allocationSize = 1,initialValue = 1)
 @Table(name = "foo_order")
 @Entity
 public class OrderEntity {
 
 	@Id
-	@GeneratedValue(generator = "gen_o",strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long ono;
 
 	

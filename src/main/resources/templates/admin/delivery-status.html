@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-    <head>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="layout/admin-layout::adminLayout(~{this::head}, ~{this::main})">
+  <head>
         <meta charset="UTF-8">
         <title>Insert title here</title>
-		<link rel="stylesheet" href="/css/common/common.css">	
 		<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
-   	 <link rel="stylesheet" href="/css/common/admin.css">
-    </head>
-    <body>
-  	<th:block th:insert="~{admin/admin :: header}"/>
+  </head>
+  <body>
+  	<main></main>
 	
-</body>
+  </body>
 </html>

@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@Table(name = "category")
+@Table(name = "foo_category")
 @Entity
 public class CategoryEntity {
 	//1차~4차

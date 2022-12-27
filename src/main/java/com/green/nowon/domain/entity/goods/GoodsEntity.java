@@ -26,13 +26,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@SequenceGenerator(name = "g_s_goods",
-		sequenceName = "s_goods", initialValue = 1, allocationSize = 1)
-@Table(name = "goods")
+@Table(name = "foo_goods")
 @Entity
 public class GoodsEntity extends BaseDateEntity{
 	@Id
-	@GeneratedValue(generator = "g_s_goods", strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "gno")
 	private long goodsNo;
 	

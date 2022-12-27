@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-	th:replace="layout/user-layout :: layout(~{this::head}, ~{this::main})">
+	th:replace="~{layout/user-layout :: layout(~{this::head}, ~{this::main})}">
 	
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<link rel="stylesheet" href="/css/cart/cart.css">
 </head>
 <body>
  <main>

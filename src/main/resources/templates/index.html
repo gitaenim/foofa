@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-	th:replace="layout/user-layout :: layout(~{this::head}, ~{this::main})">
+	th:replace="~{layout/user-layout :: layout(~{this::head}, ~{this::main})}">
 	
 <!-- th:replace="~{템플릿::fragment이름or아이디or태그}" -->
 <head>
+	<link rel="stylesheet" href="/css/common/main/slick.css">
+	<link rel="stylesheet" href="/css/common/main/common2.css">
+	<link rel="stylesheet" href="/css/common/main/slick-theme.css">
 </head>
 <main>
 	<h1>메인</h1>

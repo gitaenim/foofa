@@ -17,7 +17,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-//
+
 @Getter
 //@DynamicUpdate
 @Builder
@@ -43,4 +43,5 @@ public class GoodsImgEntity {
 	@ManyToOne
 	private GoodsEntity goods;
 	
+
 }
