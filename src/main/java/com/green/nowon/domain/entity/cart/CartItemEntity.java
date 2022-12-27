@@ -40,6 +40,4 @@ public class CartItemEntity {
 	@Column(nullable = false)
 	private int count;
 	
-	@Column(nullable = false)
-	private boolean selected;
 }

@@ -33,7 +33,8 @@ public class MemberEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long mno;
-	@Column(unique = true, nullable = false)
+	
+	@Column(unique = true)
 	private String email;
 	@Column(nullable = false)
 	private String pass;
