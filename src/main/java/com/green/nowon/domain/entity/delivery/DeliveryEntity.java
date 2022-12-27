@@ -23,7 +23,7 @@ import lombok.Setter;
 @Table(name = "foo_delivery")
 @Entity
 public class DeliveryEntity {
-
+//
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long dno;
