@@ -58,14 +58,16 @@ public class BoardEntity extends BaseDateEntity{
 		return this;
 	}
 	
+	/*
 	@Builder.Default
-	@CollectionTable(name = "foo_board_faq_division")
+	@CollectionTable(name = "foo_board_division")
 	@Enumerated(EnumType.STRING)
 	@ElementCollection(fetch = FetchType.EAGER)
 	private Set<Division> division=new HashSet<>();
 	
-	public BoardEntity addRole(Division division) {
+	public BoardEntity addDivision(Division division) {
 		this.division.add(division);
 		return this;
 	}
+	*/
 }

@@ -5,7 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import com.green.nowon.domain.entity.member.MemberRepository;
+import com.green.nowon.domain.entity.member.MemberEntityRepository;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -13,7 +13,7 @@ import lombok.extern.log4j.Log4j2;
 public class MyUserDetailsService implements UserDetailsService{
 	
 	@Autowired
-	private MemberRepository repo;
+	private MemberEntityRepository repo;
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
