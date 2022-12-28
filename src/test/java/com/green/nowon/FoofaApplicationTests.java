@@ -26,9 +26,9 @@ class FoofaApplicationTests {
 	void faq() {
 		fRepo.save(
 				FaqEntity.builder()
-				.division("cancel")
-				.question("교환(반품) 어떻게 신청하나요?")
-				.answer("교환(반품) 사유+문제가 발생한 부분을 확인할 수 있는 사진과 함께 고객센터로 문의 바랍니다.")
+				.division("delivery")
+				.question("배송지를 변경하고 싶어요")
+				.answer("상품이 이미 발송된 경우 배송지 변경이 어렵습니다. 반품 신청 후 재주문해주세요.")
 				.build() //엔티티생성
 				
 				);

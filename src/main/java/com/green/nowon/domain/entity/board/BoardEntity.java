@@ -58,6 +58,7 @@ public class BoardEntity extends BaseDateEntity{
 		return this;
 	}
 	
+	/*
 	@Builder.Default
 	@CollectionTable(name = "foo_board_division")
 	@Enumerated(EnumType.STRING)
@@ -68,4 +69,5 @@ public class BoardEntity extends BaseDateEntity{
 		this.division.add(division);
 		return this;
 	}
+	*/
 }

@@ -12,7 +12,11 @@
     -webkit-box-align: center;
     align-items: center;
     font-size: 17px;
-    color: #333;
+}
+
+.which-inquiry button{
+	font-size: 17px;
+	color: #222;
 }
 
 .bar{
@@ -32,7 +36,7 @@
 }
 
 #container>.wrap .cus-menu ul>li.target{
-	background-color: #ff8227;
+	background-color: rgba(255,191,0,0.1);
 }
 
 #container>.wrap .cus-menu ul>li::before{
@@ -107,17 +111,17 @@
 
 #container>.wrap .cus-list ul>li dl>dt.question::before {
 	content: "Q";
-	background-color: teal; 
+	background-color: #ffbf00; 
 }
 
 #container>.wrap .cus-list ul>li dl>dd.answer::before {
 	content: "A";
-	background-color: maroon; 
+	background-color: #ff8227; 
 }
 
 #container>.wrap .cus-list ul>li dl>dd.answer{
 	display: none;
-	background-color: rgba(0,0,0,0.25);
+	background-color: rgba(255,191,0,0.1);
 	padding: 1em 1em;
 }
 
@@ -127,12 +131,12 @@
 
 #container>.wrap .paging ol>li a{
 	display: inline-block;
-	padding: 1em;
-	border: 1px solid #6ba543;
+	padding: 0.5em 1em;
+	border: 1px solid #fff;
 	margin: 0 2px;
 }
 
 .select a{
 	color: #fff !important;
-	background-color: rgba(107,165,67,.5); 
+	background-color: rgba(255,130,39,1); 
 }

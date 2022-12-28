@@ -13,7 +13,8 @@
 						<div class="flex first-h">
 							<a href="/signup" class="ghldnjsrkdlq">회원가입</a>
 							<div class="bar"></div>
-							<a href="/login" class="fhrmdls">로그인</a>
+							<a sec:authorize="isAnonymous()" href="/login" class="fhrmdls">로그인</a>
+							<a sec:authorize="isAuthenticated()" href="/logout" class="fhrmdkdnt">로그아웃</a>
 							<div class="bar"></div>
 							<div class="rhrortpsxj">
 								<a>

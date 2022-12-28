@@ -3,13 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 *{margin: 0; padding: 0; box-sizing: border-box;}
 body{
-	font-family: 'Noto Sans KR', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif !important;
 	font-weight: 400;
-	color:#222;
+	color:#222 !important;
 	font-size: 16px !important;
 	line-height: normal !important;
 	}
-a{text-decoration: none; color: #222; text-underline-position: from-font;}
+a{text-decoration: none; color: #222 ; text-underline-position: from-font;}
 li{list-style: none;}
 h1{position: absolute; left:-9999px;}
 button{border: none; background: transparent; cursor: pointer;}
@@ -21,4 +21,7 @@ dd, dt {
 dl {
     margin-top: 0;
     margin-bottom: 0 !important;
+}
+label {
+	font-weight: 400;
 }

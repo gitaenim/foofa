@@ -16,11 +16,16 @@ public class FaqController {
 	@Autowired
 	FaqService service;
 	
+	@GetMapping("/board")
+	public String boardlist() {
+		return "board/page/faq";
+	}
+	
 	//division, page
 	//HTML응답을 하기 위해 ModelAndView 이용
 	//ajax요청시 실행되는 GetMapping 메서드
 	@ResponseBody //ModelAndView의 ViewName에 설정된 HTML 응답객체로 사용
-	@GetMapping("/customers/{division}/{page}")
+	@GetMapping("/board/{division}/{page}")
 	public ModelAndView customers(@PathVariable String division, @PathVariable int page, ModelAndView mv) {
 		
 		service.listForAjax(mv, division, page);

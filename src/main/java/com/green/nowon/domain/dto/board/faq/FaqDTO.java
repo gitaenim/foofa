@@ -2,9 +2,11 @@ package com.green.nowon.domain.dto.board.faq;
 
 import com.green.nowon.domain.entity.board.faq.FaqEntity;
 
+import lombok.Getter;
 import lombok.Setter;
 
 @Setter
+@Getter //getter가 있어야 가져오지
 public class FaqDTO {
 	private String division;
 	private String question;
