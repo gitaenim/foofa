@@ -39,5 +39,4 @@ public class DeliveryEntity {
 	@Column(nullable = false)
 	private String phone;
 	
-	
 }

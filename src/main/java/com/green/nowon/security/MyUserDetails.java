@@ -16,6 +16,7 @@ public class MyUserDetails extends User{
 	
 	private String email;
 	private String name;
+	private long mno;
 	
 	public MyUserDetails(String username, String password, Collection<? extends GrantedAuthority> authorities) {
 		super(username, password, authorities);
@@ -29,5 +30,6 @@ public class MyUserDetails extends User{
 		
 		this.email=entity.getEmail();
 		this.name=entity.getName();
+		this.mno=entity.getMno();
 	}
 }

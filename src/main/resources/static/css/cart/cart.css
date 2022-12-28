@@ -222,7 +222,7 @@ button[disabled], input[disabled] {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding-inline-start: 40px;
-        list-style-type: none;
+    list-style-type: none;
 }
 
 .goods-tit{
@@ -239,3 +239,4 @@ button[disabled], input[disabled] {
 	font-size: 18px;
 	font-weight: 500;
 }
+

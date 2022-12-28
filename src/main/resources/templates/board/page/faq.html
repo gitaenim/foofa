@@ -2,11 +2,39 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	th:replace="layout/user-layout :: layout(~{this::head}, ~{this::main})">
 <head>
-	<link rel="stylesheet" href="/css/board/front.css">
+	<link rel="stylesheet" href="/css/board/faq.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script type="text/javascript">
+	
+		function loginCheck(){
+			var isLogin = false;
+			$.ajax({
+				url: "/member/login-check",
+				async: false, /* 비동기 false */
+				success: function(result){
+					alert(result);
+					isLogin = result;
+				}
+			})
+			return isLogin; /* ajax가 완전히 끝난 후에 return */
+		}
+		
+		function isAuthenticated(){
+		
+			if(!loginCheck()){
+				var result = confirm("카트 저장은 로그인 이후 가능합니다.\n로그인페이지로 이동할까요?");
+				if(result){
+					location.href="/login";
+				}
+				return;
+			}
+			location.href="/board/oneonone"
+		}
+		
 		var division="use";
 		var page=1;
 		$(function(){
+			//alert("row");
 			$(".cus-menu ul>li").eq(0).addClass("target")
 			$(".cus-menu ul>li").click(menuClicked);
 			getList();
@@ -30,7 +58,7 @@
 
 		function getList(){
 			$.ajax({
-				url:`/customers/${division}/${page}`,
+				url:`/board/${division}/${page}`,
 				type:"get",
 				success:function(resultHtml){
 					$(".cus-list").html(resultHtml);
@@ -61,7 +89,7 @@
 			<div class="which-inquiry flex">
 				<a href="/board">자주묻는 질문</a>
 				<div class="bar"></div>
-				<a href="/board/oneonone">1:1 게시판</a>
+				<button onclick="isAuthenticated()">1:1 게시판</button>
 			</div>
 		</section>
 		<section id="container">

@@ -47,4 +47,5 @@ public class CartItemEntity {
 		this.count += count;
 		return this;
 	}
+
 }

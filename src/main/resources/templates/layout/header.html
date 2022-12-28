@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+<head>
+</head>
 <header>
 	<h1>상단영역</h1>
 		<div class="wrap view-size">
@@ -13,7 +15,8 @@
 						<div class="flex first-h">
 							<a href="/signup" class="ghldnjsrkdlq">회원가입</a>
 							<div class="bar"></div>
-							<a href="/login" class="fhrmdls">로그인</a>
+							<a sec:authorize="isAnonymous()" href="/login" class="fhrmdls">로그인</a>
+							<a sec:authorize="isAuthenticated()" href="/logout" class="fhrmdkdnt">로그아웃</a>
 							<div class="bar"></div>
 							<div class="rhrortpsxj">
 								<a>
@@ -85,10 +88,13 @@
 					<!-- 카테고리 -->
 					<div class="category">
 						<div class="categoryxmf">
-							<div>
+							<div class="left-cate" value="0">
 								<div class="left-category">
 									<span class="category-list"></span>
 									<span class="zkxprhfl">카테고리</span>
+								</div>
+								<div class="cate-wrap">
+									<!-- 카테고리 삽입공간 -->
 								</div>
 							</div>
 							<ul class="center-category">

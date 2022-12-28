@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-	th:fragment="layout(addHead, addMain)">
+	th:replace="layout/user-layout :: layout(~{this::head}, ~{this::main})">
 <head>
-<meta charset="UTF-8">
-<title>주문페이지</title>
-<!-- 공통적용할 css, js를 삽입하세요 -->
-<link rel="stylesheet" type="text/css" href="/css/common/main/order.css">
+	<meta charset="UTF-8">
+	<title>주문페이지</title>
+	<!-- 공통적용할 css, js를 삽입하세요 -->
+	<link rel="stylesheet" href="/css/common/main/order.css">
 </head>
-<body>
+<main>
 	<div class="wrap">
 		<div class="nognb">
 			<div class="logo">
@@ -220,7 +220,6 @@
 	</div>
 	
 	
-	<th:block th:insert="~{layout/footer :: footer}">footer태그가 삽입됩니다.</th:block>
-</body>
+</main>
 
 </html>
