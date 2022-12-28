@@ -9,6 +9,7 @@ import com.green.nowon.domain.entity.board.BoardEntity.BoardEntityBuilder;
 
 @Repository
 public interface MemberEntityRepository extends JpaRepository<MemberEntity, Long>{
+
 	Optional<MemberEntity> findByEmail(String username);
 
 	Optional<MemberEntity> findByName(String name);

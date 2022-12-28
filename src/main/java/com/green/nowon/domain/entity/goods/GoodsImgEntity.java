@@ -43,4 +43,5 @@ public class GoodsImgEntity {
 	@ManyToOne
 	private GoodsEntity goods;
 	
+
 }

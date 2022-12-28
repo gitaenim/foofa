@@ -106,14 +106,22 @@ body {
 /* //////////////2번 슬라이드//////////// */
 /* //////////////2번 슬라이드//////////// */
 #main2 >.wrap>*{
-	margin-top: 100px;
+	margin-top: 50px;
+	margin-bottom: 5%;
 }
 .title{
 	font-size: 35px;
 	font-weight: bold;
 	color: #ff8227;
 	text-align: center;
+	
+}
+
+.sub-tit{
+	text-align: center;
 	margin-bottom: 20px;
+	font-size: 15px;
+	color: gray;
 }
 
 #today-slide>.wrap>.t-menu{
@@ -132,7 +140,7 @@ body {
 
 ol{
 	list-style-type: decimal;
-	margin-block-start:1em;
+	/* margin-block-start:1em; */ /* 카테고리랑 겹쳐서 주석처리함  */
 	margin-block-end: 1em;
 	margin-inline-start: 0px;
     margin-inline-end: 0px;
@@ -220,7 +228,7 @@ ol{
 	padding: 15px;
 	width: 90%;
 	height: auto;
-	margin: 0% 10% 10% 5%;
+	margin: 7% 10% 10% 5%;
 	position: static;
 }
 .price-title{
