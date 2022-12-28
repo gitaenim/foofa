@@ -1,9 +1,11 @@
 package com.green.nowon.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.green.nowon.domain.dto.MemberDTO;
 import com.green.nowon.service.LogService;
@@ -30,5 +32,12 @@ public class LogController {
 		return "redirect:/login";
 	}
 	
+	@ResponseBody
+	@GetMapping("/login-check")
+	public boolean loginCheck(Authentication auth) {
+		//로그인했을때는 인증정보확인가능
+		//비로그인시 는 null
+		return auth==null? false:true;
+	}
 
 }

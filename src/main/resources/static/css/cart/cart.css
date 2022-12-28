@@ -81,18 +81,20 @@
 }
 
 .cart-boxlist{
-	    padding: 115px 0px;
+	padding: 115px 0px;
     border-top: 1px solid rgb(51, 51, 51);
     font-size: 16px;
     line-height: 24px;
     text-align: center;
-    color: rgb(181, 181, 181);
+    color: rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(51, 51, 51);
 }
 
 .delivery{
 	position: relative;
     width: 284px;
     min-height: 942px;
+    margin-left: auto;
 }
 
 .delivery-box{
@@ -221,4 +223,19 @@ button[disabled], input[disabled] {
     margin-inline-end: 0px;
     padding-inline-start: 40px;
         list-style-type: none;
+}
+
+.goods-tit{
+	position: relative;
+	font-size: 24px;
+	font-weight: 600;
+	color: #000000;
+	padding: 0 0.5em;
+}
+.goods-price{
+	position: relative;
+	color: #000000;
+	padding: 0 0.5em;
+	font-size: 18px;
+	font-weight: 500;
 }

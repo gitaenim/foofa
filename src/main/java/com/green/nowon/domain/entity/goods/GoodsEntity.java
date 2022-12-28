@@ -20,6 +20,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @DynamicUpdate
 @Builder
@@ -47,7 +48,7 @@ public class GoodsEntity extends BaseDateEntity{
 	private int stock;
 	
 	@Builder.Default
-	@OneToMany(mappedBy = "goods")
+	@OneToMany(mappedBy = "goods")//지연로딩 기본
 	private List<GoodsImgEntity> imgs=new ArrayList<>();
 	
 	public GoodsImgEntity defImg() {

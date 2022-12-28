@@ -6,10 +6,9 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
 public interface CartItemEntityRepository extends JpaRepository<CartItemEntity, Long>{
 
 	Optional<CartItemEntity> findByCnoAndGno(long cno, long itemNo);
 	
-	List<CartItemEntity> findByCnoMno(String email);
+	List<CartItemEntity> findByCnoMnoEmail(String email);
 }

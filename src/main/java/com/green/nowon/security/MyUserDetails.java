@@ -24,7 +24,7 @@ public class MyUserDetails extends User{
 	public MyUserDetails(MemberEntity entity) {
 		this(entity.getEmail(), entity.getPass(), entity.getRoles() //set<MyRole> ---> set<GrantedAuthority>
 				.stream()
-				.map(myRole->new SimpleGrantedAuthority(myRole.getRole()) ) //Stream<GrantedAuthority> "ROLE_USER" or "ROLE_ADMIN"
+				.map(Role->new SimpleGrantedAuthority(Role.getRole()) ) //Stream<GrantedAuthority> "ROLE_USER" or "ROLE_ADMIN"
 				.collect(Collectors.toSet()));
 		
 		this.email=entity.getEmail();

@@ -3,8 +3,10 @@ package com.green.nowon.domain.dto;
 import com.green.nowon.domain.entity.cart.CartItemEntity;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
+@Setter
 public class CartItemListDTO {
 	
 	private long no;//cartItem번호

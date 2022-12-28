@@ -1,5 +1,6 @@
 package com.green.nowon.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +17,8 @@ import com.green.nowon.service.impl.CartServiceProcess;
 @Controller
 public class CartController {
 	
-	private CartService service=new CartServiceProcess();
+	@Autowired
+	private CartService service;
 	
 	@ResponseBody
 	@PostMapping("/cart")
