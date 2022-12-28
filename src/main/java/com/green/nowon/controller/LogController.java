@@ -32,9 +32,12 @@ public class LogController {
 		return "redirect:/login";
 	}
 	
-	@GetMapping("/cart")
-	public String cart() {
-		return "member/cart";
+	@ResponseBody
+	@GetMapping("/login-check")
+	public boolean loginCheck(Authentication auth) {
+		//로그인했을때는 인증정보확인가능
+		//비로그인시 는 null
+		return auth==null? false:true;
 	}
 	
 	
