@@ -13,32 +13,6 @@ div{
 	font-size: 13px;
 }
 
-.nognb{
-	position: relative;
-	height: 90px;
-	border-bottom: 1px solid black;
-	margin: 0 auto;
-	width: 1020px;
-}
-
-.order-logo{
-	width: 1050px;
-	margin: 0 auto;
-	padding-top: 30px;
-	position: absolute;
-}
-.order-logo a{
-	display: block;
-	float: left;
-	width: 175px;
-	height: 40px;
-}
-#header-logo > img{
-	vertical-align: top;
-	width: 175px;
-	height: 40px;
-	text-align: left;
-}
 
 #body{
 	width: 1020px;
@@ -266,7 +240,7 @@ div{
 	display: block;
 }
 .newAddrs{
-	/* display: none; */
+	display: none;
 }
 .newAddrs input{
 	margin: 3px;

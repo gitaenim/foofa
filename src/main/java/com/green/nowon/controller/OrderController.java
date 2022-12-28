@@ -43,4 +43,11 @@ public class OrderController {
 	}
 	
 	
+	 @GetMapping("/order/address/base")
+	 public String baseAddrs(@AuthenticationPrincipal MyUserDetails userDetails,Model model) {
+		 service.baseAddress(userDetails.getEmail(),model);
+		 return "order/address-base";
+	 }
+	
+	
 }

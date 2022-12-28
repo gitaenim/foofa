@@ -5,23 +5,21 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <meta charset="UTF-8">
 <title>주문페이지</title>
 <!-- 공통적용할 css, js를 삽입하세요 -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
 <link rel="stylesheet" type="text/css" href="/css/common/main/order.css">
 <link rel="stylesheet" href="/css/common/common.css">
-
-</head>
-<main>
-<body>
+<th:block th:insert="~{layout/header :: header}">header태그로 삽입됩니다.</th:block>
+<link rel="stylesheet" href="/css/common/header.css">
+<link rel="stylesheet" href="/css/common/footer.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script type="text/javascript" src="/js/order.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</head>
+
+<body>
+<main>
 <div class="wrap">
-	<div class="nognb">
-		<div class="order-logo">
-			<a id="header-logo" class="icon" href="/">
-			 <img src="/images/header/foofa-logo.png">
-			</a>
-		</div>
-	</div>
+	
 	<div id="body">
 		<div class="mid">
 			<div class="ordTitle">
@@ -48,8 +46,8 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 			</div>
 			<!--///////////////////////////주소입력////////////////////////////-->
 			<h2 class="del-adr-head customer-h2">받는 사람 정보</h2>
-			<table  id="deliveryInfo" class="del-adr">
-				<form id="delivery-table">
+			<form id="delivery-table">
+				<table  id="deliveryInfo" class="del-adr">
 					<tr>
 						<th class="del-adr-h">이름</th>
 						<td class="del-adr-d del-adr-d-name">
@@ -65,21 +63,16 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 					<tr>
 						<th class="del-adr-h">배송주소</th>
 						<td class="del-adr-d">
-							<span>
-								<label for="base-addr">
-									<input type="radio" name="addr-check" id="base-addr"/>
-									기존주소
-									<br>
-									<ul class="baseAddrs">
-										<li>
-											<span>우편번호</span>
-											<span>도로명</span>
-											<span>지번</span>
-											<span>세부주소</span>
-											<span>수령장소</span>
-										</li>
-									</ul>
-								</label>
+							<div>
+								<ul id="menu-ad">
+									<!--기존주소-->
+									<li class="target" onclick="memuAdClicked(this)">
+										<input type="radio" name="addr-check" id="base-addr" />기존주소										
+										<div class="baseAddrs" id="base-address-disp">
+											<p>배송지 정보가 존재하지 않습니다.</p>
+										</div>
+									</li>
+								</ul>
 								
 								<label for="new-addr">
 									<input type="radio" name="addr-check" id="new-addr"/>
@@ -93,10 +86,10 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 										<input type="text" id="jibunAddr" name="jibunAddr" placeholder="지번주소">
 										<br>
 										<input type="text" id="detailAddr" name="detailAddr" placeholder="상세주소를 입력해주세요">
-										<button type="submit" class="page-btn add-save-btn" style="cursor: pointer;">신규주소등록</button>
+										<button type="submit" id="btn-delivery" class="page-btn add-save-btn" style="cursor: pointer;">신규주소등록</button>
 									</span>
 								</label>
-							</span>
+							</div>
 						</td>
 					</tr>
 					<tr>
@@ -108,29 +101,30 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 							<input type="text" id="extraAddr" name="extraAddr" placeholder="ex)문앞, 경비실">
 						</td>
 					</tr>
-				</form>
-			</table>
+				
+				</table>
+			</form>
 			
-		
-		<table> <!-- 상품정보 -->
-			<div class="goods-info-title del-adr-head customer-h2">상품정보</div>
-				<div class="goods-info-group">
-					<div  id="order_date_time" class="goods-info-date">
-						주문날짜
-					</div>
-					<div class="goods-info-list">
-						<p class="goods-list">상품리스트</p>
-						<div class="goods-info-bundle">
-							물건 수량 / <span>배송정보(무료or배송료)</span>
-						</div>
+	
+		<div class="goods-info-title del-adr-head customer-h2">상품정보</div>
+			<div class="goods-info-group">
+				<div  id="order_date_time" class="goods-info-date">
+					주문날짜
+				</div>
+				<div class="goods-info-list">
+					<p class="goods-list">상품리스트</p>
+					<div class="goods-info-bundle">
+						물건 수량 / <span>배송정보(무료or배송료)</span>
 					</div>
 				</div>
+			</div>
+			<table>
 				<tr class="goods-info-list" th:each="dto:${odlist}">
 					<td>
 						<input type="text" readonly="readonly" th:value="${dto.goods.gno}">
 					</td>
 				</tr>
-		</table>
+			</table>
 		<div id="pay-price-section" >
 			<h2 class="check-out del-adr-head customer-h2  orderbox">결제정보</h2>
 			<table class="pay-price">
@@ -223,15 +217,17 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 			</table>
 		</div>
 		<div id="btn-pg-order">
+			<input type="hidden" id="address-no">
 			<button type="button" class="btn-pg">주문하기</button>
 		</div>
 	</div>
 </div>
 </div>
-</body>
 </main>
+</body>
+
 <footer>
 	<th:block th:insert="~{layout/footer :: footer}">footer태그가 삽입됩니다.</th:block>
-	<link rel="stylesheet" href="/css/common/footer.css">
+	
 </footer>
 </html>

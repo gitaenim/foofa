@@ -11,4 +11,6 @@ public interface OrderService {
 
 	void orderGoods(OrderGoodsDTO dto, Model model);
 
+	void baseAddress(String email, Model model);
+
 }

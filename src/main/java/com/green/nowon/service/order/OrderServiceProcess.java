@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.green.nowon.domain.dto.order.DeliveryInfoDTO;
+import com.green.nowon.domain.dto.order.DeliveryListDTO;
 import com.green.nowon.domain.dto.order.OrderGoodsDTO;
 import com.green.nowon.domain.dto.order.OrderGoodsListDTO;
 import com.green.nowon.domain.entity.delivery.DeliveryEntityRepository;
@@ -36,9 +37,23 @@ public class OrderServiceProcess implements OrderService {
 	
 	@Override
 	public void deliveryInfoSave(DeliveryInfoDTO dto, String email) {
-		dRepo.save(dto.toEntity())
-			.base(dRepo.countByMemberEmail(email)==0?true:false)//배송정보가 없으면 base=true
-			.member(mRepo.findByEmail(email).orElseThrow());
+		//System.out.println(">>>>>>>>>>>>>>"+email);
+		dRepo.save(dto
+					.toEntity()
+					.base(dRepo.countByMemberEmail(email)==0?true:false)//배송정보가 없으면 base=true
+					.member( mRepo.findByEmail(email).orElseThrow() )
+		);
+	}
+
+
+	@Override
+	public void baseAddress(String email, Model model) {
+		//System.out.println("email:"+email);
+		model.addAttribute("baseadr",dRepo.findByBaseAndMemberEmail(true,email)
+				.map(DeliveryListDTO::new)
+				.orElseThrow()
+				);
+		
 	}
 
 	

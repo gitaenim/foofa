@@ -3,13 +3,43 @@
  */
  
  $(function(){
+	getBaseAddress();
+	$("#btn-delivery").click(function(){
+		$(this).preventDefault();
+	});
 	$("#delivery-table").submit(deliverySubmited);
 	console.log("11111111111111111111111111111");
 });
 
-function deliverySubmited(subevent){
+function getBaseAddress(){//기본배송지정보확인
+	$.ajax({
+		url:"/order/address/base",
+		success:function(resultHTML){
+			$("#base-address-disp").html(resultHTML);
+			
+			$("#address-no").val($("#addressNo").val());
+			$("#menu-ad>li").removeClass("target");
+			$("#menu-ad>li").eq(0).addClass("target");
+		},
+		error:function(){
+			memuAdClicked($("menu-ad>li").eq(1));
+			console.log("배송지정보가 없습니다");
+		}
+	});
+}
+function memuAdClicked(el){
+	if($(el).index()==0){
+		getBaseAddress();
+		return;
+	}
+	$("#menu-ad>li").removeClass("target");
+	$(el).addClass("target");
+}
 
-	subevent.preventDefault();
+
+function deliverySubmited(event){
+
+	event.preventDefault();
 	
 	var queryString=$(this).serialize();
 	$.ajax({
