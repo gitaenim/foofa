@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.green.nowon.domain.dto.GoodsListDTO;
 import com.green.nowon.service.GoodsListImgService;
 
 
@@ -14,7 +15,7 @@ import com.green.nowon.service.goodsservice.GoodsService;
 
 @Controller
 public class GoodsController {
-
+	
 	@Autowired
 	GoodsService service;
 	
@@ -25,6 +26,7 @@ public class GoodsController {
 	}
 
 	
+
 	@GetMapping("/common/category/{no}/goods")
 	public String goodsOfCategory(@PathVariable long no, Model model) {
 		service.goodsOfCategory(no, model);
@@ -32,8 +34,9 @@ public class GoodsController {
 	}
 
 
-	@GetMapping("/goods/1")
-	public String detail() {
+	@GetMapping("/common/goods/{no}")
+	public String detail(@PathVariable long no,Model model) {
+		service.detail(no, model);
 		return "goods/detail";
 	}
 	
@@ -41,6 +44,7 @@ public class GoodsController {
 	public String category() {
 		return "goods/review";
 	}
+
 
 }
 

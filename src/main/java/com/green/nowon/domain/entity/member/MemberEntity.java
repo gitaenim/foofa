@@ -15,6 +15,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.green.nowon.domain.entity.BaseDateEntity;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -26,24 +28,25 @@ import lombok.NoArgsConstructor;
 @Getter
 @Table(name = "foo_member")
 @Entity
-public class MemberEntity {
+public class MemberEntity extends BaseDateEntity{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long mno;
-	@Column(unique = true, nullable = false)
+	
+	@Column(unique = true)
 	private String email;
 	@Column(nullable = false)
 	private String pass;
 	@Column(nullable = false)
 	private String name;
 	
+	
 	@Builder.Default
 	@CollectionTable(name = "foo_member_role")
 	@Enumerated(EnumType.STRING)
 	@ElementCollection(fetch = FetchType.EAGER)
 	private Set<Role> roles=new HashSet<>();
-	
 	public MemberEntity addRole(Role role) {
 		roles.add(role);
 		return this;

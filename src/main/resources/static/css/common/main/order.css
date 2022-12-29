@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
 td{border-bottom: 1px solid rgb(251, 184, 123);}
+
 .unit{
 	color: #111;
 	font-size: 12px;
@@ -12,32 +13,6 @@ div{
 	font-size: 13px;
 }
 
-.nognb{
-	position: relative;
-	height: 90px;
-	border-bottom: 1px solid black;
-	margin: 0 auto;
-	width: 1020px;
-}
-
-.logo{
-	width: 1050px;
-	margin: 0 auto;
-	padding-top: 30px;
-	position: absolute;
-}
-.logo a{
-	display: block;
-	float: left;
-	width: 175px;
-	height: 40px;
-}
-img{
-	vertical-align: top;
-	width: 175px;
-	height: 40px;
-	text-align: left;
-}
 
 #body{
 	width: 1020px;
@@ -52,8 +27,9 @@ img{
 .ordTitle{
 	height: 70px;
 	overflow: hidden;
-	border-bottom: 3px solid #777;
+	border-bottom: 3px solid rgb(236, 130, 0);
 }
+
 .ordTitle .title{
 	float: left;
 	margin-top: 5px;
@@ -70,6 +46,9 @@ img{
 	font-size: 15px;
 	color: rgb(251, 184, 123);
 	font-weight: 700;
+}
+.ordTitle .steps a{
+	color: rgb(251, 184, 123);
 }
 .customer-h2{
 	padding: 2px;
@@ -107,8 +86,16 @@ img{
 }
 .del-adr-list-btn{
 	margin-left: 5px;
+	margin-bottom:5px;
 	vertical-align: middle;
 }
+.add-point-change-btn{
+	margin-left: 30px;
+}
+.add-save-btn{
+	float: right;
+}
+
 .del-adr{
 	border-top: 2px solid rgb(236, 130, 0);
 	width: 100%;
@@ -120,7 +107,7 @@ img{
 	width: 104px;
 	background-color: rgb(251, 184, 123);
 	text-align: right;
-	font-size: 14px;
+	font-size: 13px;
 	color: white;
 }
 .del-adr-d{
@@ -155,21 +142,14 @@ img{
 .del-req-msg{
 	width: 100%;
 }
-.del-req-msg-th{
-	padding: 7px 10px 7px 0px;
-	border-left: 1px solid rgb(236, 130, 0);
-	width: 103px;
-	background-color: rgb(251, 184, 123);
-	text-align: right;
-	color: white;
-}
+
 .del-req-msg-th span{
 	padding: 0 0 0 10px;
 	font-size: 14px;
 	width: 100%
 }
 .page-btn{
-	padding: 4px 8px;
+	padding: 0 5px 0 5px;
     border: 1px solid black;
     color: #333;
     border-radius: 2px;
@@ -177,9 +157,8 @@ img{
     font-size: 11px;
 	
 }
-.test00{
-    padding: 10px 10px 10px 16px;
-    font-size: 12px;
+.door{
+	padding-right :15px;
 }
 .goods-info{
 	margin-top:8px; 
@@ -252,4 +231,37 @@ img{
 }
 .price-msg {
 	padding-right: 10px;
+}
+
+
+#new-addr:checked ~ .newAddrs{
+	display: block;
+}
+.newAddrs{
+	display: none;
+}
+.newAddrs input{
+	margin: 3px;
+}
+#base-addr:checked ~ .baseAddrs{
+	display: block;
+}
+.baseAddrs{
+	display: none;
+}
+#btn-pg-order{
+	margin-top:20px;
+	width: 100%;
+	height: 40px;
+	text-align: center;
+}
+#btn-pg-order>.btn-pg{
+	border: 1px solid  rgb(236, 130, 0);
+	width: 150px;
+	height: 70px;
+	font-size: 15px;
+	font-weight: bold;
+	background-color: rgb(251, 184, 123);
+	color: white;
+
 }

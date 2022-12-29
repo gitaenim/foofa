@@ -106,14 +106,26 @@ body {
 /* //////////////2번 슬라이드//////////// */
 /* //////////////2번 슬라이드//////////// */
 #main2 >.wrap>*{
-	margin-top: 100px;
+	margin-top: 50px;
+	margin-bottom: 5%;
 }
 .title{
 	font-size: 35px;
 	font-weight: bold;
 	color: #ff8227;
 	text-align: center;
+	
+}
+
+.sub-tit{
+	text-align: center;
 	margin-bottom: 20px;
+
+	font-size: 15px;
+	color: gray;
+
+	margin-top: 50px;
+
 }
 
 #today-slide>.wrap>.t-menu{
@@ -128,11 +140,13 @@ body {
 }
 #today-slide>.wrap #display{
 	overflow: hidden;
+	margin-bottom: 100px;
+	border-bottom: 1px solid #a9a9a9; 
 }
 
 ol{
 	list-style-type: decimal;
-	margin-block-start:1em;
+	/* margin-block-start:1em; */ /* 카테고리랑 겹쳐서 주석처리함  */
 	margin-block-end: 1em;
 	margin-inline-start: 0px;
     margin-inline-end: 0px;
@@ -220,7 +234,7 @@ ol{
 	padding: 15px;
 	width: 90%;
 	height: auto;
-	margin: 0% 10% 10% 5%;
+	margin: 7% 10% 10% 5%;
 	position: static;
 }
 .price-title{
@@ -242,7 +256,7 @@ ol{
 	width:25px;
 	height :25px;
 	opacity:40%;
-	right:20%;
+	right:14%;
 	position:absolute;
 	background-image: url('/images/icon/angle-left-solid.svg');
 	background-size: 100%;
@@ -253,7 +267,7 @@ ol{
 	width:25px;
 	height :25px;
 	opacity:40%;
-	right:18%;
+	right:12%;
 	position:absolute;
 	background-image: url('/images/icon/angle-right-solid.svg');
 	background-size: 100%;

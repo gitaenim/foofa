@@ -14,7 +14,7 @@ import com.green.nowon.service.GoodsListImgService;
 public class GoodsListImgProcess implements GoodsListImgService {
 
 	@Autowired
-	GoodsImgEntityRepository repo;
+	private GoodsImgEntityRepository repo;
 
 	@Override
 	public void findAll(Model model) {
