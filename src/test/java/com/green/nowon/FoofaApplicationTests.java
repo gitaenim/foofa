@@ -32,10 +32,10 @@ class FoofaApplicationTests {
 	@Autowired
 	PasswordEncoder pe;
 	
-	@Test
+	//@Test
 	void 어드민계정() {
 		
-		mRepository.save(
+		mRepo.save(
 				MemberEntity.builder()
 				.email("admin@test.com")
 				.pass(pe.encode("1234"))
