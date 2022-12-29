@@ -34,8 +34,7 @@ class FoofaApplicationTests {
 	
 	@Test
 	void 어드민계정() {
-		
-			mRepo.save(
+		mRepo.save(
 				MemberEntity.builder()
 				.email("admin@test.com")
 				.pass(pe.encode("1234"))

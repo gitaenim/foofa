@@ -1,10 +1,5 @@
-/**
- * 
- */ 
 $(function(){
-			console.log(1);
     		createCategory($(".left-cate"));
-    		console.log(1);
     	});
     	
     	function createCategory(target){

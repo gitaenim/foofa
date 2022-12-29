@@ -26,6 +26,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
 @Table(name = "foo_member")
 @Entity
 public class MemberEntity extends BaseDateEntity{
@@ -41,12 +42,12 @@ public class MemberEntity extends BaseDateEntity{
 	@Column(nullable = false)
 	private String name;
 	
+	
 	@Builder.Default
 	@CollectionTable(name = "foo_member_role")
 	@Enumerated(EnumType.STRING)
 	@ElementCollection(fetch = FetchType.EAGER)
 	private Set<Role> roles=new HashSet<>();
-	
 	public MemberEntity addRole(Role role) {
 		roles.add(role);
 		return this;

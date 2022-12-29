@@ -37,20 +37,23 @@ public class LogController {
 	public String signup(MemberDTO dto) {
 		service.save(dto);
 		return "redirect:/login";
-	}
-	
-	@ResponseBody
-	@GetMapping("/login-check")
-	public boolean loginCheck(Authentication auth) {
-		//로그인했을때는 인증정보확인가능
-		//비로그인시 는 null
-		return auth==null? false:true;
-	}
 	
 	@DeleteMapping("/delete/{mno}")
 	public String delete(@PathVariable long mno) {
 		memservice.deleteMno(mno);
 		return "redirect:/admin/authority";
+
+	}	
+	
+	@ResponseBody
+	@GetMapping("/member/login-check")
+	public boolean loginCheck(Authentication auth) {
+		System.out.println(auth);
+		//로그인했을때는 인증정보확인가능
+		//비로그인시는 null
+		System.out.println("인증 : "+auth);
+		return auth==null? false:true;
+
 	}
 
 }
