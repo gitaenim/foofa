@@ -39,6 +39,7 @@ public class GoodsInsertDTO {
 			
 			imgs.add(gent);
 		}
+		//temp폴더의 상위폴더인 upload로 이동
 		MyFileUtils.moveUploadLocFormTemp(newName, url);
 		return imgs;
 	}
