@@ -10,4 +10,6 @@ public interface BoardService {
 
 	void boardlist(Model model, Long mno);
 
+	void getList(Model model);
+
 }
