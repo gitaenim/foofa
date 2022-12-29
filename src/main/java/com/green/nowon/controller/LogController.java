@@ -37,7 +37,7 @@ public class LogController {
 	public String signup(MemberDTO dto) {
 		service.save(dto);
 		return "redirect:/login";
-	
+	}
 	@DeleteMapping("/delete/{mno}")
 	public String delete(@PathVariable long mno) {
 		memservice.deleteMno(mno);
