@@ -1,46 +1,44 @@
 package com.green.nowon.domain.dto;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.green.nowon.domain.entity.category.CategoryItemEntity;
 import com.green.nowon.domain.entity.goods.GoodsEntity;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
 @Data
-public class GoodsListDTO {
-	
+public class GoodsDetailDTO {
 	private long no;
 	private String title;
-	private int price;
-
 	private String content;
-	//이미지테이블에 저장되어있음
-	private String imgUrl;
-
+	private int price;
 	private int stock;
 	
-	private int sPrice;//세일
-	private int dPrice;//배송비
+	//이미지 대표이미지
 	private String defImgUrl;
+	
+	private List<GoodsListImgDTO> imgs;
 
-	private List<GoodsListImgDTO> img;
-
-	public GoodsListDTO(GoodsEntity e) {
+	public GoodsDetailDTO(GoodsEntity e) {
 		this.no = e.getGoodsNo();
 		this.title = e.getTitle();
+		this.content =e.getContent();
 		this.price = e.getPrice();
 		this.stock = e.getStock();
+		//List<ItemListImg>
+		imgs=e.getImgs().stream()
+				.map(GoodsListImgDTO::new)
+				.collect(Collectors.toList());
+				
+				
+		
 		this.defImgUrl = e.defImg().getUrl()+e.defImg().getNewName();
-		sPrice=0;
-		dPrice=2500;
 	}
-	public GoodsListDTO(CategoryItemEntity cie) {
+	public GoodsDetailDTO(CategoryItemEntity cie) {
 		this(cie.getItem());
 	}
 	
-		
-
+	
 }

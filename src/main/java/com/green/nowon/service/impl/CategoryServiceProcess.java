@@ -1,5 +1,7 @@
 package com.green.nowon.service.impl;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
@@ -42,6 +44,19 @@ public class CategoryServiceProcess implements CategoryService {
 		if(parentNo.intValue()==0)parentNo=null;//null 은 1차카테고리
 		model.addAttribute("list", repo.findByParentNoOrderByNameAsc(parentNo));
 		
+	}
+
+	@Override
+	public void fistCategory(Model model) {
+		model.addAttribute("list", repo.findByParentNoOrderByNameAsc(null));
+	}
+
+	@Override
+	public boolean isReg(String text) {
+		Optional<CategoryEntity> result= repo.findByParentNoNullAndName(text);
+		if(result.isEmpty())
+			return true;
+		return false;
 	}
 
 }
