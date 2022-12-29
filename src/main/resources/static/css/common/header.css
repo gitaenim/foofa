@@ -59,7 +59,7 @@ header>.wrap{
     background-color: rgb(217, 217, 217);
 }
 
-.fhrmdls{
+.fhrmdls, .fhrmdkdnt{
     display: block;
     cursor: pointer;
 }

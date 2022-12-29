@@ -1,14 +1,15 @@
 package com.green.nowon.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import com.green.nowon.domain.dto.board.BoardSaveDTO;
+import com.green.nowon.security.MyUserDetails;
 import com.green.nowon.service.BoardService;
-import com.green.nowon.service.impl.BoardServiceProcess;
 
 @Controller
 public class BoardController {
@@ -16,28 +17,19 @@ public class BoardController {
 	@Autowired
 	private BoardService service;
 	
-	@GetMapping("/board")
-	public String boardlist() {
-		return "board/page/faq";
-	}
-	
 	@GetMapping("/board/oneonone")
-	public String boardlist2() {
-		return "board/page/fone";
+	public String boardlist(Model model,  @AuthenticationPrincipal MyUserDetails myUserDetails) {
+		service.boardlist(model, myUserDetails.getMno());
+		//System.out.println(">>>>> mno : "+mno);
+		return "board/page/one";
 	}
 	
-	//division, page
-	//HTML응답을 하기 위해 ModelAndView 이용
-	//ajax요청시 실행되는 GetMapping 메서드
-	@ResponseBody //ModelAndView의 ViewName에 설정된 HTML 응답객체로 사용
-	@GetMapping("/customers/{division}/{page}")
-	public  ModelAndView customers(@PathVariable String division, @PathVariable int page, ModelAndView mv) {
-		
-		service.listForAjax(mv, division, page);
-		
-		mv.setViewName("board/page/list");
-		//@ResponseBody 없을때 리턴형이 String이면 ViewResolver 처리대상인 templates
-		
-		return mv;
+	@PostMapping("/board/oneonone")
+	public String boardSave(BoardSaveDTO dto, @AuthenticationPrincipal MyUserDetails myUserDetails) {
+		service.save(dto, myUserDetails.getName());
+		return "redirect:/board/oneonone";
 	}
+	
+
+	
 }

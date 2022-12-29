@@ -48,6 +48,7 @@ public class AdminController {
 		return "admin/goods/goods-reg";
 	}
 	
+
 	@GetMapping("/admin/goods/list")
 	public String goodsList(Model model) {
 		service.list(model);

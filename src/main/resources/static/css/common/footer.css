@@ -6,6 +6,10 @@ img{
     vertical-align: top;
 }
 
+footer{
+	padding-top: 100px;
+}
+
 footer .wrap{
 	padding-top: 30px;
     border-top: 1px solid rgb(247, 247, 247);

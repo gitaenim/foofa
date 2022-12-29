@@ -13,7 +13,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -24,7 +23,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
 @Table(name = "foo_member")
 @Entity
 public class MemberEntity {
@@ -40,12 +38,12 @@ public class MemberEntity {
 	@Column(nullable = false)
 	private String name;
 	
+	
 	@Builder.Default
 	@CollectionTable(name = "foo_member_role")
 	@Enumerated(EnumType.STRING)
 	@ElementCollection(fetch = FetchType.EAGER)
 	private Set<Role> roles=new HashSet<>();
-	
 	public MemberEntity addRole(Role role) {
 		roles.add(role);
 		return this;

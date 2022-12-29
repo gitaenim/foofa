@@ -16,6 +16,7 @@ public class MyUserDetails extends User{
 	
 	private String email;
 	private String name;
+	private long mno;
 	
 	public MyUserDetails(String username, String password, Collection<? extends GrantedAuthority> authorities) {
 		super(username, password, authorities);
@@ -24,10 +25,11 @@ public class MyUserDetails extends User{
 	public MyUserDetails(MemberEntity entity) {
 		this(entity.getEmail(), entity.getPass(), entity.getRoles() //set<MyRole> ---> set<GrantedAuthority>
 				.stream()
-				.map(myRole->new SimpleGrantedAuthority(myRole.getRole()) ) //Stream<GrantedAuthority> "ROLE_USER" or "ROLE_ADMIN"
+				.map(Role->new SimpleGrantedAuthority(Role.getRole()) ) //Stream<GrantedAuthority> "ROLE_USER" or "ROLE_ADMIN"
 				.collect(Collectors.toSet()));
 		
 		this.email=entity.getEmail();
 		this.name=entity.getName();
+		this.mno=entity.getMno();
 	}
 }
