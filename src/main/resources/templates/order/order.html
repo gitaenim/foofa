@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
+
 xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <meta charset="UTF-8">
@@ -26,6 +27,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 				<h3 class="title">주문/결제</h3>
 				<span class="steps"> 장바구니 > <em>주문결제 > </em>주문완료
 				</span>
+
 			</div>
 			<div data-component="customer">
 				<div class="customer-root">
@@ -221,10 +223,12 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 			<button type="button" class="btn-pg">주문하기</button>
 		</div>
 	</div>
+
 </div>
 </div>
 </main>
 </body>
+
 
 <footer>
 	<th:block th:insert="~{layout/footer :: footer}">footer태그가 삽입됩니다.</th:block>

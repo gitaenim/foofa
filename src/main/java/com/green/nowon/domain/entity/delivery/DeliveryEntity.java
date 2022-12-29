@@ -59,5 +59,5 @@ public class DeliveryEntity {
 		this.base=base;
 		return this;
 	}
-	
+
 }

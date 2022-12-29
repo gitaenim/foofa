@@ -11,7 +11,7 @@
 <div class="cartsize">
 	<h2 class="cart-text">장바구니</h2>
 	<div class="flex between big">
-		<div class="cart-list">
+		<div class="cart-list" th:if="${!#lists.isEmpty(list)}" th:each="dto : ${list}">
 			<div class="flex select">
 				<div>
 					<label class="label">
@@ -24,17 +24,49 @@
 				</div>
 			</div>
 			<div class="cart-box">
-				<div class="cart-boxlist">장바구니에 담긴 상품이 없습니다.</div>
-			</div>
-			<div>
-					<label class="label">
-						<input type="checkbox" disabled class="label-checkbox">
-						<img src="/images/cart/as.svg" class="checkbox-img">
-						<span class="">전체선택 (0/0)</span>
-					</label>
-					<span class="crossline"></span>
-					<button disabled class="delete-button">선택삭제</button>
+				<div class="flex cart-boxlist">
+					<div><img th:src="${dto.goods.defImgUrl}" height="100px"></div>
+					<div class="flex" style="padding: 1em;">
+						<div>
+							<span class="goods-tit" th:text="${dto.goods.title}">상품명</span>
+						</div>
+						<div>
+							<span class="goods-price" th:text="${#numbers.formatInteger(dto.goods.price , 0 ,'COMMA')}">단가</span>
+							<span >원</span>
+						</div>
+						<div>
+							<span class="price-p" th:text="${dto.quantity}">구매수량</span>
+							<span >개</span>
+						</div>
+					</div>
 				</div>
+			</div>
+		<div class="price-box">	
+				<div class="flex first-p">
+					<span class="text-p">상품금액</span>
+					<span class="price-p" th:text="${#numbers.formatInteger(dto.goods.price*dto.quantity , 0 ,'COMMA')}">
+						<span>원</span>
+					</span>
+				</div>
+				<div class="flex second-p">
+				<span class="text-p">상품할인금액</span>
+				<span class="price-p">
+					<span th:text="${#numbers.formatInteger(dto.sPrice , 0 ,'COMMA')}">원</span>
+					</span>
+				</div>
+				<div class="flex second-p">
+					<span class="text-p">배송비</span>
+						<span class="price-p" th:text="${#numbers.formatInteger(dto.dPrice , 0 ,'COMMA')}">
+						<span>원</span>
+						</span>
+					</div>
+				<div class="flex last-p"><span class="text-p">결제예정금액</span>
+					<span class="price-p">
+						<strong th:text="${#numbers.formatInteger(dto.goods.price*dto.quantity+dto.dPrice-dto.sPrice , 0 ,'COMMA')}"></strong>
+						<span>원</span>
+					</span>
+				</div>
+			</div>
 		</div>
 		<div class="delivery">
 			<div class="delivery-box">
@@ -52,12 +84,6 @@
 					</button>
 				</div>
 			</div>
-			<div class="price-box">	
-				<div class="flex first-p"><span class="text-p">상품금액</span><span class="price-p">0<span>원</span></span></div>
-				<div class="flex second-p"><span class="text-p">상품할인금액</span><span class="price-p">0<span>원</span></span></div>
-				<div class="flex second-p"><span class="text-p">배송비</span><span class="price-p">0<span>원</span></span></div>
-				<div class="flex last-p"><span class="text-p">결제예정금액</span><span class="price-p"><strong>0</strong><span>원</span></span></div>
-			</div>
 			<div class="decide">
 				<button class="decide-button" type="button" disabled><span>상품을 담아주세요</span></button>
 				<ul class="last-text">
@@ -69,7 +95,6 @@
 		</div>
 	</div>
 </div>
- 
  </main>
 </body>
 </html>

@@ -13,7 +13,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -22,7 +21,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Builder
-@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "foo_member")
@@ -32,7 +30,8 @@ public class MemberEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long mno;
-	@Column(unique = true, nullable = false)
+	
+	@Column(unique = true)
 	private String email;
 	@Column(nullable = false)
 	private String pass;

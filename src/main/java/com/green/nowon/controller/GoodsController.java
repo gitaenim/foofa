@@ -14,7 +14,7 @@ import com.green.nowon.service.goodsservice.GoodsService;
 
 @Controller
 public class GoodsController {
-
+	
 	@Autowired
 	GoodsService service;
 	
@@ -25,6 +25,7 @@ public class GoodsController {
 	}
 
 	
+
 	@GetMapping("/common/category/{no}/goods")
 	public String goodsOfCategory(@PathVariable long no, Model model) {
 		service.goodsOfCategory(no, model);
@@ -41,6 +42,7 @@ public class GoodsController {
 	public String category() {
 		return "goods/review";
 	}
+
 
 }
 
