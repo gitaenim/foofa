@@ -81,18 +81,20 @@
 }
 
 .cart-boxlist{
-	    padding: 115px 0px;
+	padding: 115px 0px;
     border-top: 1px solid rgb(51, 51, 51);
     font-size: 16px;
     line-height: 24px;
     text-align: center;
-    color: rgb(181, 181, 181);
+    color: rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(51, 51, 51);
 }
 
 .delivery{
 	position: relative;
     width: 284px;
     min-height: 942px;
+    margin-left: auto;
 }
 
 .delivery-box{
@@ -128,7 +130,7 @@
 
 .strong-text em{
 	font-style: normal;
-    color: #5f0080;
+    color: #ff8227;
 }
 .check{
 	white-space: nowrap;
@@ -141,9 +143,9 @@
     width: 100%;
     height: 36px;
     border-radius: 3px;
-    color: #5f0080;
+    color: #ff8227;
     background-color: #fff;
-    border: 1px solid #5f0080;
+    border: 1px solid #ff8227;
 }
 .search-delivery{
 	font-weight: 500;
@@ -191,7 +193,7 @@
 	 padding-top: 20px;
 }
 .decide-button{
-	   display: block;
+	display: block;
     padding: 0 10px;
     text-align: center;
     overflow: hidden;
@@ -199,7 +201,7 @@
     height: 56px;
     border-radius: 3px;
     color: #fff;
-    background-color: #5f0080;
+    background-color: #ff8227;
     border: 0 none;
     font-weight: 500;
 	
@@ -219,6 +221,22 @@ button[disabled], input[disabled] {
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    padding-inline-start: 10px;
+    padding-inline-start: 40px;
     list-style-type: none;
 }
+
+.goods-tit{
+	position: relative;
+	font-size: 24px;
+	font-weight: 600;
+	color: #000000;
+	padding: 0 0.5em;
+}
+.goods-price{
+	position: relative;
+	color: #000000;
+	padding: 0 0.5em;
+	font-size: 18px;
+	font-weight: 500;
+}
+

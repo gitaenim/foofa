@@ -6,4 +6,5 @@ public interface LogService {
 
 	void save(MemberDTO dto);
 
+
 }
