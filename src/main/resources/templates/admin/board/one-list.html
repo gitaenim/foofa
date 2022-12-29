@@ -8,9 +8,10 @@
 	#container>.wrap ul>li{padding: 0.5em 1em;}
 	#container>.wrap ul>li:first-child {width: 70px;}
 	#container>.wrap ul>li:first-child>input {display: inline-block; margin: 0 1em; accent-color: orange;}
-	#container>.wrap ul>li:nth-child(2) {width: 150px;}
-	#container>.wrap ul>li:nth-child(3) {width: 380px;}
-	#container>.wrap ul>li:last-child {width: 600px;}
+	#container>.wrap ul>li:nth-child(2) {width: 200px;}
+	#container>.wrap ul>li:nth-child(3) {width: 240px;}
+	#container>.wrap ul>li:nth-child(4) {width: 500px;}
+	#container>.wrap ul>li:last-child {width: 190px;}
 	.list-checkbox{display: inline-block !important; margin: 0 11px;}
 	.wrap>div>form>button{border: 1px solid; background: transparent; cursor: pointer; padding: 0.2em 0.5em; border-radius: 5px; margin-right: 5px;}
 	.view-size{width: 300px !important;}
@@ -23,11 +24,11 @@
 	<section>
 		<h1>페이지 제목</h1>
 		<div class="wrap view-size">
-			<p class="page-title">FAQ 리스트 페이지</p>
+			<p class="page-title">1대1 리스트 페이지</p>
 		</div>
 	</section>
 	<section id="container">
-		<h1>FAQ 리스트</h1>
+		<h1>1대1 리스트</h1>
 		<div class="wrap">
 			<div class="flex">
 				<form >
@@ -41,23 +42,19 @@
 				<li class="checkbox-inline">
 					<input type="checkbox" id="allCheckBox" onclick="allChecked()">
 				</li>
-				<li>구분</li>
-				<li>질문</li>
-				<li>답변</li>
+				<li>작성자</li>
+				<li>제목</li>
+				<li>내용</li>
+				<li>작성일</li>
 			</ul>
 			<ul th:each="dto:${list}" class="flex terms">
 				<li>
 					<input type="checkbox" name="chk" class="chk list-checkbox" onclick="chkClicked()">
 				</li>
-				<li th:if="${dto.division eq 'use'}">쇼핑몰 이용문의</li>
-				<li th:if="${dto.division eq 'member'}">회원/정보</li>
-				<li th:if="${dto.division eq 'order'}">주문/결제</li>
-				<li th:if="${dto.division eq 'delivery'}">배송</li>
-				<li th:if="${dto.division eq 'cancel'}">취소/교환/반품</li>
-				<li th:if="${dto.division eq 'service'}">서비스/기타</li>
-				
-				<li class="question">[[${dto.question}]]</li>
-				<li class="answer">[[${dto.answer}]]</li>
+				<li class="writer">[[${dto.member.email}]]</li>
+				<li class="title">[[${dto.title}]]</li>
+				<li class="content" th:utext="${dto.content}"></li>
+				<li class="updatedDate" th:text="${#temporals.format(dto.createdDate,'yyyy-MM-dd')}"></li>
 			</ul>
 		</div>
 	</section>

@@ -28,7 +28,7 @@ public class SecurityConfig {
 		http
 			.authorizeRequests(authorize -> authorize
 					.antMatchers("/css/**").permitAll()
-					.antMatchers("/images/**","/js/**").permitAll()
+					.antMatchers("/images/**","/js/**","/webjars/**").permitAll()
 					.antMatchers("/**","/signup").permitAll()
 					.antMatchers("/admin/**").permitAll()
 					.antMatchers("/goods/**").permitAll()
