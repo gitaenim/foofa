@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.green.nowon.domain.dto.GoodsInsertDTO;
+import com.green.nowon.domain.dto.GoodsListDTO;
 
 public interface GoodsService {
 
@@ -17,6 +18,13 @@ public interface GoodsService {
 
 	void list(Model model);
 
-	void goodsOfCategory(long no, Model model);
+	void goodsOfCategory(long cateNo, Model model);
+
+	void detail(long no, Model model);
+
+	void update(GoodsListDTO dto);
+
+	void delete(long no);
+
 
 }

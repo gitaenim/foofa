@@ -16,9 +16,57 @@
 <script type="text/javascript">
 	$(function(){
 		$("#summernote").summernote();
+		getCategory();
 	});
 	
-	var idx=1;
+	
+	
+	
+	
+	
+	
+	
+	function subCateSelected(el){
+    	//어떤카테고리가 변경되었는지 
+    	var depth=$(el).index()+1;
+    	//1:1차, 2:2차
+    	if(depth==2)return;//마지막카테고리가 선택되면 종료
+    	
+    	//하위 카테고리 검색 후 태그생성
+    	var parentNo=$(el).val();
+    	//alert(cateNo);
+    	$.ajax({
+    		url:`/common/categorys/${parentNo}`,
+    		success: function(result){//result<==category.html
+    			//$(".first").html(result);
+    			//현재 표현되는 카테고리 제일 마지막위치 삽입
+    			//var length=$(".cate>.category").length;
+    			$(`#cate>.category:gt(${depth-1})`).remove();
+    			$("#cate>.category").last().after(result);
+    			//var depth=$("#cate>.category").last().index()+1;
+    			$("#cate>.category").last().find(".depth").text(depth+1+"차 카테고리");
+    		}
+    		
+    	});
+    }
+    function getCategory(){
+    	//1차카테고리 정보를 읽어
+    	$.ajax({
+    		url:"/common/categorys",
+    		success: function(result){//result<==category.html
+    			$("#cate").html(result);
+    			var depth=$("#cate>.category").last().index()+1;
+    			$("#cate>.category").last().find(".depth").text(depth+"차 카테고리");
+    		}
+    	});
+    }
+	
+	
+	
+	
+	
+	
+		var idx=1;
 	$(document).ready(function() {
 		  $('#summernote').summernote();
 		});
@@ -78,6 +126,15 @@
 		<a href="/">HOME</a>
 		<form action="/admin/goods/reg" method="post">
 			<table class="goods-table">
+				<tr>
+	    				<td>카테고리</td>
+	    				<td>
+	    					<div id="cate">
+	    						<!-- 여기에 카테고리가 들어갈꺼에요 -->
+	    						
+	    					</div>
+	    				</td>
+	    			</tr>
 				<tr>
 					<td>상품명</td>
 					<td><input type="text" name="title" placeholder="상품명을 입력해주세요"></td>

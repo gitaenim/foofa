@@ -1,5 +1,6 @@
 package com.green.nowon.service.goodsservice;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -14,11 +15,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.green.nowon.domain.dto.GoodsDetailDTO;
 import com.green.nowon.domain.dto.GoodsInsertDTO;
 import com.green.nowon.domain.dto.GoodsListDTO;
 
 import com.green.nowon.domain.entity.category.CategoryEntity;
 import com.green.nowon.domain.entity.category.CategoryEntityRepository;
+import com.green.nowon.domain.entity.category.CategoryItemEntity;
 import com.green.nowon.domain.entity.category.CategoryItemEntityRepository;
 
 import com.green.nowon.domain.entity.goods.GoodsEntity;
@@ -47,6 +50,9 @@ public class GoodsServiceProcess implements GoodsService {
 	@Autowired
 	CategoryEntityRepository cateRepo;
 	
+	List<CategoryEntity> cates;
+	
+	
 	@Override
 	public Map<String, String> fileTempUp(MultipartFile gimg) {
 		return MyFileUtils.fileUpload(gimg, tempUp);
@@ -54,7 +60,17 @@ public class GoodsServiceProcess implements GoodsService {
 
 	@Override
 	public void save(GoodsInsertDTO dto) {
+		long[] categoryNo=dto.getCategoryNo();
+		
 		GoodsEntity entity=grepo.save(dto.toGoodsEntity());
+		
+		for(long no:categoryNo) {
+			cateItemRepo.save(CategoryItemEntity.builder()
+					.item(entity)
+					.category(cateRepo.findById(no).get())
+					.build());
+		}
+		
 		dto.toGoodsImg(entity, upload).forEach(girepo::save);
 	}
 
@@ -66,28 +82,23 @@ public class GoodsServiceProcess implements GoodsService {
 		model.addAttribute("list", grepo.findAll().stream()
 				.map(GoodsListDTO::new).collect(Collectors.toList()));
 	}
-
+	
+	//재귀메서드
+	private void categoryList(CategoryEntity ca) {
+		if(ca==null)return;
+		cates.add(ca);
+		categoryList(ca.getParent());
+	}
+	
+	@Transactional
 	@Override
 	public void goodsOfCategory(long cateNo, Model model) {
 		//카테고리에 해당하는 상품들모두
-		CategoryEntity ca=cateRepo.findById(cateNo).get();
-		System.out.println("현재카테고리:"+ca.getName());
-		CategoryEntity su=ca.getParent();
-		if(su!=null) {
-			System.out.println("상위카테고리:"+su.getName());
-			su=su.getParent();
-			if(su!=null) {
-				System.out.println("상위카테고리:"+su.getName());
-				su=su.getParent();
-				if(su!=null) {
-					System.out.println("상위카테고리:"+su.getName());
-					su=su.getParent();
-				}
-			}
-		};
+		cates=new ArrayList<>();
+		categoryList(cateRepo.findById(cateNo).get());
 		
+		model.addAttribute("cates", cates);
 		
-		model.addAttribute("cate", ca);
 		model.addAttribute("list", cateItemRepo.findAllByCategoryNo(cateNo)
 				.stream()
 				.map(GoodsListDTO::new)
@@ -105,6 +116,36 @@ public class GoodsServiceProcess implements GoodsService {
 		
 		model.addAttribute("list", result);
 	}
+
+	
+	@Transactional
+	@Override
+	public void detail(long no, Model model) {
+		model.addAttribute("goods",grepo.findById(no)
+				.map(GoodsDetailDTO::new)
+				.orElseThrow());
+		
+	}
+
+	@Override
+	public void update(GoodsListDTO dto) {
+		grepo.save(GoodsEntity.builder()
+				.content(dto.getContent())
+				.title(dto.getTitle())
+				.price(dto.getPrice())
+				.stock(dto.getStock())
+				.goodsNo(dto.getNo())
+				.build());
+	}
+
+	@Override
+	public void delete(long no) {
+		grepo.deleteById(no);
+		
+	}
+
+
+	
 
 	
 
