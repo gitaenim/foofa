@@ -35,15 +35,16 @@
 		return isLogin; /* ajax가 완전히 끝난 후에 return */
 	}
 	
-	function isAuthenticated(){
 	
-
 	function btnOrderClicked(){
 		var quantity=$("#quantity").val();
 		var goodsNo=$("#no").val();
 		
 		location.href=`/order/order?goodsNo=${goodsNo}&quantity=${quantity}`;
-
+	}
+	
+	function isAuthenticated(){
+	
 		if(!loginCheck()){
 			var result = confirm("로그인 이후 가능합니다.\n로그인페이지로 이동할까요?");
 			if(result){
@@ -68,9 +69,8 @@
 				//alert("문제발생");
 			}
 		});
-		
-
 	}
+
 	
 	
 	</script>
