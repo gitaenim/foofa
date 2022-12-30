@@ -12,7 +12,7 @@
 		<ul>
 			<li th:each="dto:${list}">
 				<div>
-					<a href="#"><img width="180px" th:src="${dto.defImgUrl}"></a>
+					<a th:href="|/common/goods/${dto.no}|"><img width="180px" th:src="${dto.defImgUrl}"></a>
 				</div>
 				<div class="info">
 					<p><a href=""><span>[[${dto.title}]]</span></a></p>

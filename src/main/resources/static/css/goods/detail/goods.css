@@ -20,6 +20,23 @@ body, button, input, select, textarea {
     color: #333;
 }
 
+.img{
+	width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 1px solid #ff8227;
+    text-align: center;
+    line-height: 100px;
+    font-size: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.quantity{
+	width: 100%;
+}
+
 .detail{
 	font-size: 14px;
     color: #333;
@@ -122,10 +139,15 @@ body, button, input, select, textarea {
     -webkit-box-pack: justify;
     justify-content: space-between;
 }
+.addImg{
+	width: 100px;
+	height: 100px;
+	background: url(/) 0% 0% / cover, url() 50% 50% / contain no-repeat rgb(245, 245, 245);
+}
 
 .goods-img{
-	width: 430px;
-    height: 552px;
+	width: 360px;
+    height: 360px;
     background: url(/) 0% 0% / cover, url() 50% 50% / contain no-repeat rgb(245, 245, 245);
 }
 
@@ -599,10 +621,6 @@ body, button, input, select, textarea {
     line-height: 32px;
     color: #373737;
 }
-
-.goods_point{}
-
-.about_brand{}
 
 #description>div:last-child{
 	display: flex;

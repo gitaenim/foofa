@@ -15,6 +15,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.green.nowon.domain.entity.BaseDateEntity;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -23,10 +25,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
 @Table(name = "foo_member")
 @Getter
 @Entity
-public class MemberEntity {
+public class MemberEntity extends BaseDateEntity{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

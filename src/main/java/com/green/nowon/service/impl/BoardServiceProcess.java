@@ -45,5 +45,11 @@ public class BoardServiceProcess implements BoardService {
 		
 	}
 
+	@Override
+	public void getList(Model model) {
+		model.addAttribute("list", boardRepo.findAll());
+		
+	}
+
 
 }

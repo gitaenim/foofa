@@ -34,7 +34,7 @@ class FoofaApplicationTests {
 	
 	//@Test
 	void 어드민계정() {
-		
+
 		mRepo.save(
 				MemberEntity.builder()
 				.email("admin@test.com")
