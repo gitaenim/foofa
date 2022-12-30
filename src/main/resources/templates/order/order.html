@@ -115,7 +115,7 @@
 			<div class="goods-info-group">
 				<table>
 					<thead>
-						<tr>
+						<tr class="goods-or-list">
 							<td>선택</td>
 							<td>상품이미지</td>
 							<td>상품정보</td>
@@ -129,7 +129,7 @@
 						<tr class="goods-info" th:each=" dto : ${odlist}">
 							<td>
 								<input type="checkbox" class="cb" checked="checked">
-								<input type="hidden" readonly="readonly" class="goods-no"  th:value="${dto.goods.gno}" >
+								<input type="hidden" readonly="readonly" class="goods-no"  th:value="${dto.goods.no}" >
 								<input type="hidden" readonly="readonly" class="quantity"  th:value="${dto.quantity}" >
 								<input type="hidden" readonly="readonly" class="title"  th:value="${dto.goods.title}" >
 								<input type="hidden" readonly="readonly" class="payPrice"  th:value="${dto.totPrice + dto.goods.dPrice}" >
@@ -152,7 +152,7 @@
 					<input type="hidden" id="delivery-no" >
 					<input type="hidden" id="user-email" th:value="${#authentication.name}" readonly="readonly">
 					<input type="hidden" id="user-name" th:value="${#authentication.principal.name}" readonly="readonly">
-					<button type="button" id="btn-pg" onclick="btnPgClicked()">주문하기</button>
+					<button type="button" id="btn-pg" onclick="btnPgClicked()">결제하기</button>
 				</div>
 			</section>
 		</div>

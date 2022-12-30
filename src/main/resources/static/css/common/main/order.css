@@ -169,8 +169,16 @@ div{
 	color: rgb(236, 130, 0);
 }
 .goods-info-group{
-	border: 1px solid #ccc;
+	border: 3px solid rgb(251, 184, 123);
 	border-radius: 3px;
+	width: 100%;
+	}
+.goods-or-list td{
+	width:145px;
+	font-size: 14px;
+	font-weight: bold;
+	
+	
 	}
 	
 	
@@ -275,3 +283,6 @@ div{
 	color: white;
 
 }
+
+
+
