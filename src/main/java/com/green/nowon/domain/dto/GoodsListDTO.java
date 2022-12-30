@@ -1,11 +1,14 @@
 package com.green.nowon.domain.dto;
 
+import java.util.List;
+
 import com.green.nowon.domain.entity.category.CategoryItemEntity;
 import com.green.nowon.domain.entity.goods.GoodsEntity;
 
 import lombok.Data;
-import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 @Data
 public class GoodsListDTO {
 	
@@ -23,6 +26,7 @@ public class GoodsListDTO {
 	private int dPrice;//배송비
 	private String defImgUrl;
 
+	private List<GoodsListImgDTO> img;
 
 	public GoodsListDTO(GoodsEntity e) {
 		this.no = e.getGoodsNo();

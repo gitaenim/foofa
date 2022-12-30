@@ -12,7 +12,6 @@ import com.green.nowon.domain.dto.order.DeliveryInfoDTO;
 import com.green.nowon.domain.dto.order.OrderGoodsDTO;
 import com.green.nowon.security.MyUserDetails;
 import com.green.nowon.service.order.OrderService;
-import com.green.nowon.service.order.OrderServiceProcess;
 
 @Controller
 public class OrderController {
@@ -22,10 +21,7 @@ public class OrderController {
 		return "order/order-list";
 	}
 	
-	@GetMapping("/order")
-	public String order() {
-		return "order/order";
-	}
+	
 	
 	@Autowired
 	private OrderService service;
@@ -36,7 +32,7 @@ public class OrderController {
 		service.deliveryInfoSave(dto, uDetail.getEmail());
 	}
 	
-	@GetMapping("/order/orderGoods")
+	@GetMapping("/order/order")
 	public String orderPayment(OrderGoodsDTO dto,Model model) {
 		service.orderGoods(dto, model);
 		return "order/order";

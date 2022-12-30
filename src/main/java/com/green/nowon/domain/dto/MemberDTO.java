@@ -4,8 +4,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.green.nowon.domain.entity.member.MemberEntity;
 
+import lombok.Getter;
 import lombok.Setter;
 
+@Getter
 @Setter
 public class MemberDTO {
 	
@@ -20,4 +22,5 @@ public class MemberDTO {
 				.name(name)
 				.build();
 	}
+	
 }

@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -45,6 +46,12 @@ public class FaqServiceProcess implements FaqService {
 				.map(FaqDTO::new)
 				.collect(Collectors.toList()));
 		mv.addObject("pi",pageInfo);
+		
+	}
+
+	@Override
+	public void getList(Model model) {
+		model.addAttribute("list", fRepo.findAll());
 		
 	}
 	

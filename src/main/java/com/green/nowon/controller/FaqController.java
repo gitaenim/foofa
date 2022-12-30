@@ -14,7 +14,7 @@ import com.green.nowon.service.impl.FaqServiceProcess;
 public class FaqController {
 	
 	@Autowired
-	FaqService service;
+	private FaqService service;
 	
 	@GetMapping("/board")
 	public String boardlist() {
