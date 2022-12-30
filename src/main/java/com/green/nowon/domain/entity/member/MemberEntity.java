@@ -27,6 +27,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Getter
 @Table(name = "foo_member")
+@Getter
 @Entity
 public class MemberEntity extends BaseDateEntity{
 	

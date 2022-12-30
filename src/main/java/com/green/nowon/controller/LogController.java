@@ -38,13 +38,14 @@ public class LogController {
 		service.save(dto);
 		return "redirect:/login";
 	}
+
 	@DeleteMapping("/delete/{mno}")
 	public String delete(@PathVariable long mno) {
 		memservice.deleteMno(mno);
 		return "redirect:/admin/authority";
 
 	}	
-	
+
 	@ResponseBody
 	@GetMapping("/member/login-check")
 	public boolean loginCheck(Authentication auth) {
