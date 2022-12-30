@@ -7,5 +7,5 @@ import lombok.Setter;
 @Getter
 public class OrderGoodsDTO {
 	private long goodsNo;
-	private int orderQuantity;
+	private int quantity;
 }

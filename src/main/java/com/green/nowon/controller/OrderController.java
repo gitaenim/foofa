@@ -36,18 +36,22 @@ public class OrderController {
 		service.deliveryInfoSave(dto, uDetail.getEmail());
 	}
 	
-	@GetMapping("/user/order")
+	@GetMapping("/order/orderGoods")
 	public String orderPayment(OrderGoodsDTO dto,Model model) {
-		service.orderGoods(dto,model);
-		return "user/order";
+		service.orderGoods(dto, model);
+		return "order/order";
 	}
-	
 	
 	 @GetMapping("/order/address/base")
 	 public String baseAddrs(@AuthenticationPrincipal MyUserDetails userDetails,Model model) {
 		 service.baseAddress(userDetails.getEmail(),model);
 		 return "order/address-base";
 	 }
-	
+	 
+	@GetMapping("/order/addres-list")
+	public String addresList(@AuthenticationPrincipal MyUserDetails userDetails,Model model) {
+		service.addresList(userDetails.getEmail(), model);
+		return "order/addres-list";
+	}
 	
 }

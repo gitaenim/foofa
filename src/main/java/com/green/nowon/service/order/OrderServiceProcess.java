@@ -1,5 +1,7 @@
 package com.green.nowon.service.order;
 
+import java.util.stream.Collectors;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,14 +32,16 @@ public class OrderServiceProcess implements OrderService {
 	@Transactional
 	@Override
 	public void orderGoods(OrderGoodsDTO dto, Model model) {
-		model.addAttribute("odlist" , gRepo.findById(dto.getGoodsNo())
-				.map(OrderGoodsListDTO::new).get().quantity(dto.getOrderQuantity()));
+		System.out.println(">>>>>>>>>>>>>>>>>"+dto+model);
+		model.addAttribute("odlist" , gRepo.findById(dto.getGoodsNo()).map(OrderGoodsListDTO::new)
+				.get()
+				.quantity(dto.getQuantity()));
 	}
 	
 	
 	@Override
 	public void deliveryInfoSave(DeliveryInfoDTO dto, String email) {
-		//System.out.println(">>>>>>>>>>>>>>"+email);
+		System.out.println(">>>>>>>>>>>>>>"+email);
 		dRepo.save(dto
 					.toEntity()
 					.base(dRepo.countByMemberEmail(email)==0?true:false)//배송정보가 없으면 base=true
@@ -45,15 +49,23 @@ public class OrderServiceProcess implements OrderService {
 		);
 	}
 
-
 	@Override
 	public void baseAddress(String email, Model model) {
-		//System.out.println("email:"+email);
+		
 		model.addAttribute("baseadr",dRepo.findByBaseAndMemberEmail(true,email)
 				.map(DeliveryListDTO::new)
 				.orElseThrow()
 				);
 		
+	}
+
+
+	@Override
+	public void addresList(String email, Model model) {
+		model.addAttribute("list",dRepo.findAllByMemberEmail(email).stream()
+									.map(DeliveryListDTO::new)
+									.collect(Collectors.toList())
+				);
 	}
 
 	

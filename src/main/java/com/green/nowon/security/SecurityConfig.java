@@ -6,9 +6,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-
-
-
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 @EnableWebSecurity
 public class SecurityConfig {
@@ -28,7 +26,7 @@ public class SecurityConfig {
 		http
 			.authorizeRequests(authorize -> authorize
 					.antMatchers("/css/**").permitAll()
-					.antMatchers("/images/**","/js/**").permitAll()
+					.antMatchers("/images/**","/js/**","/webjars/**").permitAll()
 					.antMatchers("/**","/signup").permitAll()
 					.antMatchers("/admin/**").permitAll()
 					.antMatchers("/goods/**").permitAll()
@@ -39,11 +37,16 @@ public class SecurityConfig {
 					.passwordParameter("pass")
 					.loginPage("/login")
 					.loginProcessingUrl("/login")
+					.successHandler(mySuccessHandler())
 					.permitAll()
 			)
-			.csrf(csrf->csrf.disable())
-			;
+			.csrf(csrf->csrf.disable());
 			
 		return http.build();
+	}
+	
+	@Bean
+	public AuthenticationSuccessHandler mySuccessHandler() {
+		return new MySuccessHandler();
 	}
 }

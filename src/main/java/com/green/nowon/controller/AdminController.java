@@ -5,7 +5,9 @@ import java.util.Map;
 import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -15,14 +17,23 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.green.nowon.domain.dto.GoodsInsertDTO;
+
+import com.green.nowon.domain.dto.MemberListDTO;
+import com.green.nowon.service.MemberService;
+
 import com.green.nowon.domain.dto.GoodsListDTO;
+
 import com.green.nowon.service.goodsservice.GoodsService;
 
-@org.springframework.stereotype.Controller
+
+@Controller
 public class AdminController {
 	
 	@Autowired
 	private GoodsService service;
+	
+	@Autowired
+	private MemberService memberservice;
 	
 	@GetMapping("/admin")
 	public String admin() {
@@ -31,7 +42,8 @@ public class AdminController {
 	}
 	
 	@GetMapping("/admin/authority")
-	public String authority() {
+	public String authority(Model model) {
+		memberservice.getList(model);
 		return "admin/authority";
 	}
 	
@@ -61,10 +73,8 @@ public class AdminController {
 		return "admin/goods/goods-reg";
 	}
 	
-	@GetMapping("/admin/board")
-	public String BoardList() {
-		return "admin/board/faq-list";
-	}
+
+
 	
 	@ResponseBody
 	@PostMapping("/admin/temp-up")
