@@ -73,10 +73,8 @@ public class AdminController {
 		return "admin/goods/goods-reg";
 	}
 	
-	@GetMapping("/admin/board")
-	public String BoardList() {
-		return "admin/board/faq-list";
-	}
+
+
 	
 	@ResponseBody
 	@PostMapping("/admin/temp-up")

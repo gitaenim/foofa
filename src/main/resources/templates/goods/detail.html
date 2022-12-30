@@ -22,7 +22,30 @@
 		var tot=$("#quantity").val() * $("#price").val();
 		$("#total-price").text(tot);
 	}
+	function loginCheck(){
+		var isLogin = false;
+		$.ajax({
+			url: "/member/login-check",
+			async: false, /* 비동기 false */
+			success: function(result){
+				//alert(result);
+				isLogin = result;
+			}
+		})
+		return isLogin; /* ajax가 완전히 끝난 후에 return */
+	}
 	
+	function isAuthenticated(){
+	
+		if(!loginCheck()){
+			var result = confirm("로그인 이후 가능합니다.\n로그인페이지로 이동할까요?");
+			if(result){
+				location.href="/login";
+			}
+			return;
+		}
+		location.href="/carts"
+	}
 	
 	
 	</script>
@@ -147,13 +170,11 @@
 								</span>
 							</button>
 							<div class="flex">
-								<button>
+								<button onclick="isAuthenticated()">
 									<span>장바구니 담기</span>
 								</button>
 								<button>
-									<span>카트</span>
-
-									<span>구매하기</span>
+									<span>바로구매하기</span>
 								</button>
 							</div>
 						</div>

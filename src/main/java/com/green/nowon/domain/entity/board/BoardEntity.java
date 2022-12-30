@@ -57,17 +57,5 @@ public class BoardEntity extends BaseDateEntity{
 		this.content=dto.getContent();
 		return this;
 	}
-	
-	/*
-	@Builder.Default
-	@CollectionTable(name = "foo_board_division")
-	@Enumerated(EnumType.STRING)
-	@ElementCollection(fetch = FetchType.EAGER)
-	private Set<Division> division=new HashSet<>();
-	
-	public BoardEntity addDivision(Division division) {
-		this.division.add(division);
-		return this;
-	}
-	*/
+
 }
