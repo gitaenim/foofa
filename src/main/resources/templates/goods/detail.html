@@ -44,7 +44,24 @@
 			}
 			return;
 		}
-		location.href="/carts"
+		
+		var ea=$("#quantity").val();
+		var no=$("#no").val();
+		
+		$.ajax({
+			url: "/cart",
+			data:{quantity:ea, itemNo:no},
+			type: "post",
+			success:function(){
+				if(!confirm("장바구니에 상품을 담았습니다.\n장바구니 페이지로 이동할까요?"))return;
+				location.href="/carts";
+				
+			},
+			error:function(){
+				//alert("문제발생");
+			}
+		});
+		
 	}
 	
 	
@@ -133,6 +150,7 @@
 									</div>
 									<div class="flex">
 										<div>
+										<input type="hidden" id="no" th:value="${goods.no}">
 										<input type="hidden" id="price" th:value="${goods.price}">
 										<input type="number" id="quantity" min="1" th:max="${goods.stock}" value="1" onchange="quantityChanged()">
 										</div>
