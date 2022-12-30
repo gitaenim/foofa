@@ -36,11 +36,13 @@
 						<tbody>
 							<tr>
 								<td class="customer--1">이름</td>
-								<td class="customer--2">회원 이름이 들어갈 공간</td>
+								<td class="customer--2">회원 이름
+								</td>
+								
 							</tr>
 							<tr>
 								<td class="customer--1">이메일</td>
-								<td class="customer--2">회원 이메일이 들어갈 공간</td>
+								<td class="customer--2">회원 이메일</td>
 							</tr>
 						</tbody>
 					</table>
@@ -120,9 +122,9 @@
 							<td>상품이미지</td>
 							<td>상품정보</td>
 							<td>구매수량</td>
-							<td>토탈금액</td>
+							<td>금액</td>
 							<td>배송비</td>
-							<td>주문금액</td>
+							<td>주문 총 금액</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -137,12 +139,12 @@
 							<td><img alt="상품목록이미지" th:src="${dto.goods.defImgUrl}"  height="100px;"></td>
 							<td>
 								<p th:text="${dto.goods.title}">상품명</p>
-								<p th:text="${dto.goods.price}">단가</p>
+								<!-- <p th:text="${dto.goods.price}">단가</p> -->
 							</td>
 							<td th:text="${dto.quantity}">구매수량</td>
-							<td th:text="${dto.totPrice}">토탈금액</td>
+							<td th:text="${dto.totPrice}">금액</td>
 							<td th:text="${dto.goods.dPrice}">배송비</td>
-							<td th:text="${dto.totPrice + dto.goods.dPrice}">주문금액</td>
+							<td th:text="${dto.totPrice + dto.goods.dPrice}">주문 총 금액</td>
 						</tr>
 					</tbody>
 				</table>
