@@ -9,6 +9,7 @@
  function openChat(){
 	 setConnectStated(true);//접속
 	 connect();
+	 
  }
 
  function showMessage(message) {
