@@ -11,6 +11,8 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -41,6 +43,7 @@ public class GoodsImgEntity {
 	
 	@JoinColumn
 	@ManyToOne
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	private GoodsEntity goods;
 	
 

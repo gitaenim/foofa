@@ -26,9 +26,10 @@ public class SecurityConfig {
 		http
 			.authorizeRequests(authorize -> authorize
 					.antMatchers("/css/**").permitAll()
+					.antMatchers("/").permitAll()
 					.antMatchers("/images/**","/js/**","/webjars/**").permitAll()
-					.antMatchers("/**","/signup").permitAll()
-					.antMatchers("/admin/**").permitAll()
+					.antMatchers("/signup").permitAll()
+					.antMatchers("/admin/**").hasRole("ADMIN")
 					.antMatchers("/goods/**").permitAll()
 				.anyRequest().authenticated()
 			)
@@ -37,7 +38,7 @@ public class SecurityConfig {
 					.passwordParameter("pass")
 					.loginPage("/login")
 					.loginProcessingUrl("/login")
-					.successHandler(CustomAuthSuccessHandler())
+					.successHandler(mySuccessHandler())
 					.permitAll()
 			)
 			.csrf(csrf->csrf.disable());
@@ -46,7 +47,7 @@ public class SecurityConfig {
 	}
 	
 	@Bean
-	public AuthenticationSuccessHandler CustomAuthSuccessHandler() {
-		return new CustomAuthSuccessHandler();
+	public AuthenticationSuccessHandler mySuccessHandler() {
+		return new MySuccessHandler();
 	}
 }
