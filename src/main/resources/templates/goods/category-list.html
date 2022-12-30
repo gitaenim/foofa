@@ -6,7 +6,7 @@
 <main>
 	<h1>메인컨텐츠</h1>
 	<div class="wrap view-size">
-		<div class="flex row-reverse end category-path" th:if="${cates}">
+		<div class="flex row-reverse end category-path" th:if="${cates}" style="flex-direction:row-reverse;">
 			<span th:each="cate:${cates}" th:class="${'cate-name ca-'+cate.depth}">
 				<a th:href="|/common/category/${cate.no}/goods|" th:text="${cate.name}">카테고리이름</a>
 				<span class="seperator" th:unless="${cateStat.first}">&gt;</span>
@@ -17,7 +17,7 @@
 			</span>
 		</div>
 		<p th:if="${cates}" th:text="${cates[0].name}" class="page-tit"></p>
-		<ul class="grid-container">
+		<ul class="grid-container flex">
 			<li th:each="dto:${list}" class="list-item">
 				<div>
 					<a th:href="|/common/goods/${dto.no}|"><img height="280px" th:src="${dto.defImgUrl}"></a>
