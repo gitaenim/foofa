@@ -15,7 +15,7 @@
 					<a th:href="|/common/goods/${dto.no}|"><img width="180px" th:src="${dto.defImgUrl}"></a>
 				</div>
 				<div class="info">
-					<p><a href=""><span>[[${dto.title}]]</span></a></p>
+					<p><a th:href="|/common/goods/${dto.no}|"><span>[[${dto.title}]]</span></a></p>
 					<div class="price">
 						<i >
 							<span>sale정보</span>

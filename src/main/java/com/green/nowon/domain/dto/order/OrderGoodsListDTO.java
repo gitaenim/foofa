@@ -15,7 +15,7 @@ public class OrderGoodsListDTO {
 	
 	public OrderGoodsListDTO quantity(int quantity) {
 		this.quantity=quantity;
-		this.totPrice=quantity*(goods.getDPrice()-goods.getSPrice());
+		this.totPrice=quantity*(goods.getPrice()-goods.getSPrice());
 		return this;
 	}
 	//주문금액

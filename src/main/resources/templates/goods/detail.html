@@ -37,6 +37,13 @@
 	
 	function isAuthenticated(){
 	
+
+	function btnOrderClicked(){
+		var quantity=$("#quantity").val();
+		var goodsNo=$("#no").val();
+		
+		location.href=`/order/order?goodsNo=${goodsNo}&quantity=${quantity}`;
+
 		if(!loginCheck()){
 			var result = confirm("로그인 이후 가능합니다.\n로그인페이지로 이동할까요?");
 			if(result){
@@ -62,6 +69,7 @@
 			}
 		});
 		
+
 	}
 	
 	
@@ -188,11 +196,13 @@
 								</span>
 							</button>
 							<div class="flex">
+
+								<input type="hidden" id="no" th:value="${goods.no}">
 								<button onclick="isAuthenticated()">
 									<span>장바구니 담기</span>
 								</button>
-								<button>
-									<span>바로구매하기</span>
+								<button type="button" id="btn-order" onclick="btnOrderClicked()">
+									바로구매하기
 								</button>
 							</div>
 						</div>
