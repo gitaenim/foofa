@@ -177,7 +177,7 @@ div{
 	width:145px;
 	font-size: 14px;
 	font-weight: bold;
-	
+	border-bottom: 1px solid rgb(236, 130, 0);
 	
 	}
 	
@@ -259,12 +259,7 @@ div{
 .baseAddrs{
 	display: none;
 }
-#btn-addr-list:checked ~ .listAddrs{
-		display: block;
-	}
-.listAddrs{
-	display: none;	
-}
+
 
 
 .btn-pg-order{

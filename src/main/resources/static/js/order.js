@@ -22,9 +22,9 @@ function getBaseAddress(){//기본배송지정보확인
 		success:function(resultHTML){
 			$("#base-address-disp").html(resultHTML);
 			
-			$("#address-no").val($("#addressNo").val());
-			$("#menu-ad>li").removeClass("target");
-			$("#menu-ad>li").eq(0).addClass("target");
+			//$("#address-no").val($("#addressNo").val());
+			//$("#menu-ad>li").removeClass("target");
+			//$("#menu-ad>li").eq(0).addClass("target");
 		},
 		error:function(){
 			memuAdClicked($("menu-ad>li").eq(1));
@@ -62,7 +62,7 @@ function deliverySubmited(event){
 		type:"post",
 		data:queryString,
 		success:function(){
-			console.log("등록완료");
+			alert("등록완료");
 		}
 		
 	});
@@ -126,16 +126,12 @@ IMP.init("imp88887548"); // 예: imp00000000a
 
 
 	function btnPgClicked(){
-		  //1.페이지에서 결제정보 수집하는 방법 : 구매자 정보,상품정보,배송
-		
+		 //1.페이지에서 결제정보 수집 : 구매자 정보,상품정보,배송
 		var checkedItems=$(".cb:checked");
-		//.siblings(".item-no");
-		
 		var title=$(checkedItems[0]).siblings(".title").val();
 		if(checkedItems.length>1){
 			title +=" 외 "+(checkedItems.length-1)+"건";
 		}					
-		//var quantity;
 		var payPrice=0;
 		console.log("length: "+checkedItems.length);
 		
@@ -143,8 +139,6 @@ IMP.init("imp88887548"); // 예: imp00000000a
 	  		payPrice += parseInt($(item).siblings(".payPrice").val());
 	  	});
 	  	merchant_uid="ORD_"+new Date().getTime();
-	  	
-	  	
 	  	
 	  	var data={
 	  		merchant_uid: merchant_uid,
@@ -180,7 +174,7 @@ IMP.init("imp88887548"); // 예: imp00000000a
 		        pmDone();       
 		        
 		      } else {
-		    	alert("결제실패!");
+		    	alert("결제가 취소되었습니다.");
 		      }
 		    	
 		    });
