@@ -37,6 +37,13 @@
 	
 	function isAuthenticated(){
 	
+
+	function btnOrderClicked(){
+		var quantity=$("#quantity").val();
+		var goodsNo=$("#no").val();
+		
+		location.href=`/order/order?goodsNo=${goodsNo}&quantity=${quantity}`;
+
 		if(!loginCheck()){
 			var result = confirm("로그인 이후 가능합니다.\n로그인페이지로 이동할까요?");
 			if(result){
@@ -44,7 +51,25 @@
 			}
 			return;
 		}
-		location.href="/carts"
+		
+		var ea=$("#quantity").val();
+		var no=$("#no").val();
+		
+		$.ajax({
+			url: "/cart",
+			data:{quantity:ea, itemNo:no},
+			type: "post",
+			success:function(){
+				if(!confirm("장바구니에 상품을 담았습니다.\n장바구니 페이지로 이동할까요?"))return;
+				location.href="/carts";
+				
+			},
+			error:function(){
+				//alert("문제발생");
+			}
+		});
+		
+
 	}
 	
 	
@@ -133,6 +158,7 @@
 									</div>
 									<div class="flex">
 										<div>
+										<input type="hidden" id="no" th:value="${goods.no}">
 										<input type="hidden" id="price" th:value="${goods.price}">
 										<input type="number" id="quantity" min="1" th:max="${goods.stock}" value="1" onchange="quantityChanged()">
 										</div>
@@ -170,11 +196,13 @@
 								</span>
 							</button>
 							<div class="flex">
+
+								<input type="hidden" id="no" th:value="${goods.no}">
 								<button onclick="isAuthenticated()">
 									<span>장바구니 담기</span>
 								</button>
-								<button>
-									<span>바로구매하기</span>
+								<button type="button" id="btn-order" onclick="btnOrderClicked()">
+									바로구매하기
 								</button>
 							</div>
 						</div>

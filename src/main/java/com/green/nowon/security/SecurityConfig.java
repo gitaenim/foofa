@@ -26,9 +26,10 @@ public class SecurityConfig {
 		http
 			.authorizeRequests(authorize -> authorize
 					.antMatchers("/css/**").permitAll()
-					.antMatchers("/images/**","/js/**","/webjars/**","/my-websocket/**").permitAll()
-					.antMatchers("/**","/signup").permitAll()
-					.antMatchers("/admin/**").permitAll()
+					.antMatchers("/").permitAll()
+					.antMatchers("/images/**","/js/**","/webjars/**").permitAll()
+					.antMatchers("/signup").permitAll()
+					.antMatchers("/admin/**").hasRole("ADMIN")
 					.antMatchers("/goods/**").permitAll()
 				.anyRequest().authenticated()
 			)

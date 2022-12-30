@@ -9,13 +9,13 @@
 	<h1>메인컨텐츠</h1>
 	<div class="wrap view-size"> 
 		<p>상품리스트</p>
-		<ul>
+		<ul class="flex">
 			<li th:each="dto:${list}">
 				<div>
 					<a th:href="|/common/goods/${dto.no}|"><img width="180px" th:src="${dto.defImgUrl}"></a>
 				</div>
 				<div class="info">
-					<p><a href=""><span>[[${dto.title}]]</span></a></p>
+					<p><a th:href="|/common/goods/${dto.no}|"><span>[[${dto.title}]]</span></a></p>
 					<div class="price">
 						<i >
 							<span>sale정보</span>
