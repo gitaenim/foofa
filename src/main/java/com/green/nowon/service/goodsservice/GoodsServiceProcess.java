@@ -39,16 +39,15 @@ public class GoodsServiceProcess implements GoodsService {
 	private String upload;
 	
 	@Autowired
-	GoodsEntityRepository grepo;
-	
+	GoodsEntityRepository grepo;//상품
 	@Autowired
-	GoodsImgEntityRepository girepo;
-	
+	GoodsImgEntityRepository girepo;//상품이미지
 	@Autowired
-	CategoryItemEntityRepository cateItemRepo;
-	
+	CategoryItemEntityRepository cateItemRepo;//카테고리상품연계
 	@Autowired
-	CategoryEntityRepository cateRepo;
+	CategoryEntityRepository cateRepo;//카테고리
+	
+	
 	
 	List<CategoryEntity> cates;
 	
@@ -81,6 +80,7 @@ public class GoodsServiceProcess implements GoodsService {
 		
 		model.addAttribute("list", grepo.findAll().stream()
 				.map(GoodsListDTO::new).collect(Collectors.toList()));
+		
 	}
 	
 	//재귀메서드

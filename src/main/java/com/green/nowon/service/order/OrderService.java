@@ -13,4 +13,6 @@ public interface OrderService {
 
 	void baseAddress(String email, Model model);
 
+	void addresList(String email, Model model);
+
 }
