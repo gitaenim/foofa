@@ -37,7 +37,7 @@ public class SecurityConfig {
 					.passwordParameter("pass")
 					.loginPage("/login")
 					.loginProcessingUrl("/login")
-					.successHandler(CustomAuthSuccessHandler())
+					.successHandler(mySuccessHandler())
 					.permitAll()
 			)
 			.csrf(csrf->csrf.disable());
@@ -46,7 +46,7 @@ public class SecurityConfig {
 	}
 	
 	@Bean
-	public AuthenticationSuccessHandler CustomAuthSuccessHandler() {
-		return new CustomAuthSuccessHandler();
+	public AuthenticationSuccessHandler mySuccessHandler() {
+		return new MySuccessHandler();
 	}
 }
