@@ -57,12 +57,12 @@ public class CartServiceProcess implements CartService {
 	@Override
 	public void save(CartItemSaveDTO dto, String email) {
 		
-		CartEntity cart= (cartRepo.findByMnoEmail(email)
-				.orElseGet(()->cartRepo.save(CartEntity.builder()
-						.mno(memRepository.findByEmail(email).orElseThrow())
-						.build())));
+		CartEntity cart= cartRepo.findByMnoEmail(email)
+									.orElseGet(
+											()->cartRepo.save(CartEntity.builder().mno(memRepository.findByEmail(email).orElseThrow()).build())
+											);
 		
-		cartItemRepo.findByCnoAndGno(cart.getCno(), dto.getItemNo()).ifPresentOrElse(
+		cartItemRepo.findByCnoAndGno(cart, goodsRepo.findById(dto.getItemNo()).get()).ifPresentOrElse(
 				//존재하면 구매수량 증가
 				e->e.updateQuantity(dto.getQuantity()),
 				//존재하지 않으면 저장
