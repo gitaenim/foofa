@@ -3,13 +3,12 @@
  */
  var stompClient = null;
  $(function(){
-	$("#question").keyup(questionKeyup());
+	
  });
  
  function openChat(){
 	 setConnectStated(true);//접속
 	 connect();
-	 
  }
 
  function showMessage(message) {
@@ -85,9 +84,9 @@ function menuclicked(el){
 }
 
 //질문에 엔터키가 입력되었을 때
-function questionKeyup(event){
+function questionKeyup(){
 	if(event.keyCode!=13)return;
-	btnMmsgSendClicked()
+	btnMsgSendClicked()
 }
 
 //전송 버튼을 클릭했을 때

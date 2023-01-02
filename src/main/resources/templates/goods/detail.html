@@ -35,7 +35,24 @@
 		return isLogin; /* ajax가 완전히 끝난 후에 return */
 	}
 	
+
+	function btnOrderClicked(){
+		var quantity=$("#quantity").val();
+		var goodsNo=$("#no").val();
+		
+		location.href=`/order/order?goodsNo=${goodsNo}&quantity=${quantity}`;
+	}
+	
 	function isAuthenticated(){
+	
+		if(!loginCheck()){
+			var result = confirm("로그인 이후 가능합니다.\n로그인페이지로 이동할까요?");
+			if(result){
+				location.href="/login";
+			}
+			return;
+		}
+
 		
 		var ea=$("#quantity").val();
 		var no=$("#no").val();
@@ -54,16 +71,8 @@
 			}
 			
 		});
-		
-}
-function btnOrderClicked(){
-		
-		var quantity=$("#quantity").val();
-		var goodsNo=$("#no").val();
-		
-		location.href=`/order/order?goodsNo=${goodsNo}&quantity=${quantity}`;
 
-	}	
+	}
 	
 	
 	</script>
@@ -401,6 +410,5 @@ function btnOrderClicked(){
 		<div class="bottom-line"></div>
 		<span class="to-the-top"></span>
 	</div>
-
 </main>
 </html>

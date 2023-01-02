@@ -15,9 +15,9 @@
    		<dd id="chat-content">
    		
    		</dd>
-   		<dd id="chat-question">
+   		<dd id="chat-question" class="flex">
    			<span class="flex column center"><i></i></span>
-			<input type="text" id="question"  placeholder="질문을 입력하세요">
+			<input type="text" id="question" onkeyup="questionKeyup()" placeholder="질문을 입력하세요">
 			<button type="button" id="btn-msg-send" onclick="btnMsgSendClicked()">전송</button>
 		</dd>
    	</dl>
