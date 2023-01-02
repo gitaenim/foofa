@@ -35,7 +35,7 @@
 		return isLogin; /* ajax가 완전히 끝난 후에 return */
 	}
 	
-	
+
 	function btnOrderClicked(){
 		var quantity=$("#quantity").val();
 		var goodsNo=$("#no").val();
@@ -52,6 +52,7 @@
 			}
 			return;
 		}
+
 		
 		var ea=$("#quantity").val();
 		var no=$("#no").val();
@@ -68,9 +69,10 @@
 			error:function(){
 				//alert("문제발생");
 			}
+			
 		});
-	}
 
+	}
 	
 	
 	</script>
@@ -196,7 +198,6 @@
 								</span>
 							</button>
 							<div class="flex">
-
 								<input type="hidden" id="no" th:value="${goods.no}">
 								<button onclick="isAuthenticated()">
 									<span>장바구니 담기</span>
