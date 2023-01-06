@@ -19,9 +19,7 @@ else
 fi
 
 #배포된 war파일을 tomcat_web_root 경로에 압축해제
-cp -f /home/ec2-user/src/deploy/build/libs/Foofa.war  /home/ec2-user/src/webapp/
-cd /home/ec2-user/src/webapp/
-jar -vf Foofa.war
+unzip -oqq  ~/src/deploy/build/libs/Foofa.war  -d ~/src/webapp/
 echo "$DATE : WAR파일을 webapp 경로에 압축해제 완료!" >> $DEPLOY_LOG
 
 #톰캣 시작
