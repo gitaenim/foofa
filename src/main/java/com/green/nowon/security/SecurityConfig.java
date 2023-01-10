@@ -25,12 +25,12 @@ public class SecurityConfig {
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http
 			.authorizeRequests(authorize -> authorize
-					.antMatchers("/css/**").permitAll()
-					.antMatchers("/**").permitAll()
-					.antMatchers("/images/**","/js/**","/webjars/**").permitAll()
-					.antMatchers("/signup").permitAll()
+					.antMatchers("/common/**","/category/**","/member/login-check","/list/**").permitAll()
+					.antMatchers("/").permitAll()
+					.antMatchers("/images/**","/js/**","/css/**","/webjars/**").permitAll()
+					.antMatchers("/hello/**","/message/**","/topic/**","/app/**","/my-websocket/**").permitAll()
+					.antMatchers("/goods/**","/signup","/board/**").permitAll()
 					.antMatchers("/admin/**").hasRole("ADMIN")
-					.antMatchers("/goods/**").permitAll()
 				.anyRequest().authenticated()
 			)
 			.formLogin(formLogin->formLogin
