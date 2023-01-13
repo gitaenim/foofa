@@ -30,7 +30,7 @@ public class SecurityConfig {
 					.antMatchers("/images/**","/js/**","/css/**","/webjars/**").permitAll()
 					.antMatchers("/hello/**","/message/**","/topic/**","/app/**","/my-websocket/**").permitAll()
 					.antMatchers("/goods/**","/signup","/board/**").permitAll()
-					.antMatchers("/admin/**").hasRole("ADMIN")
+					.antMatchers("/admin/**","/delete/**").hasRole("ADMIN")
 				.anyRequest().authenticated()
 			)
 			.formLogin(formLogin->formLogin

@@ -4,7 +4,7 @@ os: linux
 files:
   - source:  /
     destination: /home/ec2-user/src/deploy
-    overwrite: yes
+    overwrite: true
 
 permissions:
   - object: /
@@ -14,8 +14,8 @@ permissions:
 
 hooks:
   AfterInstall:
-    - location: scripts/deploy
+    - location: scripts/stop
       timeout: 60
 #  ApplicationStart:
-#    - location: scripts/deploy
+#    - location: scripts/start
 #      timeout: 60

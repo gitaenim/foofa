@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
+<html xmlns:th="https://www.thymeleaf.org"
 	th:replace="layout/user-layout :: layout(~{this::head}, ~{this::main})">
 <!-- th:replace="~{템플릿::fragment이름or아이디or태그}" -->
 <head>
@@ -214,8 +214,8 @@
 				<ul>
 					<li><a><span>상품설명</span></a></li>
 					<li><a><span>상세정보</span></a></li>
-					<li><a><span>후기</span><span>(${review_count})</span></a>
-					</li><li><a><span>문의</span>	</a></li>
+					<li><a><span>후기</span></a></li>
+					<li><a><span>문의</span></a></li>
 				</ul>
 			</nav>
 			<div class="goods-detail">
